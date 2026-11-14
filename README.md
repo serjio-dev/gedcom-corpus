@@ -63,6 +63,9 @@ The first segment is `HEAD` or a record xref. Each next segment is a tag with an
 0-based index among siblings with that tag; without an index the tag must be unique among
 its siblings. In `ops.json` each path is resolved after the previous operation.
 
+Paths in diagnostics and loss reports use the canonical form: an index appears only when
+the tag repeats among its siblings (`@I1@/NAME[1]`, but `@I1@/FAMC` for a single `FAMC`).
+
 ## Imported cases
 
 `cases/g7c-*` come from [gedcom7code/test-files](https://github.com/gedcom7code/test-files)

@@ -17,12 +17,12 @@ input:
   version: "5.5.1"
   encoding: UTF-8
   lineEnding: LF
-checks: [read, roundtrip-preserve, roundtrip-stream, convert, convert-stream]
+checks: [read, roundtrip-preserve, roundtrip-stream, validate, convert, convert-stream]
 expect:
   recordCount: 4
   diagnostics:
     - severity: error
-      path: "@I1@/FAMC[0]"
+      path: "@I1@/FAMC"
       about: Pointer to a record that does not exist
 convert:
   - to: "7.0"
