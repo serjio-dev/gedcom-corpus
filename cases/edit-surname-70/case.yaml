@@ -1,0 +1,23 @@
+id: edit-surname-70
+description: >-
+  Edit in preserve mode - change a surname in NAME and SURN, append a birth event.
+  Untouched lines, including the extension tag, must be written byte for byte;
+  new lines use the document's line ending.
+source:
+  origin: handmade
+license: Apache-2.0
+fictional: true
+milestone: "0.1"
+tags: [edit, preserve, cyrillic]
+input:
+  file: input.ged
+  version: "7.0"
+  encoding: UTF-8
+  lineEnding: LF
+checks: [read, roundtrip-preserve, fingerprint, edit]
+expect:
+  recordCount: 1
+edit:
+  ops: ops.json
+  expected: expected.ged
+  writeMode: preserve

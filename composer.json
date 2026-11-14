@@ -1,0 +1,9 @@
+{
+    "name": "korin/gedcom-corpus",
+    "description": "Language-neutral GEDCOM test corpus: inputs, expected outputs, loss reports and fingerprints",
+    "type": "library",
+    "license": "Apache-2.0",
+    "keywords": ["gedcom", "genealogy", "test-corpus", "conformance"],
+    "homepage": "https://github.com/serjio-dev/gedcom-corpus",
+    "require": {}
+}

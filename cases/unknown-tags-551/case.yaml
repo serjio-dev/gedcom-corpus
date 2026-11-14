@@ -1,0 +1,18 @@
+id: unknown-tags-551
+description: >-
+  Vendor and user-defined tags at every level - _UID, _FSFTID, _MREL/_FREL under CHIL,
+  a whole user-defined record and a nested pointer inside it. All must survive unchanged.
+source:
+  origin: handmade
+license: Apache-2.0
+fictional: true
+milestone: "0.1"
+tags: [extensions, underscore-tags]
+input:
+  file: input.ged
+  version: "5.5.1"
+  encoding: UTF-8
+  lineEnding: LF
+checks: [read, roundtrip-preserve, fingerprint]
+expect:
+  recordCount: 4

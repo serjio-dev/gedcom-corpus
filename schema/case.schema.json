@@ -1,0 +1,341 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://serjio-dev.github.io/gedcom-corpus/schema/case.schema.json",
+    "title": "Corpus case descriptor (case.yaml)",
+    "type": "object",
+    "additionalProperties": false,
+    "required": [
+        "id",
+        "description",
+        "source",
+        "license",
+        "fictional",
+        "milestone",
+        "input",
+        "checks"
+    ],
+    "properties": {
+        "id": {
+            "description": "Must equal the case directory name.",
+            "type": "string",
+            "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+        },
+        "description": {
+            "type": "string",
+            "minLength": 10
+        },
+        "source": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "origin"
+            ],
+            "properties": {
+                "origin": {
+                    "enum": [
+                        "handmade",
+                        "gedcom7code",
+                        "gedcom.io",
+                        "vendor-export",
+                        "fuzz"
+                    ]
+                },
+                "url": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "program": {
+                    "description": "Exporting program for vendor-export, e.g. \"RootsMagic 10.0.3\".",
+                    "type": "string"
+                },
+                "commit": {
+                    "description": "Upstream commit the file was taken from.",
+                    "type": "string",
+                    "pattern": "^[0-9a-f]{40}$"
+                },
+                "path": {
+                    "description": "File path inside the upstream repository.",
+                    "type": "string"
+                }
+            },
+            "if": {
+                "properties": {
+                    "origin": {
+                        "const": "vendor-export"
+                    }
+                }
+            },
+            "then": {
+                "required": [
+                    "program"
+                ]
+            }
+        },
+        "license": {
+            "enum": [
+                "Apache-2.0",
+                "Unlicense"
+            ]
+        },
+        "fictional": {
+            "description": "Every person in the case is invented. Real trees of living people never enter the corpus.",
+            "const": true
+        },
+        "milestone": {
+            "description": "Korin milestone that must pass this case.",
+            "type": "string",
+            "pattern": "^\\d+\\.\\d+$"
+        },
+        "tags": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "uniqueItems": true
+        },
+        "input": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "file",
+                "version",
+                "encoding"
+            ],
+            "properties": {
+                "file": {
+                    "type": "string",
+                    "pattern": "^input\\.(ged|gdz)$"
+                },
+                "version": {
+                    "$ref": "#/$defs/version"
+                },
+                "encoding": {
+                    "$ref": "#/$defs/encoding"
+                },
+                "declaredChar": {
+                    "description": "Raw HEAD.CHAR value when it differs from the real encoding.",
+                    "type": "string"
+                },
+                "bom": {
+                    "type": "boolean",
+                    "default": false
+                },
+                "lineEnding": {
+                    "enum": [
+                        "LF",
+                        "CRLF",
+                        "CR",
+                        "mixed"
+                    ]
+                },
+                "versionDeclared": {
+                    "description": "false when the input has no HEAD.GEDC.VERS; version is then what a lenient reader is expected to assume.",
+                    "type": "boolean",
+                    "default": true
+                }
+            }
+        },
+        "checks": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+                "enum": [
+                    "read",
+                    "roundtrip-preserve",
+                    "roundtrip-normalize",
+                    "roundtrip-stream",
+                    "fingerprint",
+                    "validate",
+                    "convert",
+                    "convert-stream",
+                    "edit"
+                ]
+            }
+        },
+        "expect": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "recordCount": {
+                    "description": "Records excluding HEAD and TRLR.",
+                    "type": "integer",
+                    "minimum": 0
+                },
+                "diagnostics": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "required": [
+                            "severity"
+                        ],
+                        "properties": {
+                            "code": {
+                                "description": "Omit while the code is not yet assigned in docs/diagnostics.md.",
+                                "type": "string",
+                                "pattern": "^KV\\d{4}$"
+                            },
+                            "severity": {
+                                "enum": [
+                                    "error",
+                                    "warning",
+                                    "info"
+                                ]
+                            },
+                            "path": {
+                                "type": "string"
+                            },
+                            "about": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "convert": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                    "to",
+                    "expected"
+                ],
+                "properties": {
+                    "to": {
+                        "$ref": "#/$defs/version"
+                    },
+                    "expected": {
+                        "type": "string",
+                        "pattern": "^expected\\.[0-9.]+\\.(ged|gdz)$"
+                    },
+                    "losses": {
+                        "type": "string",
+                        "pattern": "^losses\\.[0-9.]+\\.json$"
+                    }
+                }
+            }
+        },
+        "references": {
+            "description": "Other cases holding one valid conversion of this input. Compare semantically, not byte for byte: the conversion is not unique.",
+            "type": "array",
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                    "to",
+                    "case"
+                ],
+                "properties": {
+                    "to": {
+                        "$ref": "#/$defs/version"
+                    },
+                    "case": {
+                        "type": "string",
+                        "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+                    }
+                }
+            }
+        },
+        "edit": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+                "ops",
+                "expected",
+                "writeMode"
+            ],
+            "properties": {
+                "ops": {
+                    "const": "ops.json"
+                },
+                "expected": {
+                    "const": "expected.ged"
+                },
+                "writeMode": {
+                    "enum": [
+                        "preserve",
+                        "normalize"
+                    ]
+                }
+            }
+        }
+    },
+    "allOf": [
+        {
+            "if": {
+                "properties": {
+                    "checks": {
+                        "contains": {
+                            "const": "edit"
+                        }
+                    }
+                }
+            },
+            "then": {
+                "required": [
+                    "edit"
+                ]
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "checks": {
+                        "contains": {
+                            "const": "convert"
+                        }
+                    }
+                }
+            },
+            "then": {
+                "required": [
+                    "convert"
+                ]
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "checks": {
+                        "contains": {
+                            "const": "convert-stream"
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "checks": {
+                        "contains": {
+                            "const": "convert"
+                        }
+                    }
+                }
+            }
+        }
+    ],
+    "$defs": {
+        "version": {
+            "type": "string",
+            "pattern": "^(4\\.0|5\\.[0-4]|5\\.5|5\\.5\\.1|5\\.5\\.5|7\\.0(\\.\\d+)?)$"
+        },
+        "encoding": {
+            "enum": [
+                "UTF-8",
+                "UTF-16LE",
+                "UTF-16BE",
+                "ASCII",
+                "ANSEL",
+                "Windows-1250",
+                "Windows-1251",
+                "Windows-1252",
+                "CP437",
+                "CP850",
+                "MacRoman"
+            ]
+        }
+    }
+}

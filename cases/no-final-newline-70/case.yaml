@@ -1,0 +1,17 @@
+id: no-final-newline-70
+description: GEDCOM 7.0 file whose last line, TRLR, has no terminator. Preserve mode must not add one.
+source:
+  origin: handmade
+license: Apache-2.0
+fictional: true
+milestone: "0.1"
+tags: [line-endings]
+input:
+  file: input.ged
+  version: "7.0"
+  encoding: UTF-8
+  lineEnding: LF
+checks: [read, roundtrip-preserve, fingerprint, validate]
+expect:
+  recordCount: 1
+  diagnostics: []

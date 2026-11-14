@@ -1,0 +1,17 @@
+0 HEAD
+1 SOUR KORIN_CORPUS
+1 GEDC
+2 VERS 5.5.1
+2 FORM LINEAGE-LINKED
+1 CHAR UTF-8
+1 SUBM @U1@
+0 @U1@ SUBM
+1 NAME Korin Corpus
+0 @I1@ INDI
+1 NAME Anna /Koval/
+1 NOTE Born in Poltava. Emai
+2 CONC l: anna@@example.org
+2 CONT Second line.
+2 CONT
+2 CONT After empty line.
+0 TRLR

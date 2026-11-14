@@ -1,0 +1,30 @@
+id: xref-forward-void-551
+description: >-
+  5.5.1 → 7.0 where every pointer is seen before its record: xrefs invalid in 7.0
+  (@fam 1@, @note@, @sub@) become @X1@..@X3@ in record order, the dangling @lost@
+  becomes @VOID@, NOTE record becomes SNOTE with 7.0 @ escaping. Streaming conversion
+  cannot write HEAD.SUBM or the first FAMS without a prepass, so convert-stream must
+  match convert byte for byte. Output follows the conversion conventions of the spec: BOM, source line
+  endings, HEAD.SOUR kept, CHAR and GEDC.FORM removed.
+source:
+  origin: handmade
+license: Apache-2.0
+fictional: true
+milestone: "0.3"
+tags: [convert, xref, void, prepass, streaming]
+input:
+  file: input.ged
+  version: "5.5.1"
+  encoding: UTF-8
+  lineEnding: LF
+checks: [read, roundtrip-preserve, roundtrip-stream, convert, convert-stream]
+expect:
+  recordCount: 4
+  diagnostics:
+    - severity: error
+      path: "@I1@/FAMC[0]"
+      about: Pointer to a record that does not exist
+convert:
+  - to: "7.0"
+    expected: expected.7.0.ged
+    losses: losses.7.0.json

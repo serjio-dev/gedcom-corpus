@@ -1,0 +1,16 @@
+﻿0 HEAD
+1 SOUR KORIN_CORPUS
+1 GEDC
+2 VERS 7.0
+1 SUBM @X3@
+0 @I1@ INDI
+1 NAME Anna /Koval/
+1 FAMC @VOID@
+1 FAMS @X1@
+1 SNOTE @X2@
+0 @X1@ FAM
+1 WIFE @I1@
+0 @X2@ SNOTE Shared note with @ inside
+0 @X3@ SUBM
+1 NAME Korin Corpus
+0 TRLR

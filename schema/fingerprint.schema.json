@@ -1,0 +1,29 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://serjio-dev.github.io/gedcom-corpus/schema/fingerprint.schema.json",
+    "title": "Semantic fingerprint (fingerprint.json)",
+    "description": "Canonical semantic content of a document. Records and substructures keep document order; values are Unicode NFC after joining CONC/CONT (CONT becomes \\n) and removing @@ escaping. TRLR and the volatile HEAD substructures DATE, SOUR, CHAR, GEDC are omitted. Compare only within one GEDCOM version.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["fingerprintVersion", "gedcomVersion", "records"],
+    "properties": {
+        "fingerprintVersion": { "const": 1 },
+        "gedcomVersion": { "type": "string" },
+        "records": { "type": "array", "items": { "$ref": "#/$defs/node" } }
+    },
+    "$defs": {
+        "node": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["tag"],
+            "properties": {
+                "xref": { "type": "string", "pattern": "^@[^@]+@$" },
+                "tag": { "type": "string", "pattern": "^_?[A-Za-z0-9_]+$" },
+                "value": { "type": "string" },
+                "pointer": { "description": "Used instead of value when the line value is a cross-reference.", "type": "string", "pattern": "^@[^@]+@$" },
+                "children": { "type": "array", "items": { "$ref": "#/$defs/node" } }
+            },
+            "not": { "required": ["value", "pointer"] }
+        }
+    }
+}

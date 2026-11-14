@@ -1,0 +1,29 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://serjio-dev.github.io/gedcom-corpus/schema/losses.schema.json",
+    "title": "Expected loss report (losses.<version>.json)",
+    "description": "Golden comparison uses code, path and storedAs; message is informative and not compared.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["from", "to", "entries"],
+    "properties": {
+        "from": { "type": "string" },
+        "to": { "type": "string" },
+        "entries": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["code", "severity", "path", "storedAs"],
+                "properties": {
+                    "code": { "type": "string", "pattern": "^KL\\d{4}$" },
+                    "severity": { "enum": ["error", "warning", "info"] },
+                    "path": { "description": "Path in the source document, see README \"Paths\".", "type": "string" },
+                    "line": { "description": "1-based line in input file.", "type": "integer", "minimum": 1 },
+                    "storedAs": { "enum": ["extension", "note", "dropped"] },
+                    "message": { "type": "string" }
+                }
+            }
+        }
+    }
+}

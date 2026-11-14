@@ -1,0 +1,7 @@
+# Test inputs and expected outputs must stay byte-exact on every OS.
+*.ged binary
+*.gdz binary
+
+/.github       export-ignore
+/scripts       export-ignore
+/.gitattributes export-ignore

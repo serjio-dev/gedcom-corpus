@@ -1,0 +1,24 @@
+id: cyrillic-cp1251-ansi-551
+description: >-
+  Ukrainian text in Windows-1251 with CRLF, declared as the non-standard "CHAR ANSI",
+  as many Windows programs export it. Covers all Ukrainian-specific letters, the
+  typographic apostrophe, guillemets and the numero sign.
+source:
+  origin: handmade
+license: Apache-2.0
+fictional: true
+milestone: "0.1"
+tags: [encoding, cyrillic, cp1251, char-mismatch]
+input:
+  file: input.ged
+  version: "5.5.1"
+  encoding: Windows-1251
+  declaredChar: ANSI
+  lineEnding: CRLF
+checks: [read, roundtrip-preserve, fingerprint]
+expect:
+  recordCount: 2
+  diagnostics:
+    - severity: warning
+      path: HEAD/CHAR
+      about: Non-standard CHAR value; encoding detected from content

@@ -1,0 +1,20 @@
+id: ansel-diacritics-551
+description: >-
+  ANSEL with combining diacritics written before the base letter (acute, grave, circumflex,
+  tilde, dot above, diaeresis, caron, ring, cedilla, ogonek) and spacing letters
+  Ł ł Ø ø Æ æ Œ œ © °. Decoded values must be NFC.
+source:
+  origin: handmade
+license: Apache-2.0
+fictional: true
+milestone: "0.1"
+tags: [encoding, ansel, diacritics]
+input:
+  file: input.ged
+  version: "5.5.1"
+  encoding: ANSEL
+  lineEnding: LF
+checks: [read, roundtrip-preserve, fingerprint, validate]
+expect:
+  recordCount: 2
+  diagnostics: []

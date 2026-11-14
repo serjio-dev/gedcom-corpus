@@ -1,0 +1,31 @@
+{
+    "fingerprintVersion": 1,
+    "gedcomVersion": "5.5.1",
+    "records": [
+        { "tag": "HEAD", "children": [{ "tag": "SUBM", "pointer": "@U1@" }] },
+        { "xref": "@U1@", "tag": "SUBM", "children": [{ "tag": "NAME", "value": "Корпус Корінь" }] },
+        {
+            "xref": "@I1@",
+            "tag": "INDI",
+            "children": [
+                {
+                    "tag": "NAME",
+                    "value": "Анна Іванівна /Коваль/",
+                    "children": [
+                        { "tag": "GIVN", "value": "Анна Іванівна" },
+                        { "tag": "SURN", "value": "Коваль" }
+                    ]
+                },
+                { "tag": "SEX", "value": "F" },
+                {
+                    "tag": "BIRT",
+                    "children": [
+                        { "tag": "DATE", "value": "12 MAR 1921" },
+                        { "tag": "PLAC", "value": "Полтава, Полтавська губернія" }
+                    ]
+                },
+                { "tag": "NOTE", "value": "Літери: ґ Ґ є Є і І ї Ї ’ «лапки» №5" }
+            ]
+        }
+    ]
+}

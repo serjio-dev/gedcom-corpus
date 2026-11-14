@@ -1,0 +1,17 @@
+id: minimal-551
+description: Smallest valid GEDCOM 5.5.1 file with the mandatory HEAD fields and a submitter.
+source:
+  origin: handmade
+license: Apache-2.0
+fictional: true
+milestone: "0.1"
+tags: [minimal]
+input:
+  file: input.ged
+  version: "5.5.1"
+  encoding: UTF-8
+  lineEnding: LF
+checks: [read, roundtrip-preserve, fingerprint, validate]
+expect:
+  recordCount: 1
+  diagnostics: []
