@@ -1,0 +1,8 @@
+{
+    "fingerprintVersion": 1,
+    "gedcomVersion": "5.5.1",
+    "records": [
+        { "tag": "HEAD", "children": [{ "tag": "SUBM", "pointer": "@U1@" }] },
+        { "xref": "@U1@", "tag": "SUBM", "children": [{ "tag": "NAME", "value": "Korin Corpus" }] }
+    ]
+}

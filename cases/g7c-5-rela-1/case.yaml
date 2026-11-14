@@ -1,0 +1,23 @@
+id: g7c-5-rela-1
+description: Imported from gedcom7code/test-files 5/rela_1.ged.
+source:
+  origin: gedcom7code
+  url: https://github.com/gedcom7code/test-files/blob/4418c40978bdf9e56bbf612558548d670c590816/5/rela_1.ged
+  commit: 4418c40978bdf9e56bbf612558548d670c590816
+  path: 5/rela_1.ged
+license: Unlicense
+fictional: true
+milestone: '0.1'
+tags:
+- gedcom7code
+input:
+  file: input.ged
+  version: 5.5.1
+  encoding: ASCII
+  lineEnding: LF
+checks:
+- read
+- roundtrip-preserve
+references:
+- to: '7.0'
+  case: g7c-7-rela-1

@@ -1,0 +1,20 @@
+id: utf16le-bom-cyrillic-551
+description: >-
+  UTF-16LE with BOM and CRLF, declared as CHAR UNICODE. Ukrainian letters plus
+  characters outside the BMP, which need surrogate pairs.
+source:
+  origin: handmade
+license: Apache-2.0
+fictional: true
+milestone: "0.1"
+tags: [encoding, utf-16, bom, cyrillic, surrogates]
+input:
+  file: input.ged
+  version: "5.5.1"
+  encoding: UTF-16LE
+  bom: true
+  lineEnding: CRLF
+checks: [read, roundtrip-preserve, fingerprint, validate]
+expect:
+  recordCount: 2
+  diagnostics: []

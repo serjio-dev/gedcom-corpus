@@ -1,0 +1,18 @@
+id: line-endings-mixed-551
+description: >-
+  CR, LF and CRLF mixed in one file, including inside a CONT sequence. Preserve mode
+  must keep every line's own terminator; CONT still joins with \n.
+source:
+  origin: handmade
+license: Apache-2.0
+fictional: true
+milestone: "0.1"
+tags: [line-endings, cont]
+input:
+  file: input.ged
+  version: "5.5.1"
+  encoding: UTF-8
+  lineEnding: mixed
+checks: [read, roundtrip-preserve, fingerprint]
+expect:
+  recordCount: 2

@@ -1,0 +1,19 @@
+id: conc-cont-at-551
+description: >-
+  CONC split in the middle of a word, CONT with an empty line, and @@ escaping,
+  which in 5.5.1 applies to every @ in a value.
+source:
+  origin: handmade
+license: Apache-2.0
+fictional: true
+milestone: "0.1"
+tags: [conc, cont, escaping]
+input:
+  file: input.ged
+  version: "5.5.1"
+  encoding: UTF-8
+  lineEnding: LF
+checks: [read, roundtrip-preserve, fingerprint, validate]
+expect:
+  recordCount: 2
+  diagnostics: []

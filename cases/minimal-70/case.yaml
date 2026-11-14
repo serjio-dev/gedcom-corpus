@@ -1,0 +1,17 @@
+id: minimal-70
+description: Smallest valid GEDCOM 7.0 file - HEAD with GEDC.VERS and TRLR only.
+source:
+  origin: handmade
+license: Apache-2.0
+fictional: true
+milestone: "0.1"
+tags: [minimal]
+input:
+  file: input.ged
+  version: "7.0"
+  encoding: UTF-8
+  lineEnding: LF
+checks: [read, roundtrip-preserve, fingerprint, validate]
+expect:
+  recordCount: 0
+  diagnostics: []

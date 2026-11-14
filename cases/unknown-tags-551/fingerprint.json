@@ -1,0 +1,39 @@
+{
+    "fingerprintVersion": 1,
+    "gedcomVersion": "5.5.1",
+    "records": [
+        { "tag": "HEAD", "children": [{ "tag": "SUBM", "pointer": "@U1@" }] },
+        { "xref": "@U1@", "tag": "SUBM", "children": [{ "tag": "NAME", "value": "Korin Corpus" }] },
+        {
+            "xref": "@I1@",
+            "tag": "INDI",
+            "children": [
+                { "tag": "NAME", "value": "Ivan /Koval/" },
+                { "tag": "_UID", "value": "6F1C2A3B4D5E4F60A1B2C3D4E5F60718" },
+                { "tag": "_FSFTID", "value": "KZZZ-ZZZ" },
+                { "tag": "FAMC", "pointer": "@F1@" }
+            ]
+        },
+        {
+            "xref": "@F1@",
+            "tag": "FAM",
+            "children": [
+                {
+                    "tag": "CHIL",
+                    "pointer": "@I1@",
+                    "children": [
+                        { "tag": "_MREL", "value": "Natural" },
+                        { "tag": "_FREL", "value": "Adopted" }
+                    ]
+                }
+            ]
+        },
+        {
+            "xref": "@X1@",
+            "tag": "_CUSTREC",
+            "children": [
+                { "tag": "_CUSTOM", "value": "some value", "children": [{ "tag": "_DEEPER", "pointer": "@I1@" }] }
+            ]
+        }
+    ]
+}

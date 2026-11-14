@@ -1,0 +1,8 @@
+{
+    "ops": [
+        { "op": "setValue", "path": "@I1@/NAME[0]", "value": "Анна /Ковальова/" },
+        { "op": "setValue", "path": "@I1@/NAME[0]/SURN[0]", "value": "Ковальова" },
+        { "op": "addChild", "path": "@I1@", "tag": "BIRT" },
+        { "op": "addChild", "path": "@I1@/BIRT[0]", "tag": "DATE", "value": "12 MAR 1921" }
+    ]
+}

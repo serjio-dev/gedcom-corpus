@@ -1,0 +1,8 @@
+{
+    "fingerprintVersion": 1,
+    "gedcomVersion": "7.0",
+    "records": [
+        { "tag": "HEAD" },
+        { "xref": "@I1@", "tag": "INDI", "children": [{ "tag": "NAME", "value": "Ivan /Koval/" }] }
+    ]
+}

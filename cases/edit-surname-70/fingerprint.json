@@ -1,0 +1,23 @@
+{
+    "fingerprintVersion": 1,
+    "gedcomVersion": "7.0",
+    "records": [
+        { "tag": "HEAD" },
+        {
+            "xref": "@I1@",
+            "tag": "INDI",
+            "children": [
+                {
+                    "tag": "NAME",
+                    "value": "Анна /Коваль/",
+                    "children": [
+                        { "tag": "GIVN", "value": "Анна" },
+                        { "tag": "SURN", "value": "Коваль" }
+                    ]
+                },
+                { "tag": "SEX", "value": "F" },
+                { "tag": "_CUSTOM", "value": "preserved" }
+            ]
+        }
+    ]
+}

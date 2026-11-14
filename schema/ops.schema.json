@@ -1,0 +1,57 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://serjio-dev.github.io/gedcom-corpus/schema/ops.schema.json",
+    "title": "Edit operations (ops.json)",
+    "description": "Applied in order to input; the result written in edit.writeMode must equal expected.ged. Paths are resolved against the document state after the previous operation.",
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["ops"],
+    "properties": {
+        "ops": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/op" } }
+    },
+    "$defs": {
+        "path": { "type": "string", "pattern": "^(HEAD|@[^@/]+@)(/_?[A-Za-z0-9_]+(\\[\\d+\\])?)*$" },
+        "xref": { "type": "string", "pattern": "^@[^@/]+@$" },
+        "tag": { "type": "string", "pattern": "^_?[A-Za-z0-9_]+$" },
+        "op": {
+            "oneOf": [
+                {
+                    "type": "object", "additionalProperties": false,
+                    "required": ["op", "path", "value"],
+                    "properties": { "op": { "const": "setValue" }, "path": { "$ref": "#/$defs/path" }, "value": { "type": ["string", "null"] } }
+                },
+                {
+                    "type": "object", "additionalProperties": false,
+                    "required": ["op", "path", "tag"],
+                    "properties": {
+                        "op": { "const": "addChild" },
+                        "path": { "$ref": "#/$defs/path" },
+                        "tag": { "$ref": "#/$defs/tag" },
+                        "value": { "type": "string" },
+                        "position": { "description": "0-based index among all children; omitted = append.", "type": "integer", "minimum": 0 }
+                    }
+                },
+                {
+                    "type": "object", "additionalProperties": false,
+                    "required": ["op", "path"],
+                    "properties": { "op": { "const": "remove" }, "path": { "$ref": "#/$defs/path" } }
+                },
+                {
+                    "type": "object", "additionalProperties": false,
+                    "required": ["op", "from", "to"],
+                    "properties": { "op": { "const": "renameXref" }, "from": { "$ref": "#/$defs/xref" }, "to": { "$ref": "#/$defs/xref" } }
+                },
+                {
+                    "type": "object", "additionalProperties": false,
+                    "required": ["op", "tag", "xref"],
+                    "properties": { "op": { "const": "addRecord" }, "tag": { "$ref": "#/$defs/tag" }, "xref": { "$ref": "#/$defs/xref" }, "value": { "type": "string" } }
+                },
+                {
+                    "type": "object", "additionalProperties": false,
+                    "required": ["op", "xref"],
+                    "properties": { "op": { "const": "removeRecord" }, "xref": { "$ref": "#/$defs/xref" } }
+                }
+            ]
+        }
+    }
+}

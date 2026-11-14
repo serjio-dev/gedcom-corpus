@@ -1,0 +1,21 @@
+id: g7c-7-date-all
+description: Imported from gedcom7code/test-files 7/date-all.ged.
+source:
+  origin: gedcom7code
+  url: https://github.com/gedcom7code/test-files/blob/4418c40978bdf9e56bbf612558548d670c590816/7/date-all.ged
+  commit: 4418c40978bdf9e56bbf612558548d670c590816
+  path: 7/date-all.ged
+license: Unlicense
+fictional: true
+milestone: '0.1'
+tags:
+- gedcom7code
+input:
+  file: input.ged
+  version: '7.0'
+  encoding: UTF-8
+  bom: true
+  lineEnding: LF
+checks:
+- read
+- roundtrip-preserve

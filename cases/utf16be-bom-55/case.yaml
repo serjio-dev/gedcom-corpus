@@ -1,0 +1,17 @@
+id: utf16be-bom-55
+description: GEDCOM 5.5 in UTF-16BE with BOM and LF, the default write encoding for 5.5 in Korin.
+source:
+  origin: handmade
+license: Apache-2.0
+fictional: true
+milestone: "0.1"
+tags: [encoding, utf-16, bom, cyrillic, gedcom-5.5]
+input:
+  file: input.ged
+  version: "5.5"
+  encoding: UTF-16BE
+  bom: true
+  lineEnding: LF
+checks: [read, roundtrip-preserve, fingerprint]
+expect:
+  recordCount: 2

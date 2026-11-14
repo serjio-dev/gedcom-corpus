@@ -1,0 +1,18 @@
+0 HEAD
+1 SOUR KORIN_CORPUS
+1 GEDC
+2 VERS 5.5.1
+2 FORM LINEAGE-LINKED
+1 CHAR UTF-8
+1 SUBM @sub@
+0 @I1@ INDI
+1 NAME Anna /Koval/
+1 FAMC @lost@
+1 FAMS @fam 1@
+1 NOTE @note@
+0 @fam 1@ FAM
+1 WIFE @I1@
+0 @note@ NOTE Shared note with @@ inside
+0 @sub@ SUBM
+1 NAME Korin Corpus
+0 TRLR

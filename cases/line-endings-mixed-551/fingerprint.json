@@ -1,0 +1,16 @@
+{
+    "fingerprintVersion": 1,
+    "gedcomVersion": "5.5.1",
+    "records": [
+        { "tag": "HEAD", "children": [{ "tag": "SUBM", "pointer": "@U1@" }] },
+        { "xref": "@U1@", "tag": "SUBM", "children": [{ "tag": "NAME", "value": "Korin Corpus" }] },
+        {
+            "xref": "@I1@",
+            "tag": "INDI",
+            "children": [
+                { "tag": "NAME", "value": "Anna /Koval/" },
+                { "tag": "NOTE", "value": "First line after CR\nSecond after CRLF\nThird after LF" }
+            ]
+        }
+    ]
+}
