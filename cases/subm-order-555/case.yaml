@@ -1,0 +1,25 @@
+id: subm-order-555
+description: >-
+  A GEDCOM 5.5.5 file with a NOTE record between HEAD and the SUBM record. The 5.5.5 grammar
+  of the file is HEAD, SUBM, the other records, TRLR; the SUBM record must directly follow
+  HEAD. Otherwise valid, with a BOM.
+source:
+  origin: handmade
+license: Apache-2.0
+fictional: true
+milestone: "0.2"
+tags: [structure, record-order, gedcom-5.5.5, validate]
+input:
+  file: input.ged
+  version: "5.5.5"
+  encoding: UTF-8
+  bom: true
+  lineEnding: LF
+checks: [read, roundtrip-preserve, validate]
+expect:
+  recordCount: 3
+  diagnostics:
+    - code: KV2004
+      severity: error
+      path: "@U1@"
+      about: The SUBM record must directly follow HEAD

@@ -1,0 +1,25 @@
+id: no-bom-555
+description: >-
+  A GEDCOM 5.5.5 file in UTF-8 without a byte order mark, otherwise valid. The 5.5.5
+  specification: "All GEDCOM 5.5.5 files, UTF-8 as well as UTF-16 GEDCOM files, must start
+  with a Byte Order Mark (BOM)." The file is read normally; the validator warns about the
+  file as a whole, without a line.
+source:
+  origin: handmade
+license: Apache-2.0
+fictional: true
+milestone: "0.2"
+tags: [encoding, bom, gedcom-5.5.5, validate]
+input:
+  file: input.ged
+  version: "5.5.5"
+  encoding: UTF-8
+  bom: false
+  lineEnding: LF
+checks: [read, roundtrip-preserve, validate]
+expect:
+  recordCount: 2
+  diagnostics:
+    - code: KV1104
+      severity: warning
+      about: A 5.5.5 file must start with a byte order mark
