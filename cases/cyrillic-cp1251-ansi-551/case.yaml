@@ -15,7 +15,7 @@ input:
   encoding: Windows-1251
   declaredChar: ANSI
   lineEnding: CRLF
-checks: [read, roundtrip-preserve, fingerprint, validate]
+checks: [read, roundtrip-preserve, fingerprint, validate, convert]
 expect:
   recordCount: 2
   diagnostics:
@@ -27,3 +27,7 @@ expect:
       severity: error
       path: HEAD/CHAR
       about: ANSI is not a CHARACTER_SET value of 5.5.1
+convert:
+  - to: "7.0"
+    expected: expected.7.0.ged
+    losses: losses.7.0.json

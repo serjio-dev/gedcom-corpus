@@ -1,0 +1,35 @@
+id: xref-rename-551
+description: >-
+  5.5.1 → 7.0 xref edge cases: @1@ is valid in 7.0 and kept; @X1@ already exists, so new
+  names skip it; a record called @VOID@ (reserved in 7.0) and @fam@ become @X2@ and @X3@ in
+  record order, pointers to them follow, an extension pointer (_FRIEND) included; @x1@ differs
+  from @X1@ only in case, so it dangles and becomes @VOID@; a NOTE pointer that leads nowhere
+  (@Smith family@, text written without @@) stays text. Text keeps a leading @@ (on the
+  first line and on a CONT line) and loses the doubling of an inner one.
+source:
+  origin: handmade
+license: Apache-2.0
+fictional: true
+milestone: "0.3"
+tags: [convert, xref, void, escaping]
+input:
+  file: input.ged
+  version: "5.5.1"
+  encoding: UTF-8
+  lineEnding: LF
+checks: [read, roundtrip-preserve, validate, convert]
+expect:
+  recordCount: 4
+  diagnostics:
+    - code: KV4001
+      severity: error
+      path: "@X1@/NOTE"
+      about: Pointer to a record that does not exist
+    - code: KV4001
+      severity: error
+      path: "@fam@/CHIL"
+      about: Pointer to a record that does not exist
+convert:
+  - to: "7.0"
+    expected: expected.7.0.ged
+    losses: losses.7.0.json

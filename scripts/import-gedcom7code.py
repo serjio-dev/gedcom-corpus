@@ -9,8 +9,9 @@ Every upstream file becomes its own case (g7c-5-<name>, g7c-7-<name>) checked fo
 read and roundtrip-preserve. A 5/ file and the 7/ file with the same name are linked
 through `references`: upstream's 7.0 file is one valid conversion, not the only one,
 so the pair is compared semantically. Re-running the script replaces all g7c-* cases;
-checks and expectations added by hand (`checks` beyond the two above, `expect`) are kept
-for files whose bytes are unchanged upstream, and dropped with a warning otherwise.
+checks and expectations added by hand (`checks` beyond the two above, `expect`, `convert`
+with its expected files) are kept for files whose bytes are unchanged upstream, and dropped
+with a warning otherwise.
 Requires: pip install pyyaml
 """
 
@@ -99,8 +100,14 @@ def main() -> None:
     for old in CASES.glob("g7c-*"):
         descriptor = yaml.safe_load((old / "case.yaml").read_text("utf-8"))
         extra = [c for c in descriptor["checks"] if c not in ("read", "roundtrip-preserve")]
-        if extra or "expect" in descriptor:
-            kept[old.name] = ((old / "input.ged").read_bytes(), extra, descriptor.get("expect"))
+        convert = descriptor.get("convert")
+        if extra or "expect" in descriptor or convert:
+            golden = {}
+            for entry in convert or []:
+                for key in ("expected", "losses"):
+                    if key in entry:
+                        golden[entry[key]] = (old / entry[key]).read_bytes()
+            kept[old.name] = ((old / "input.ged").read_bytes(), extra, descriptor.get("expect"), convert, golden)
         shutil.rmtree(old)
 
     files = {major: sorted((source / major).glob("*.ged")) for major in ("5", "7")}
@@ -123,24 +130,30 @@ def main() -> None:
             }
             if major == "5" and path.stem in names[other]:
                 descriptor["references"] = [{"to": "7.0", "case": case_id(other, path.stem)}]
+            golden = {}
             if cid in kept:
-                raw, extra, expect = kept.pop(cid)
+                raw, extra, expect, convert, golden = kept.pop(cid)
                 if raw == path.read_bytes():
                     descriptor["checks"] += extra
                     if expect is not None:
                         descriptor["expect"] = expect
+                    if convert:
+                        descriptor["convert"] = convert
                 else:
-                    print(f"{cid}: input changed upstream, checks {extra} and expect dropped; review them", file=sys.stderr)
+                    golden = {}
+                    print(f"{cid}: input changed upstream, checks {extra}, expect and convert dropped; review them", file=sys.stderr)
 
             target = CASES / cid
             target.mkdir()
+            for name, data in golden.items():
+                (target / name).write_bytes(data)
             shutil.copyfile(path, target / "input.ged")
             (target / "LICENSE").write_text(license_text, "utf-8")
             (target / "case.yaml").write_text(yaml.safe_dump(descriptor, allow_unicode=True, sort_keys=False, width=200), "utf-8")
             print(f"{cid}: {spec['version']} {spec['encoding']}" + (f" (CHAR {spec['declaredChar']})" if "declaredChar" in spec else ""))
 
     for cid in kept:
-        print(f"{cid}: removed upstream, its checks and expect are gone", file=sys.stderr)
+        print(f"{cid}: removed upstream, its checks, expect and convert are gone", file=sys.stderr)
     print(f"imported {sum(len(p) for p in files.values())} files from {REPO} @ {commit[:12]}")
 
 

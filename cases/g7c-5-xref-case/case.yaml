@@ -19,6 +19,7 @@ checks:
 - read
 - roundtrip-preserve
 - validate
+- convert
 references:
 - to: '7.0'
   case: g7c-7-xref-case
@@ -27,3 +28,7 @@ expect:
   - code: KV4001
     severity: error
     path: HEAD/SUBM
+convert:
+- to: '7.0'
+  expected: expected.7.0.ged
+  losses: losses.7.0.json
