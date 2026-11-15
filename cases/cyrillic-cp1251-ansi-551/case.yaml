@@ -15,10 +15,15 @@ input:
   encoding: Windows-1251
   declaredChar: ANSI
   lineEnding: CRLF
-checks: [read, roundtrip-preserve, fingerprint]
+checks: [read, roundtrip-preserve, fingerprint, validate]
 expect:
   recordCount: 2
   diagnostics:
-    - severity: warning
+    - code: KV1101
+      severity: warning
       path: HEAD/CHAR
       about: Non-standard CHAR value; encoding detected from content
+    - code: KV3006
+      severity: error
+      path: HEAD/CHAR
+      about: ANSI is not a CHARACTER_SET value of 5.5.1

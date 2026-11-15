@@ -13,6 +13,7 @@ input:
   version: "5.5.1"
   encoding: UTF-8
   lineEnding: LF
-checks: [read, roundtrip-preserve, fingerprint]
+checks: [read, roundtrip-preserve, fingerprint, validate]
 expect:
   recordCount: 4
+  diagnostics: []

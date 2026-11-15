@@ -18,6 +18,24 @@ input:
 checks:
 - read
 - roundtrip-preserve
+- validate
 references:
 - to: '7.0'
   case: g7c-7-obje-1
+expect:
+  diagnostics:
+  - code: KV2003
+    severity: error
+    path: HEAD
+  - code: KV2003
+    severity: error
+    path: HEAD
+  - code: KV3006
+    severity: error
+    path: '@2@/OBJE[1]/FILE[0]/FORM'
+  - code: KV3006
+    severity: error
+    path: '@2@/OBJE[1]/FILE[1]/FORM'
+  - code: KV2001
+    severity: error
+    path: '@2@/OBJE[1]/NOTE'

@@ -19,3 +19,168 @@ input:
 checks:
 - read
 - roundtrip-preserve
+- validate
+expect:
+  diagnostics:
+  - code: KV3008
+    severity: warning
+    path: '@PERIOD@/BIRT[41]/DATE'
+  - code: KV3008
+    severity: warning
+    path: '@PERIOD@/BIRT[47]/DATE'
+  - code: KV3008
+    severity: warning
+    path: '@PERIOD@/BIRT[53]/DATE'
+  - code: KV3008
+    severity: warning
+    path: '@PERIOD@/BIRT[59]/DATE'
+  - code: KV3008
+    severity: warning
+    path: '@PERIOD@/BIRT[68]/DATE'
+  - code: KV3008
+    severity: warning
+    path: '@CALCULATED@/BIRT[32]/DATE'
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[356]/DATE'
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[399]/DATE'
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[405]/DATE'
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[411]/DATE'
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[417]/DATE'
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[1152]/DATE'
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[1153]/DATE'
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[1154]/DATE'
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[1155]/DATE'
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[1156]/DATE'
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[1157]/DATE'
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[1158]/DATE'
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[1159]/DATE'
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[1160]/DATE'
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[1161]/DATE'
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[1162]/DATE'
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[1163]/DATE'
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[1164]/DATE'
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[1165]/DATE'
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[1166]/DATE'
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[1167]/DATE'
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[1168]/DATE'
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[1169]/DATE'
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[1170]/DATE'
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[1171]/DATE'
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[1172]/DATE'
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[1173]/DATE'
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[1174]/DATE'
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[1175]/DATE'
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[1176]/DATE'
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[1177]/DATE'
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[1178]/DATE'
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[1179]/DATE'
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[1180]/DATE'
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[1181]/DATE'
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[1182]/DATE'
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[1183]/DATE'
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[1184]/DATE'
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[1185]/DATE'
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[1186]/DATE'
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[1187]/DATE'
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[1220]/DATE'
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_PERIOD@/BIRT[689]/DATE'
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_PERIOD@/BIRT[695]/DATE'
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_PERIOD@/BIRT[701]/DATE'
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_PERIOD@/BIRT[707]/DATE'
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_PERIOD@/BIRT[1019]/DATE'
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_PERIOD@/BIRT[1031]/DATE'

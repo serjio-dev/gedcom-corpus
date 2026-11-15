@@ -14,9 +14,10 @@ input:
   version: "7.0"
   encoding: UTF-8
   lineEnding: LF
-checks: [read, roundtrip-preserve, fingerprint, edit]
+checks: [read, roundtrip-preserve, fingerprint, edit, validate]
 expect:
   recordCount: 1
+  diagnostics: []
 edit:
   ops: ops.json
   expected: expected.ged
