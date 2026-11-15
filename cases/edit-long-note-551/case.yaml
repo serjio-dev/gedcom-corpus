@@ -16,9 +16,19 @@ input:
   version: "5.5.1"
   encoding: UTF-8
   lineEnding: CRLF
-checks: [read, roundtrip-preserve, fingerprint, edit]
+checks: [read, roundtrip-preserve, fingerprint, edit, validate]
 expect:
   recordCount: 1
+  diagnostics:
+    # The case is about CONC splitting; its header is minimal.
+    - code: KV2003
+      severity: error
+      path: HEAD
+      about: HEAD requires SOUR
+    - code: KV2003
+      severity: error
+      path: HEAD
+      about: HEAD requires SUBM
 edit:
   ops: ops.json
   expected: expected.ged

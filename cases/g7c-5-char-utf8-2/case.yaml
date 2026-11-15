@@ -19,6 +19,12 @@ input:
 checks:
 - read
 - roundtrip-preserve
+- validate
 references:
 - to: '7.0'
   case: g7c-7-char-utf8-2
+expect:
+  diagnostics:
+  - code: KV1102
+    severity: warning
+    path: HEAD/CHAR

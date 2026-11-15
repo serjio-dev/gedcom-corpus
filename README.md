@@ -38,6 +38,8 @@ Only files referenced from `case.yaml` may be present.
 | `edit` | Applying `ops.json` and writing in `edit.writeMode` gives `expected.ged` |
 
 Diagnostics without `code` are matched by severity and path until codes are assigned.
+Codes are those of Korin's [diagnostics reference](https://github.com/serjio-dev/korin-php/blob/main/docs/diagnostics.md);
+`validate` expects the reader's diagnostics too, since a validator reports both.
 
 ## Fingerprint
 
@@ -79,7 +81,13 @@ python scripts/import-gedcom7code.py /tmp/test-files
 Upstream pairs a 5.5.1 file in `5/` with a 7.0 file of the same name in `7/`. The 7.0 file is
 one valid conversion, not the only one, so the pair is linked through `references` and
 compared semantically, never byte for byte. Fingerprints and expected diagnostics for
-imported cases are added by hand after review.
+imported cases are added by hand after review; the import script keeps them as long as the
+upstream file is unchanged.
+
+Every imported case has the `validate` check except `g7c-5-date-all`: it combines every
+date form with every calendar written without its `@#D…@` escape (`JULIAN 1401`) and with
+one-digit dual years (`1401/8`), so most of its 2,917 dates are invalid 5.5.1 by design and an
+expected list would not test anything the smaller date cases do not.
 
 ## Contributing a case
 

@@ -19,6 +19,9 @@ input:
 checks:
 - read
 - roundtrip-preserve
+- validate
 references:
 - to: '7.0'
   case: g7c-7-char-utf8-3
+expect:
+  diagnostics: []

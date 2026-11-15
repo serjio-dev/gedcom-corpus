@@ -19,6 +19,24 @@ input:
 checks:
 - read
 - roundtrip-preserve
+- validate
 references:
 - to: '7.0'
   case: g7c-7-tiny-1
+expect:
+  diagnostics:
+  - code: KV1007
+    severity: warning
+    path: HEAD/GEDC/VERS
+  - code: KV2003
+    severity: error
+    path: HEAD
+  - code: KV2003
+    severity: error
+    path: HEAD
+  - code: KV2003
+    severity: error
+    path: HEAD
+  - code: KV2003
+    severity: error
+    path: HEAD

@@ -19,3 +19,6 @@ input:
 checks:
 - read
 - roundtrip-preserve
+- validate
+expect:
+  diagnostics: []

@@ -18,6 +18,261 @@ input:
 checks:
 - read
 - roundtrip-preserve
+- validate
 references:
 - to: '7.0'
   case: g7c-7-date-dual-invalid
+expect:
+  diagnostics:
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[0]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[1]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[2]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[3]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[4]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[5]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[6]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[7]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[8]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[9]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[10]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[11]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[12]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[13]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[14]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[15]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[16]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[17]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[18]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[19]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[20]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[21]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[22]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[23]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[24]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[25]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[26]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[27]/DATE'
+  - code: KV3005
+    severity: error
+    path: '@1@/BIRT[28]/DATE'
+  - code: KV3005
+    severity: error
+    path: '@1@/BIRT[29]/DATE'
+  - code: KV3005
+    severity: error
+    path: '@1@/BIRT[30]/DATE'
+  - code: KV3005
+    severity: error
+    path: '@1@/BIRT[31]/DATE'
+  - code: KV3005
+    severity: error
+    path: '@1@/BIRT[32]/DATE'
+  - code: KV3005
+    severity: error
+    path: '@1@/BIRT[33]/DATE'
+  - code: KV3005
+    severity: error
+    path: '@1@/BIRT[34]/DATE'
+  - code: KV3005
+    severity: error
+    path: '@1@/BIRT[35]/DATE'
+  - code: KV3005
+    severity: error
+    path: '@1@/BIRT[36]/DATE'
+  - code: KV3005
+    severity: error
+    path: '@1@/BIRT[37]/DATE'
+  - code: KV3005
+    severity: error
+    path: '@1@/BIRT[38]/DATE'
+  - code: KV3005
+    severity: error
+    path: '@1@/BIRT[39]/DATE'
+  - code: KV3005
+    severity: error
+    path: '@1@/BIRT[40]/DATE'
+  - code: KV3005
+    severity: error
+    path: '@1@/BIRT[41]/DATE'
+  - code: KV3005
+    severity: error
+    path: '@1@/BIRT[42]/DATE'
+  - code: KV3005
+    severity: error
+    path: '@1@/BIRT[43]/DATE'
+  - code: KV3005
+    severity: error
+    path: '@1@/BIRT[44]/DATE'
+  - code: KV3005
+    severity: error
+    path: '@1@/BIRT[45]/DATE'
+  - code: KV3005
+    severity: error
+    path: '@1@/BIRT[46]/DATE'
+  - code: KV3005
+    severity: error
+    path: '@1@/BIRT[47]/DATE'
+  - code: KV3005
+    severity: error
+    path: '@1@/BIRT[48]/DATE'
+  - code: KV3005
+    severity: error
+    path: '@1@/BIRT[49]/DATE'
+  - code: KV3005
+    severity: error
+    path: '@1@/BIRT[50]/DATE'
+  - code: KV3005
+    severity: error
+    path: '@1@/BIRT[51]/DATE'
+  - code: KV3005
+    severity: error
+    path: '@1@/BIRT[52]/DATE'
+  - code: KV3005
+    severity: error
+    path: '@1@/BIRT[53]/DATE'
+  - code: KV3005
+    severity: error
+    path: '@1@/BIRT[54]/DATE'
+  - code: KV3005
+    severity: error
+    path: '@1@/BIRT[55]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[56]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[57]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[58]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[59]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[60]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[61]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[62]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[63]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[64]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[65]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[66]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[67]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[68]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[69]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[70]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[71]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[72]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[73]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[74]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[75]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[76]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[77]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[78]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[79]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[80]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[81]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[82]/DATE'
+  - code: KV3009
+    severity: warning
+    path: '@1@/BIRT[83]/DATE'

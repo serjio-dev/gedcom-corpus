@@ -18,6 +18,285 @@ input:
 checks:
 - read
 - roundtrip-preserve
+- validate
 references:
 - to: '7.0'
   case: g7c-7-age-invalid
+expect:
+  diagnostics:
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[0]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[1]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[2]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[3]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[4]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[5]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[6]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[7]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[8]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[9]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[10]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[11]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[12]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[13]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[14]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[15]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[16]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[17]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[18]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[19]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[20]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[21]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[22]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[23]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[24]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[25]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[26]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[27]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[28]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[29]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[30]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[31]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[32]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[33]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[34]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[35]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[36]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[37]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[38]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[39]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[40]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[41]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[42]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[43]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[44]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[45]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[46]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[47]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[48]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[49]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[50]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[51]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[52]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[53]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[54]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[55]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[56]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[57]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[58]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[59]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[60]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[61]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[62]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[63]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[64]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[65]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[66]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[67]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[68]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[69]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[70]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[71]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[72]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[73]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[74]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[75]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[76]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[77]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[78]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[79]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[80]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[81]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[82]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[83]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[84]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[85]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[86]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[87]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[88]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[89]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[90]/AGE'
+  - code: KV3005
+    severity: error
+    path: '@SIMPLE@/EVEN[91]/AGE'

@@ -21,7 +21,8 @@ checks: [read, roundtrip-preserve, roundtrip-stream, validate, convert, convert-
 expect:
   recordCount: 4
   diagnostics:
-    - severity: error
+    - code: KV4001
+      severity: error
       path: "@I1@/FAMC"
       about: Pointer to a record that does not exist
 convert:
