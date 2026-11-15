@@ -1,0 +1,17 @@
+﻿0 HEAD
+1 SOUR KORIN_CORPUS
+1 GEDC
+2 VERS 7.0
+1 SUBM @U1@
+0 @U1@ SUBM
+1 NAME Корпус Корінь
+0 @I1@ INDI
+1 NAME Анна Іванівна /Коваль/
+2 GIVN Анна Іванівна
+2 SURN Коваль
+1 SEX F
+1 BIRT
+2 DATE 12 MAR 1921
+2 PLAC Полтава, Полтавська губернія
+1 NOTE Літери: ґ Ґ є Є і І ї Ї ’ «лапки» №5
+0 TRLR

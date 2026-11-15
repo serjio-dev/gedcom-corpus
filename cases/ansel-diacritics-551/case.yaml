@@ -14,7 +14,11 @@ input:
   version: "5.5.1"
   encoding: ANSEL
   lineEnding: LF
-checks: [read, roundtrip-preserve, fingerprint, validate]
+checks: [read, roundtrip-preserve, fingerprint, validate, convert]
 expect:
   recordCount: 2
   diagnostics: []
+convert:
+  - to: "7.0"
+    expected: expected.7.0.ged
+    losses: losses.7.0.json

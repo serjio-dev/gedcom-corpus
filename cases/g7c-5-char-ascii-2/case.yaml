@@ -20,6 +20,7 @@ checks:
 - read
 - roundtrip-preserve
 - validate
+- convert
 references:
 - to: '7.0'
   case: g7c-7-char-ascii-2
@@ -31,3 +32,7 @@ expect:
   - code: KV3006
     severity: error
     path: HEAD/CHAR
+convert:
+- to: '7.0'
+  expected: expected.7.0.ged
+  losses: losses.7.0.json

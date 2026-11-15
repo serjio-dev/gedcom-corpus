@@ -1,0 +1,24 @@
+0 HEAD
+1 SOUR KORIN_CORPUS
+1 GEDC
+2 VERS 5.5.1
+2 FORM LINEAGE-LINKED
+1 CHAR UTF-8
+1 SUBM @1@
+0 @1@ SUBM
+1 NAME Korin Corpus
+0 @X1@ INDI
+1 NAME Petro /Koval/
+1 FAMS @fam@
+1 _FRIEND @VOID@
+1 NOTE @Smith family@
+0 @VOID@ INDI
+1 NAME Olena /Koval/
+1 FAMS @fam@
+1 NOTE @@ leading at, e-mail olena@@example.org
+2 CONT @@ at the start of a CONT line
+0 @fam@ FAM
+1 HUSB @X1@
+1 WIFE @VOID@
+1 CHIL @x1@
+0 TRLR

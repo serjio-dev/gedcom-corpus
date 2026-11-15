@@ -20,6 +20,7 @@ checks:
 - read
 - roundtrip-preserve
 - validate
+- convert
 references:
 - to: '7.0'
   case: g7c-7-tiny-1
@@ -40,3 +41,7 @@ expect:
   - code: KV2003
     severity: error
     path: HEAD
+convert:
+- to: '7.0'
+  expected: expected.7.0.ged
+  losses: losses.7.0.json
