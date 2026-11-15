@@ -1,0 +1,26 @@
+id: records-551
+description: >-
+  5.5.1 → 7.0 record rules: the SUBN record and HEAD.SUBN become HEAD._SUBN (its RIN stays, as
+  everything inside an extension); AFN, RFN (with and without "resource:record") and RIN become
+  EXID with the TYPE URIs of the 7.0 term files, RIN with HEAD.SOUR percent-encoded as the
+  fragment; _UID becomes UID unchanged; inline sources become SOUR records @X1@, @X2@ before
+  TRLR with the description (CONC joined, @@ unescaped) as NOTE, and their TEXT moves under DATA.
+source:
+  origin: handmade
+license: Apache-2.0
+fictional: true
+milestone: "0.3"
+tags: [convert, records, subn, exid, uid, inline-source]
+input:
+  file: input.ged
+  version: "5.5.1"
+  encoding: UTF-8
+  lineEnding: LF
+checks: [read, roundtrip-preserve, validate, convert]
+expect:
+  recordCount: 4
+  diagnostics: []
+convert:
+  - to: "7.0"
+    expected: expected.7.0.ged
+    losses: losses.7.0.json

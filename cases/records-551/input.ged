@@ -1,0 +1,35 @@
+0 HEAD
+1 SOUR Korin Corpus
+1 GEDC
+2 VERS 5.5.1
+2 FORM LINEAGE-LINKED
+1 CHAR UTF-8
+1 SUBM @U1@
+1 SUBN @S1@
+0 @U1@ SUBM
+1 NAME Korin Corpus
+1 RIN 7
+0 @I1@ INDI
+1 NAME Anna /Koval/
+1 AFN 1A2B-3CD
+1 RFN family-registry:4711
+1 RIN 42
+1 _UID 7A7B18E2D8B04E8C9A8E2C35A2E0F3D18F1C
+1 BIRT
+2 DATE 12 MAR 1921
+2 SOUR Parish register of Poltava, 1921, entry 1
+3 CONC 7, kept by the family@@home
+3 TEXT Born to Ivan and Maria
+3 QUAY 2
+3 NOTE Copy seen in 1990
+3 TEXT on the twelfth of March
+1 SOUR Family letters
+0 @I2@ INDI
+1 NAME Ivan /Koval/
+1 RFN 4712
+0 @S1@ SUBN
+1 FAMF Koval family
+1 TEMP SLAKE
+1 ANCE 2
+1 RIN 9
+0 TRLR
