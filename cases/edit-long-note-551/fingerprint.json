@@ -1,0 +1,17 @@
+{
+    "fingerprintVersion": 1,
+    "gedcomVersion": "5.5.1",
+    "records": [
+        { "tag": "HEAD" },
+        {
+            "xref": "@I1@",
+            "tag": "INDI",
+            "children": [
+                { "tag": "NAME", "value": "Олена /Гнатюк/" },
+                { "tag": "SEX", "value": "F" },
+                { "tag": "NOTE", "value": "Коротка примітка\nдруга лінія" },
+                { "tag": "_MARK", "value": "keep" }
+            ]
+        }
+    ]
+}

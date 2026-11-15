@@ -1,0 +1,25 @@
+id: edit-long-note-551
+description: >-
+  Edit in preserve mode - replace a NOTE with text longer than the 5.5.1 line limit.
+  Changed lines are split into CONC so that no line, CRLF included, exceeds 255 characters;
+  each line is as long as allowed, a split never falls next to a space or inside "@@",
+  and a long CONT line gets its own CONC lines at the CONT level. The old CONT line is
+  dropped, untouched lines stay byte for byte.
+source:
+  origin: handmade
+license: Apache-2.0
+fictional: true
+milestone: "0.1"
+tags: [edit, preserve, conc, line-length, cyrillic]
+input:
+  file: input.ged
+  version: "5.5.1"
+  encoding: UTF-8
+  lineEnding: CRLF
+checks: [read, roundtrip-preserve, fingerprint, edit]
+expect:
+  recordCount: 1
+edit:
+  ops: ops.json
+  expected: expected.ged
+  writeMode: preserve
