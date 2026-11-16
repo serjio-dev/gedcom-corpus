@@ -1,0 +1,75 @@
+0 HEAD
+1 SOUR Korin Corpus
+2 CORP Korin Corpus Ltd
+3 ADDR 1 Main Street
+4 ADR1 1 Main Street
+4 ADR3 Floor 2
+3 EMAIL corpus@example.org
+3 WWW https://example.org
+1 SUBM @U1@
+1 GEDC
+2 VERS 5.5.1
+2 FORM LINEAGE-LINKED
+1 CHAR UTF-8
+0 @U1@ SUBM
+1 NAME Corpus Author
+0 @I1@ INDI
+1 NAME Taro /Yamada/
+2 TYPE birth
+2 ROMN Taro /Yamada/
+3 TYPE romaji
+1 SEX U
+1 RESN confidential
+1 BIRT Y
+2 DATE 1 JAN 1900
+2 PLAC Tokyo, Japan
+3 MAP
+4 LATI N35.68
+4 LONG E139.69
+2 RELI Shinto
+1 BURI
+2 DATE 1980
+1 EVEN Served in the navy
+2 TYPE Military
+1 EVEN Moved to Osaka
+2 DATE 1950
+1 FACT Tall
+2 TYPE Height
+1 FAMC @F1@
+2 PEDI birth
+2 STAT proven
+1 ASSO @I2@
+2 RELA Friend
+1 OBJE
+2 FILE photos/taro.jpg
+3 FORM jpg
+4 MEDI photo
+2 FILE photos/taro.tif
+3 FORM tif
+2 TITL Taro, two scans
+1 BAPL
+2 STAT EXCLUDED
+3 DATE 2 JAN 2000
+0 @I2@ INDI
+1 NAME Jiro /Sato/
+1 SEX M
+0 @F1@ FAM
+1 CHIL @I1@
+1 RESN privacy
+1 MARR
+2 HUSB
+3 AGE 30y
+2 EMAIL family@example.org
+2 FAX +81 3 0000 0000
+0 @S1@ SOUR
+1 TITL Family register
+1 REPO @R1@
+2 CALN 7
+1 REPO @R2@
+1 REPO
+2 CALN 12
+0 @R1@ REPO
+1 NAME City archive
+0 @R2@ REPO
+1 NAME Temple archive
+0 TRLR

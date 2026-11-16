@@ -1,0 +1,62 @@
+{
+    "from": "5.5",
+    "to": "5.5.1",
+    "entries": [
+        {
+            "code": "KL3003",
+            "severity": "warning",
+            "path": "@I1@/CREM",
+            "line": 16,
+            "storedAs": "dropped",
+            "message": "5.5.1 CREM has no value Y"
+        },
+        {
+            "code": "KL2002",
+            "severity": "warning",
+            "path": "@I1@/FAMC/PEDI[1]",
+            "line": 20,
+            "storedAs": "extension",
+            "message": "5.5.1 allows 1 PEDI here"
+        },
+        {
+            "code": "KL3001",
+            "severity": "warning",
+            "path": "@I1@/BAPL/STAT",
+            "line": 25,
+            "storedAs": "extension",
+            "message": "5.5.1 STAT has no such value"
+        },
+        {
+            "code": "KL2001",
+            "severity": "warning",
+            "path": "@I1@/OBJE[0]/NOTE",
+            "line": 32,
+            "storedAs": "extension",
+            "message": "5.5.1 has no NOTE here"
+        },
+        {
+            "code": "KL2001",
+            "severity": "warning",
+            "path": "@I1@/NOTE/SOUR",
+            "line": 34,
+            "storedAs": "extension",
+            "message": "5.5.1 has no SOUR here"
+        },
+        {
+            "code": "KL2001",
+            "severity": "warning",
+            "path": "@F1@/MARR/AGE",
+            "line": 42,
+            "storedAs": "extension",
+            "message": "5.5.1 has no AGE here"
+        },
+        {
+            "code": "KL2001",
+            "severity": "warning",
+            "path": "@F1@/MARR/PLAC/SOUR",
+            "line": 46,
+            "storedAs": "extension",
+            "message": "5.5.1 has no SOUR here"
+        }
+    ]
+}

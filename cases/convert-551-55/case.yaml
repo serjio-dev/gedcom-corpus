@@ -1,0 +1,30 @@
+id: convert-551-55
+description: >-
+  5.5.1 → 5.5, written in UTF-16BE with a BOM and CHAR UNICODE. Structures 5.5 does not have
+  (ADR3, EMAIL, WWW, FAX, NAME.TYPE, ROMN, MAP, RELI and RESN of an event or family, FACT,
+  FAMC.STAT, MEDI) become extensions (KL2001); a second FILE of a media link and a second REPO of
+  a source too (KL2002); values 5.5 does not list (SEX U, RESN confidential, STAT EXCLUDED) and a
+  REPO without a pointer make the structure an extension (KL3001). Media FORM jpg → jpeg moves up
+  from the FILE to the OBJE. The value of EVEN becomes its TYPE, or a NOTE when it has a TYPE
+  (KL3004, moved / note). ASSO gets TYPE INDI. BIRT Y stays, BURI stays without a value.
+  Converting the expected file up gives the input back, except for the EVEN values.
+source:
+  origin: handmade
+license: Apache-2.0
+fictional: true
+milestone: "0.3"
+tags: [convert, downgrade, structures, extensions, gedcom-5.5, utf-16]
+input:
+  file: input.ged
+  version: "5.5.1"
+  encoding: UTF-8
+  lineEnding: LF
+  bom: false
+checks: [read, roundtrip-preserve, validate, convert]
+expect:
+  recordCount: 7
+  diagnostics: []
+convert:
+  - to: "5.5"
+    expected: expected.5.5.ged
+    losses: losses.5.5.json
