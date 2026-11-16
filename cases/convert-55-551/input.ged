@@ -1,0 +1,53 @@
+0 HEAD
+1 SOUR Korin Corpus
+1 SUBM @U1@
+1 GEDC
+2 VERS 5.5
+2 FORM LINEAGE-LINKED
+1 CHAR ASCII
+1 LANG English
+0 @U1@ SUBM
+1 NAME Corpus Author
+0 @I1@ INDI
+1 NAME John /Smith/
+1 SEX M
+1 BIRT Y
+1 BURI Y
+1 CREM Y
+2 DATE 1950
+1 FAMC @F1@
+2 PEDI birth
+2 PEDI adopted
+1 ASSO @I2@
+2 TYPE INDI
+2 RELA Godfather
+1 BAPL
+2 STAT CLEARED
+1 EVEN
+2 TYPE Military service
+1 OBJE
+2 FORM jpeg
+2 TITL Portrait
+2 FILE photos/john.jpg
+2 NOTE Taken in 1940
+1 NOTE Family tradition
+2 SOUR Family Bible
+1 OBJE @O1@
+0 @I2@ INDI
+1 NAME Jim /Brown/
+1 SEX M
+0 @F1@ FAM
+1 CHIL @I1@
+1 MARR Y
+2 AGE 25y
+2 HUSB
+3 AGE 30y
+2 PLAC Kyiv
+3 SOUR @S1@
+0 @O1@ OBJE
+1 FORM tiff
+1 TITL Scan
+1 _FILE scans/john.tif
+0 @S1@ SOUR
+1 TITL Parish register
+0 TRLR

@@ -40,6 +40,14 @@ def load_json(case: str, path: Path) -> object | None:
         return None
 
 
+def decode(raw: bytes) -> str:
+    """Text of a GEDCOM file: UTF-16 by its BOM (5.5 output), otherwise UTF-8."""
+    for bom, codec in ((b"\xfe\xff", "utf-16-be"), (b"\xff\xfe", "utf-16-le")):
+        if raw.startswith(bom):
+            return raw[len(bom):].decode(codec, "replace")
+    return raw.decode("utf-8", "replace")
+
+
 def line_ending(raw: bytes) -> str:
     crlf = raw.count(b"\r\n")
     cr = raw.count(b"\r") - crlf
@@ -114,7 +122,7 @@ def check_case(case_dir: Path) -> None:
         expected = case_dir / conversion["expected"]
         if not expected.is_file():
             fail(case, f"{conversion['expected']} is missing")
-        elif not re.search(rf"^2 VERS {re.escape(conversion['to'])}\r?$", expected.read_bytes().decode("utf-8", "replace"), re.MULTILINE):
+        elif not re.search(rf"^2 VERS {re.escape(conversion['to'])}\r?$", decode(expected.read_bytes()), re.MULTILINE):
             fail(case, f"{conversion['expected']} does not declare VERS {conversion['to']}")
         if "losses" in conversion:
             referenced.add(conversion["losses"])

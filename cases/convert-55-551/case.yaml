@@ -1,0 +1,37 @@
+id: convert-55-551
+description: >-
+  5.5 → 5.5.1 and, through it, 7.0. Y of an event 5.5.1 has no value for is dropped (BURI Y →
+  BURI; CREM Y with a DATE: KL3003); BIRT and MARR keep it. A second PEDI → _PEDI (KL2002); STAT
+  CLEARED, which 5.5.1 does not list → _STAT (KL3001); NOTE of a media link, SOUR of a note or
+  place, AGE of a family event → extensions (KL2001). ASSO TYPE INDI is removed. Media FORM jpeg →
+  jpg moves into the FILE of a link; the media record keeps its file as _FILE, as 5.5.1 → 5.5
+  writes it (the 5.5 input lacks the BLOB the record requires), and gets it back as FILE with the
+  record's FORM and TITL. In 7.0 the shared steps follow: LANG English → en, the media link → a
+  record @X1@ with the link's NOTE, ROLE GODP + PHRASE Godfather; _SOUR with a text under NOTE
+  stays an extension, as 7.0 NOTE.SOUR is a pointer.
+source:
+  origin: handmade
+license: Apache-2.0
+fictional: true
+milestone: "0.3"
+tags: [convert, upgrade, structures, extensions, gedcom-5.5]
+input:
+  file: input.ged
+  version: "5.5"
+  encoding: ASCII
+  lineEnding: LF
+  bom: false
+checks: [read, roundtrip-preserve, validate, convert]
+expect:
+  recordCount: 6
+  diagnostics: 
+    - code: KV2003
+      severity: error
+      path: "@O1@"
+convert:
+  - to: "5.5.1"
+    expected: expected.5.5.1.ged
+    losses: losses.5.5.1.json
+  - to: "7.0"
+    expected: expected.7.0.ged
+    losses: losses.7.0.json

@@ -20,7 +20,7 @@
                     "severity": { "enum": ["error", "warning", "info"] },
                     "path": { "description": "Path in the source document, see README \"Paths\".", "type": "string" },
                     "line": { "description": "1-based line in input file.", "type": "integer", "minimum": 1 },
-                    "storedAs": { "enum": ["extension", "note", "dropped"] },
+                    "storedAs": { "enum": ["extension", "note", "moved", "dropped"] },
                     "message": { "type": "string" }
                 }
             }

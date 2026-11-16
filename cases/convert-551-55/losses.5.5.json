@@ -1,0 +1,174 @@
+{
+    "from": "5.5.1",
+    "to": "5.5",
+    "entries": [
+        {
+            "code": "KL2001",
+            "severity": "warning",
+            "path": "HEAD/SOUR/CORP/ADDR/ADR3",
+            "line": 6,
+            "storedAs": "extension",
+            "message": "5.5 has no ADR3 here"
+        },
+        {
+            "code": "KL2001",
+            "severity": "warning",
+            "path": "HEAD/SOUR/CORP/EMAIL",
+            "line": 7,
+            "storedAs": "extension",
+            "message": "5.5 has no EMAIL here"
+        },
+        {
+            "code": "KL2001",
+            "severity": "warning",
+            "path": "HEAD/SOUR/CORP/WWW",
+            "line": 8,
+            "storedAs": "extension",
+            "message": "5.5 has no WWW here"
+        },
+        {
+            "code": "KL2001",
+            "severity": "warning",
+            "path": "@I1@/NAME/TYPE",
+            "line": 18,
+            "storedAs": "extension",
+            "message": "5.5 has no TYPE here"
+        },
+        {
+            "code": "KL2001",
+            "severity": "warning",
+            "path": "@I1@/NAME/ROMN",
+            "line": 19,
+            "storedAs": "extension",
+            "message": "5.5 has no ROMN here"
+        },
+        {
+            "code": "KL3001",
+            "severity": "warning",
+            "path": "@I1@/SEX",
+            "line": 21,
+            "storedAs": "extension",
+            "message": "5.5 SEX has no such value"
+        },
+        {
+            "code": "KL3001",
+            "severity": "warning",
+            "path": "@I1@/RESN",
+            "line": 22,
+            "storedAs": "extension",
+            "message": "5.5 RESN has no such value"
+        },
+        {
+            "code": "KL2001",
+            "severity": "warning",
+            "path": "@I1@/BIRT/PLAC/MAP",
+            "line": 26,
+            "storedAs": "extension",
+            "message": "5.5 has no MAP here"
+        },
+        {
+            "code": "KL2001",
+            "severity": "warning",
+            "path": "@I1@/BIRT/RELI",
+            "line": 29,
+            "storedAs": "extension",
+            "message": "5.5 has no RELI here"
+        },
+        {
+            "code": "KL3004",
+            "severity": "warning",
+            "path": "@I1@/EVEN[0]",
+            "line": 32,
+            "storedAs": "note",
+            "message": "5.5 EVEN has no value; it has a TYPE already"
+        },
+        {
+            "code": "KL3004",
+            "severity": "warning",
+            "path": "@I1@/EVEN[1]",
+            "line": 34,
+            "storedAs": "moved",
+            "message": "5.5 EVEN has no value: it is its TYPE"
+        },
+        {
+            "code": "KL2001",
+            "severity": "warning",
+            "path": "@I1@/FACT",
+            "line": 36,
+            "storedAs": "extension",
+            "message": "5.5 has no FACT here"
+        },
+        {
+            "code": "KL2001",
+            "severity": "warning",
+            "path": "@I1@/FAMC/STAT",
+            "line": 40,
+            "storedAs": "extension",
+            "message": "5.5 has no STAT here"
+        },
+        {
+            "code": "KL2001",
+            "severity": "warning",
+            "path": "@I1@/OBJE/FILE[0]/FORM/MEDI",
+            "line": 46,
+            "storedAs": "extension",
+            "message": "5.5 has no MEDI here"
+        },
+        {
+            "code": "KL2002",
+            "severity": "warning",
+            "path": "@I1@/OBJE/FILE[1]",
+            "line": 47,
+            "storedAs": "extension",
+            "message": "5.5 allows 1 FILE here"
+        },
+        {
+            "code": "KL3001",
+            "severity": "warning",
+            "path": "@I1@/BAPL/STAT",
+            "line": 51,
+            "storedAs": "extension",
+            "message": "5.5 STAT has no such value"
+        },
+        {
+            "code": "KL2001",
+            "severity": "warning",
+            "path": "@F1@/RESN",
+            "line": 58,
+            "storedAs": "extension",
+            "message": "5.5 has no RESN here"
+        },
+        {
+            "code": "KL2001",
+            "severity": "warning",
+            "path": "@F1@/MARR/EMAIL",
+            "line": 62,
+            "storedAs": "extension",
+            "message": "5.5 has no EMAIL here"
+        },
+        {
+            "code": "KL2001",
+            "severity": "warning",
+            "path": "@F1@/MARR/FAX",
+            "line": 63,
+            "storedAs": "extension",
+            "message": "5.5 has no FAX here"
+        },
+        {
+            "code": "KL2002",
+            "severity": "warning",
+            "path": "@S1@/REPO[1]",
+            "line": 68,
+            "storedAs": "extension",
+            "message": "5.5 allows 1 REPO here"
+        },
+        {
+            "code": "KL3001",
+            "severity": "warning",
+            "path": "@S1@/REPO[2]",
+            "line": 69,
+            "storedAs": "extension",
+            "message": "5.5 REPO needs a value"
+        }
+    ]
+}
