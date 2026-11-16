@@ -1,0 +1,41 @@
+﻿0 HEAD
+1 SOUR Korin Corpus
+1 GEDC
+2 VERS 7.0
+1 SUBM @U1@
+1 _SUBN
+2 FAMF Koval family
+2 TEMP SLAKE
+2 ANCE 2
+2 RIN 9
+0 @U1@ SUBM
+1 NAME Korin Corpus
+1 EXID 7
+2 TYPE https://gedcom.io/terms/v7/RIN#Korin%20Corpus
+0 @I1@ INDI
+1 NAME Anna /Koval/
+1 EXID 1A2B-3CD
+2 TYPE https://gedcom.io/terms/v7/AFN
+1 EXID family-registry
+2 TYPE https://gedcom.io/terms/v7/RFN#4711
+1 EXID 42
+2 TYPE https://gedcom.io/terms/v7/RIN#Korin%20Corpus
+1 UID 7A7B18E2D8B04E8C9A8E2C35A2E0F3D18F1C
+1 BIRT
+2 DATE 12 MAR 1921
+2 SOUR @X1@
+3 DATA
+4 TEXT Born to Ivan and Maria
+4 TEXT on the twelfth of March
+3 QUAY 2
+3 NOTE Copy seen in 1990
+1 SOUR @X2@
+0 @I2@ INDI
+1 NAME Ivan /Koval/
+1 EXID 4712
+2 TYPE https://gedcom.io/terms/v7/RFN
+0 @X1@ SOUR
+1 NOTE Parish register of Poltava, 1921, entry 17, kept by the family@home
+0 @X2@ SOUR
+1 NOTE Family letters
+0 TRLR

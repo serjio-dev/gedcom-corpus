@@ -1,0 +1,16 @@
+﻿0 HEAD
+1 SOUR conversion test
+1 SUBM @1@
+1 GEDC
+2 VERS 7.0
+1 _SUBN
+2 FAMF Example file
+2 ANCE 0
+2 DESC 0
+2 ORDI no
+2 RIN 12345
+2 CHAN
+3 DATE 24 DEC 2020
+0 @1@ SUBM
+1 NAME Luther Tychonievich
+0 TRLR
