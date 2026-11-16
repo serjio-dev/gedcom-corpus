@@ -1,0 +1,45 @@
+0 HEAD
+1 SOUR Korin Corpus
+1 SUBM @U1@
+1 FILE family-tree.ged
+1 GEDC
+2 VERS 5.5.1
+2 FORM LINEAGE-LINKED
+1 CHAR UTF-8
+0 @U1@ SUBM
+1 NAME Corpus Author
+0 @I1@ INDI
+1 NAME 山田 /太郎/
+2 GIVN 太郎
+2 SURN 山田
+2 ROMN Yamada /Taro/
+3 TYPE romaji
+3 GIVN Taro
+3 SURN Yamada
+2 FONE やまだ /たろう/
+3 TYPE hiragana
+1 NAME 김 /민준/
+2 FONE 김 /민준/
+3 TYPE HANGUL
+2 ROMN Kim /Minjun/
+3 TYPE revised romanization
+1 RESI
+2 DATE 1950
+2 PLAC 東京
+3 ROMN Tokyo
+4 TYPE Hepburn
+3 FONE とうきょう
+4 TYPE kana
+1 EVEN
+2 TYPE Pilgrimage
+2 PLAC 北京
+3 ROMN Beijing
+4 TYPE pinyin
+3 ROMN Peking
+4 TYPE wadegiles
+1 FAMC @F1@
+0 @F1@ FAM
+1 CHIL @I1@
+1 RESI
+2 PLAC Kyiv
+0 TRLR
