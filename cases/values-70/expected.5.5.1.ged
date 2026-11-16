@@ -1,0 +1,80 @@
+0 HEAD
+1 SOUR Korin Corpus
+1 SUBM @U1@
+1 GEDC
+2 VERS 5.5.1
+2 FORM LINEAGE-LINKED
+1 LANG Ukrainian
+1 CHAR UTF-8
+0 @U1@ SUBM
+1 NAME Corpus Author
+1 LANG English
+0 @I1@ INDI
+1 NAME Anna /Koval/
+2 TYPE Screen
+1 NAME Hanna /Kovalenko/
+2 TYPE birth
+1 SEX F
+1 BIRT
+2 DATE INT @#DJULIAN@ 30 JAN 1649 (30 JAN 1648/49)
+1 CHR
+2 DATE 30 JAN 1648/49
+2 AGE CHILD
+1 EDUC Village school
+2 DATE @#DFRENCH R@ 1 VEND 10
+1 GRAD
+2 DATE INT 5 MAR 1700 (Fifth of March)
+1 OCCU Scribe
+2 DATE FROM 44 B.C. TO 30 B.C.
+1 RESI
+2 DATE @#DROMAN@ 24 IUL 15
+1 DEAT
+2 DATE (in the war)
+2 AGE >72y 3m
+1 BURI
+2 _AGE 2w
+1 FAMC @F1@
+2 PEDI adopted
+2 STAT proven
+1 ASSO @I2@
+2 RELA godmother
+1 ASSO @I2@
+2 RELA Friend
+1 ASSO @I2@
+2 RELA land-lord
+1 RESN confidential
+1 OBJE @O1@
+1 SOUR @S1@
+2 EVEN BIRT
+3 ROLE (midwife)
+2 QUAY 2
+1 BAPL
+2 STAT PRE-1970
+3 DATE 1 JAN 1960
+1 CHAN
+2 DATE 1 JAN 2020
+3 TIME 10:00:00
+0 @I2@ INDI
+1 NAME Olena /Koval/
+1 SEX F
+0 @F1@ FAM
+1 CHIL @I1@
+1 SLGS
+2 STAT DNS/CAN
+3 DATE 1 JAN 1960
+0 @S1@ SOUR
+1 TITL Parish register
+1 DATA
+2 EVEN BIRT, DEAT
+3 DATE FROM 1640 TO 1700
+0 @O1@ OBJE
+1 FILE c:\My Photos\anna.jpg
+2 FORM jpg
+3 TYPE photo
+1 FILE photos/old house.tif
+2 FORM tif
+1 FILE \\archive\scans\register.gif
+2 FORM gif
+1 FILE https://example.com/register%201648.bmp
+2 FORM bmp
+0 TRLR

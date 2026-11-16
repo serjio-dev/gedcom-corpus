@@ -1,0 +1,32 @@
+id: values-70
+description: >-
+  7.0 → 5.5.1 value rules, each value chosen so that converting up gives the 7.0 value and PHRASE
+  back. Dates: calendar names → escapes (JULIAN → @#DJULIAN@, FRENCH_R → @#DFRENCH R@, _ROMAN 24
+  _IUL 15 → @#DROMAN@ 24 IUL 15), BCE → B.C., a PHRASE back into the date (30 JAN 1649 + PHRASE 30
+  JAN 1648/49 → 30 JAN 1648/49; a Julian date with that PHRASE → INT … (…); an empty date → (in
+  the war)). Ages: < 8y + PHRASE CHILD → CHILD, > 72y 3m → >72y 3m, 2w → _AGE (KL3001). LANG →
+  names (uk → Ukrainian). FORM → extensions (image/jpeg → jpg), MEDI → TYPE (PHOTO → photo), FILE
+  → paths (file:///c:/My%20Photos/… → c:\My Photos\…, file://archive/… → \\archive\…); an https
+  URL stays. Enumerations in 5.5.1 case and spelling (PRE_1970 → PRE-1970, DNS_CAN → DNS/CAN),
+  OTHER + PHRASE → the phrase ((midwife) for a role in an event), ASSO.ROLE → RELA (GODP + PHRASE
+  godmother → godmother, FRIEND → Friend).
+source:
+  origin: handmade
+license: Apache-2.0
+fictional: true
+milestone: "0.3"
+tags: [convert, downgrade, dates, ages, languages, media, enumerations]
+input:
+  file: input.ged
+  version: "7.0"
+  encoding: UTF-8
+  lineEnding: LF
+  bom: true
+checks: [read, roundtrip-preserve, validate, convert]
+expect:
+  recordCount: 6
+  diagnostics: []
+convert:
+  - to: "5.5.1"
+    expected: expected.5.5.1.ged
+    losses: losses.5.5.1.json

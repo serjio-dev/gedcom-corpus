@@ -1,0 +1,14 @@
+{
+    "from": "7.0",
+    "to": "5.5.1",
+    "entries": [
+        {
+            "code": "KL3001",
+            "severity": "warning",
+            "path": "@I1@/BURI/AGE",
+            "line": 39,
+            "storedAs": "extension",
+            "message": "The age has no 5.5.1 form"
+        }
+    ]
+}
