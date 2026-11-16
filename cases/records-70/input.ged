@@ -1,0 +1,41 @@
+﻿0 HEAD
+1 SOUR Korin Corpus
+1 SUBM @U1@
+1 GEDC
+2 VERS 7.0
+1 _SUBN
+2 FAMF Koval family file
+2 TEMP SLAKE
+2 ORDI yes
+0 @U1@ SUBM
+1 NAME Corpus Author
+1 UID 6f1d1a2e-3c4b-4d5e-8f90-a1b2c3d4e5f6
+0 @I1@ INDI
+1 NAME Anna /Koval/
+2 NOTE Written at home @ Kyiv; "@#DJULIAN@" here is plain text
+3 CONT second line @ the end
+1 SEX F
+1 FAMC @VOID@
+2 NOTE Parents unknown
+1 FAMS @F1@
+1 SNOTE @N1@
+1 UID 0c9a7e44-5f7b-4c3d-9a1e-2b3c4d5e6f70
+1 EXID 12345
+2 TYPE https://gedcom.io/terms/v7/AFN
+1 EXID 0042
+2 TYPE https://gedcom.io/terms/v7/RFN#Kyiv%20Archive
+1 EXID 17
+2 TYPE https://gedcom.io/terms/v7/RIN#Korin%20Corpus
+1 EXID GZ8M-2QK
+2 TYPE https://www.familysearch.org/tree/person/
+1 _MILESTONE First school day
+2 FAMC @VOID@
+0 @F1@ FAM
+1 WIFE @I1@
+1 ASSO @VOID@
+2 PHRASE The village priest
+2 ROLE OFFICIATOR
+1 SNOTE @N1@
+0 @N1@ SNOTE The Koval family kept a book of letters, copied here as one long line so that a 5.5.1 writer has to split it: they wrote about the harvest, the river that flooded in spring, the new school, the neighbours who moved to the city, and the names of every child born in the village that year.
+1 UID 9d8c7b6a-5e4f-4a3b-8c2d-1e0f9a8b7c6d
+0 TRLR

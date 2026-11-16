@@ -1,0 +1,30 @@
+id: records-70
+description: >-
+  7.0 → 5.5.1 syntax and record rules. HEAD gets GEDC.FORM LINEAGE-LINKED and CHAR UTF-8; every
+  "@" of a text is doubled ("@#DJULIAN@" in a 7.0 text is text and is written as it is); a long
+  line is split into CONC. SNOTE records and pointers → NOTE; HEAD._SUBN → a SUBN record @X1@
+  before TRLR, with HEAD.SUBN pointing to it; UID → _UID. EXID → AFN, RFN (RFN#Kyiv%20Archive →
+  RFN 0042:Kyiv Archive) and RIN (RIN#<HEAD.SOUR>); an EXID with another TYPE stays as _EXID
+  (KL2001). Pointers to @VOID@ become extensions with their substructures (FAMC → _FAMC, ASSO →
+  _ASSO, KL4001); inside an extension they stay, and 5.5.1 validation reports them as warnings
+  only.
+source:
+  origin: handmade
+license: Apache-2.0
+fictional: true
+milestone: "0.3"
+tags: [convert, records, downgrade]
+input:
+  file: input.ged
+  version: "7.0"
+  encoding: UTF-8
+  lineEnding: LF
+  bom: true
+checks: [read, roundtrip-preserve, validate, convert]
+expect:
+  recordCount: 4
+  diagnostics: []
+convert:
+  - to: "5.5.1"
+    expected: expected.5.5.1.ged
+    losses: losses.5.5.1.json

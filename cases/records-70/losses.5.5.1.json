@@ -1,0 +1,30 @@
+{
+    "from": "7.0",
+    "to": "5.5.1",
+    "entries": [
+        {
+            "code": "KL4001",
+            "severity": "warning",
+            "path": "@I1@/FAMC",
+            "line": 18,
+            "storedAs": "extension",
+            "message": "A pointer to @VOID@ has no record to point to in 5.5.1"
+        },
+        {
+            "code": "KL2001",
+            "severity": "warning",
+            "path": "@I1@/EXID[3]",
+            "line": 29,
+            "storedAs": "extension",
+            "message": "EXID has no 5.5.1 identifier for its TYPE"
+        },
+        {
+            "code": "KL4001",
+            "severity": "warning",
+            "path": "@F1@/ASSO",
+            "line": 35,
+            "storedAs": "extension",
+            "message": "A pointer to @VOID@ has no record to point to in 5.5.1"
+        }
+    ]
+}
