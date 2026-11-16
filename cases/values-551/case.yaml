@@ -1,0 +1,51 @@
+id: values-551
+description: >-
+  5.5.1 → 7.0 value rules. Dates: escapes become calendar names (@#DHEBREW@ → HEBREW, @#DJULIAN@ →
+  JULIAN), B.C. → BCE, dual years → the year by a 1 January new year with the original as PHRASE
+  (30 jan 1648/49 → 30 JAN 1649, 1701/02 → 1702), INT and "(…)" phrases → PHRASE, case; a date
+  inside an extension is text, written by the 7.0 rules (@@#DJULIAN@ 1700). Ages: order, case and
+  spacing (30d11m 2Y → 2y 11m 30d), CHILD and STILLBORN with PHRASE. LANG names → BCP 47
+  (ukrainian → uk), an unknown one → und with _PHRASE. FORM → media types (jpg → image/jpeg, PNG →
+  image/png), FORM.TYPE → FORM.MEDI, FILE → URLs (c:\… → file:///c:/…, spaces and #
+  percent-encoded), also in an inline OBJE moved into a record. Enumerations: case (birth →
+  BIRTH), PRE-1970 → PRE_1970, values 7.0 does not have → OTHER + PHRASE (TYPE Screen, TYPE
+  document, ROLE (midwife)); RELA → ROLE (Godmother → GODP + PHRASE, land-lord → OTHER + PHRASE).
+  Several inputs are written the way programs write them, not as 5.5.1 allows: the expected
+  diagnostics list them.
+source:
+  origin: handmade
+license: Apache-2.0
+fictional: true
+milestone: "0.3"
+tags: [convert, dates, ages, languages, media, enumerations]
+input:
+  file: input.ged
+  version: "5.5.1"
+  encoding: UTF-8
+  lineEnding: LF
+checks: [read, roundtrip-preserve, validate, convert]
+expect:
+  recordCount: 6
+  diagnostics:
+    - severity: error
+      path: "@U1@/LANG"
+      code: KV3006
+    - severity: error
+      path: "@I1@/EVEN/AGE"
+      code: KV3005
+    - severity: error
+      path: "@I1@/DEAT/AGE"
+      code: KV3005
+    - severity: error
+      path: "@I1@/OBJE[1]/FILE/FORM"
+      code: KV3006
+    - severity: error
+      path: "@O1@/FILE[1]/FORM/TYPE"
+      code: KV3006
+    - severity: error
+      path: "@O1@/FILE[2]/FORM"
+      code: KV3006
+convert:
+  - to: "7.0"
+    expected: expected.7.0.ged
+    losses: losses.7.0.json

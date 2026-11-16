@@ -85,7 +85,9 @@ conversions for imported cases are added by hand after review; the import script
 long as the upstream file is unchanged. The `convert` golden file of a 5.5.1 case
 (`expected.7.0.ged`) follows the spec's output conventions; where the upstream 7.0 file is
 exactly that conversion, the golden file is a copy of it. Otherwise they differ where the
-upstream converter drops data (SUBN, `@#…@` in text) or orders new records differently.
+upstream converter drops data (SUBN, `@#…@` in text, `HEAD.SOUR`), moves `HEAD.SUBM`, orders
+new records differently, or reads a dual year whose second part is not the following year
+(`1701/99`) as another year than the first.
 
 Every imported case has the `validate` check except `g7c-5-date-all`: it combines every
 date form with every calendar written without its `@#D…@` escape (`JULIAN 1401`) and with
