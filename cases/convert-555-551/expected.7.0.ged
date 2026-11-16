@@ -1,0 +1,53 @@
+﻿0 HEAD
+1 GEDC
+2 VERS 7.0
+1 SOUR KORIN
+2 VERS 0.3
+1 DATE 2 MAR 2026
+2 TIME 9:05
+1 SUBM @U1@
+1 LANG uk
+0 @U1@ SUBM
+1 NAME Olena Koval
+1 ADDR Kyiv, 01001, Ukraine
+2 CITY Kyiv
+2 POST 01001
+2 CTRY Ukraine
+0 @I1@ INDI
+1 NAME Taras /Koval/
+2 TRAN Taras /Koval/
+3 LANG und
+3 _TYPE kana phonetic
+1 SEX U
+2 _SEX N
+1 BIRT
+2 _DATE 5 MAR
+2 PLAC Kyiv, Ukraine
+1 DEAT
+2 DATE ABT 50
+2 AGE < 1y
+1 RESI
+2 DATE FROM 1000 BCE TO 990 BCE
+2 ADDR 12 Khreshchatyk St
+3 CONT apt. 4
+3 ADR1 12 Khreshchatyk St
+3 ADR2 apt. 4
+3 CITY Kyiv
+1 FACT Beekeeper
+2 TYPE Hobby
+1 IDNO 12345
+2 TYPE Passport
+1 OBJE @O1@
+1 SOUR @S1@
+2 PAGE p. 4
+0 @O1@ OBJE
+1 FILE portrait.gif
+2 FORM image/gif
+2 TITL Portrait
+0 @O2@ OBJE
+1 FILE scan.jpeg
+2 FORM image/jpeg
+3 MEDI PHOTO
+0 @S1@ SOUR
+1 TITL Parish register
+0 TRLR

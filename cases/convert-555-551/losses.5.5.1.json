@@ -1,0 +1,22 @@
+{
+    "from": "5.5.5",
+    "to": "5.5.1",
+    "entries": [
+        {
+            "code": "KL3002",
+            "severity": "warning",
+            "path": "@I1@/SEX",
+            "line": 23,
+            "storedAs": "extension",
+            "message": "SEX N has no 5.5.1 value: SEX U"
+        },
+        {
+            "code": "KL3001",
+            "severity": "warning",
+            "path": "@I1@/BIRT/DATE",
+            "line": 25,
+            "storedAs": "extension",
+            "message": "5.5.1 DATE has no such value"
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+id: convert-555-551
+description: >-
+  5.5.5 → 5.5.1 and, through it, 7.0. ADDR gets a value: from ADR1 and ADR2, or from CITY, POST
+  and CTRY when there are no ADR lines. SEX N → SEX U with _SEX N (KL3002), in 7.0 too. A date
+  without a year (5 MAR), which neither 5.5.1 nor 7.0 has → _DATE (KL3001). Values take the
+  5.5.1 spelling: ABT 050 → ABT 50, < 1y → <1y, BCE → B.C. (7.0: BCE and < 1y again); FORM
+  JPEG → jpg, GIF stays (7.0: image/jpeg, image/gif). GEDC.FORM.VERS is removed.
+source:
+  origin: handmade
+license: Apache-2.0
+fictional: true
+milestone: "0.3"
+tags: [convert, upgrade, extensions, gedcom-5.5.5]
+input:
+  file: input.ged
+  version: "5.5.5"
+  encoding: UTF-8
+  lineEnding: LF
+  bom: true
+checks: [read, roundtrip-preserve, validate, convert]
+expect:
+  recordCount: 5
+  diagnostics: []
+convert:
+  - to: "5.5.1"
+    expected: expected.5.5.1.ged
+    losses: losses.5.5.1.json
+  - to: "7.0"
+    expected: expected.7.0.ged
+    losses: losses.7.0.json

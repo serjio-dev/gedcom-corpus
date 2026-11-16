@@ -1,0 +1,83 @@
+0 HEAD
+1 GEDC
+2 VERS 5.5.1
+2 FORM LINEAGE-LINKED
+1 CHAR UTF-8
+1 SOUR KORIN
+2 VERS 0.3
+2 NAME Korin
+1 DEST ANY
+1 DATE 2 MAR 2026
+2 TIME 09:05:00.5
+1 SUBM @U2@
+1 SUBN @N1@
+1 PLAC
+2 FORM City, Region, Country
+0 @U1@ SUBM
+1 NAME Olena Koval
+0 @I1@ INDI
+1 NAME Taras /Koval/
+1 SEX U
+2 _SEX X
+1 RESN privacy
+1 BIRT Y
+1 BURI
+1 DEAT Y
+2 DATE 05 JAN 1950
+2 AGE <070y 0m
+2 PLAC Kyiv,Ukraine
+2 SOUR Parish register of St Andrew
+3 CONT volume 2
+3 TEXT Died at home
+3 QUAY 2
+2 OBJE
+3 FILE grave.jpg
+4 FORM jpg
+5 MEDI photo
+3 TITL Grave
+1 RESI
+2 DATE ABT 50
+2 ADDR 12 Khreshchatyk St
+3 CONT apt. 4
+3 ADR1 12 Khreshchatyk St
+3 CITY Kyiv
+3 CTRY Ukraine
+1 RESI
+2 DATE 1960
+2 ADDR Kyiv, Ukraine
+3 CITY Kyiv
+3 CTRY Ukraine
+1 RESI
+2 DATE 1970
+2 ADDR Lviv
+3 CONT Rynok Square
+3 CONT 1
+3 CONT Ukraine
+1 BAPL
+2 DATE 1960
+2 TEMP SLAKE
+1 FAMS @F1@
+1 OBJE @O1@
+1 CHAN
+2 DATE 1 JAN 2026
+3 TIME 9:05
+0 @I2@ INDI
+1 NAME Maria /Koval/
+1 SEX F
+1 FAMS @F1@
+0 @F1@ FAM
+1 HUSB @I1@
+1 WIFE @I2@
+1 MARR Y
+0 @O1@ OBJE
+1 FILE portrait.jpg
+2 FORM jpg
+2 TITL Portrait
+1 FILE portrait-back.jpg
+2 FORM jpg
+0 @U2@ SUBM
+1 NAME Taras Koval
+1 LANG Ukrainian
+0 @N1@ SUBN
+1 FAMF Koval family file
+0 TRLR
