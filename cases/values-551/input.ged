@@ -1,0 +1,83 @@
+0 HEAD
+1 SOUR Korin Corpus
+1 SUBM @U1@
+1 GEDC
+2 VERS 5.5.1
+2 FORM LINEAGE-LINKED
+1 CHAR UTF-8
+1 LANG ukrainian
+0 @U1@ SUBM
+1 NAME Corpus Author
+1 LANG Hmong
+1 CHAN
+2 DATE 2 feb 2024
+0 @I1@ INDI
+1 RESN privacy
+1 NAME Olena /Koval/
+2 TYPE Screen
+1 NAME Olena /Shevchenko/
+2 TYPE maiden
+1 SEX f
+1 BIRT
+2 DATE 30 jan 1648/49
+2 AGE stillborn
+1 CHR
+2 DATE INT 1699/00 (as the register says)
+1 OCCU Miller
+2 DATE FROM 44 B.C. TO @#DJULIAN@ 30 B.C.
+1 EVEN Lviv
+2 TYPE Journey
+2 DATE (in the spring after the flood)
+2 AGE 30d11m 2Y
+1 DEAT
+2 DATE abt 1701/02
+2 AGE >0 Y
+1 FAMC @F1@
+2 PEDI birth
+2 STAT proven
+1 ADOP
+2 FAMC @F1@
+3 ADOP both
+1 ASSO @I2@
+2 RELA Godmother
+1 ASSO @I2@
+2 RELA land-lord
+1 OBJE @O1@
+1 OBJE
+2 FILE рукопис\сторінка 1.png
+3 FORM PNG
+4 MEDI manuscript
+1 SOUR @S1@
+2 EVEN BIRT
+3 ROLE (midwife)
+1 _MILESTONE
+2 DATE @#DJULIAN@ 1700
+1 CHAN
+2 DATE 1 jan 2024
+0 @I2@ INDI
+1 NAME Maria /Koval/
+1 SEX F
+1 BAPL
+2 STAT PRE-1970
+3 DATE 1 JAN 2000
+0 @F1@ FAM
+1 CHIL @I1@
+1 MARR
+2 HUSB
+3 AGE CHILD
+2 DATE @#DHEBREW@ 5 TSH 5784
+0 @O1@ OBJE
+1 FILE c:\Photos\family 1900.jpg
+2 FORM jpg
+3 TYPE photo
+1 FILE /home/olena/scan#2.tif
+2 FORM tif
+3 TYPE document
+1 FILE https://example.com/a b.mp4
+2 FORM mp4
+0 @S1@ SOUR
+1 TITL Parish register
+1 DATA
+2 EVEN BIRT, DEAT
+3 DATE from 1640 to 1710
+0 TRLR

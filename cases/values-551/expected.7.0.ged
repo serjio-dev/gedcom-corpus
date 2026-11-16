@@ -1,0 +1,94 @@
+﻿0 HEAD
+1 SOUR Korin Corpus
+1 SUBM @U1@
+1 GEDC
+2 VERS 7.0
+1 LANG uk
+0 @U1@ SUBM
+1 NAME Corpus Author
+1 LANG und
+2 _PHRASE Hmong
+1 CHAN
+2 DATE 2 FEB 2024
+0 @I1@ INDI
+1 RESN PRIVACY
+1 NAME Olena /Koval/
+2 TYPE OTHER
+3 PHRASE Screen
+1 NAME Olena /Shevchenko/
+2 TYPE MAIDEN
+1 SEX F
+1 BIRT
+2 DATE 30 JAN 1649
+3 PHRASE 30 jan 1648/49
+2 AGE 0y
+3 PHRASE stillborn
+1 CHR
+2 DATE 1700
+3 PHRASE INT 1699/00 (as the register says)
+1 OCCU Miller
+2 DATE FROM 44 BCE TO JULIAN 30 BCE
+1 EVEN Lviv
+2 TYPE Journey
+2 DATE
+3 PHRASE in the spring after the flood
+2 AGE 2y 11m 30d
+1 DEAT
+2 DATE ABT 1702
+3 PHRASE abt 1701/02
+2 AGE > 0y
+1 FAMC @F1@
+2 PEDI BIRTH
+2 STAT PROVEN
+1 ADOP
+2 FAMC @F1@
+3 ADOP BOTH
+1 ASSO @I2@
+2 ROLE GODP
+3 PHRASE Godmother
+1 ASSO @I2@
+2 ROLE OTHER
+3 PHRASE land-lord
+1 OBJE @O1@
+1 OBJE @X1@
+1 SOUR @S1@
+2 EVEN BIRT
+3 ROLE OTHER
+4 PHRASE midwife
+1 _MILESTONE
+2 DATE @@#DJULIAN@ 1700
+1 CHAN
+2 DATE 1 JAN 2024
+0 @I2@ INDI
+1 NAME Maria /Koval/
+1 SEX F
+1 BAPL
+2 STAT PRE_1970
+3 DATE 1 JAN 2000
+0 @F1@ FAM
+1 CHIL @I1@
+1 MARR
+2 HUSB
+3 AGE < 8y
+4 PHRASE CHILD
+2 DATE HEBREW 5 TSH 5784
+0 @O1@ OBJE
+1 FILE file:///c:/Photos/family%201900.jpg
+2 FORM image/jpeg
+3 MEDI PHOTO
+1 FILE file:///home/olena/scan%232.tif
+2 FORM image/tiff
+3 MEDI OTHER
+4 PHRASE document
+1 FILE https://example.com/a%20b.mp4
+2 FORM video/mp4
+0 @S1@ SOUR
+1 TITL Parish register
+1 DATA
+2 EVEN BIRT, DEAT
+3 DATE FROM 1640 TO 1710
+0 @X1@ OBJE
+1 FILE рукопис/сторінка%201.png
+2 FORM image/png
+3 MEDI MANUSCRIPT
+0 TRLR
