@@ -1,0 +1,32 @@
+id: convert-551-555
+description: >-
+  5.5.1 → 5.5.5. The inline source and media link of DEAT become records @X1@ (TITL from the
+  description, TEXT under DATA of the citation) and @X2@ (TITL under FILE, MEDI → TYPE); SUBN
+  moves into HEAD._SUBN; the SUBM record HEAD.SUBM points to moves after HEAD, the other one →
+  _SUBM (KL2002). ADDR loses its value: lines repeating ADR1 are dropped, the next becomes ADR2,
+  a value made of CITY and CTRY is dropped, a four-line value → _ADDR (KL3001). BIRT Y and BURI,
+  which 5.5.5 cannot write without a value or substructures → _BIRT, _BURI (KL3001); DEAT and
+  MARR keep Y. SEX U with _SEX X → SEX X. Values follow the 5.5.5 grammars: 05 JAN → 5 JAN, ABT
+  50 → ABT 050, <070y 0m → < 70y, 09:05:00.5 → 9:05:00.50, Kyiv,Ukraine → Kyiv, Ukraine. RESN,
+  BAPL, HEAD.PLAC, SUBM.LANG and a second FILE of the media record → extensions (KL2001,
+  KL2002); GEDC.FORM gets VERS 5.5.5.
+source:
+  origin: handmade
+license: Apache-2.0
+fictional: true
+milestone: "0.3"
+tags: [convert, structures, extensions, gedcom-5.5.5]
+input:
+  file: input.ged
+  version: "5.5.1"
+  encoding: UTF-8
+  lineEnding: LF
+  bom: false
+checks: [read, roundtrip-preserve, validate, convert]
+expect:
+  recordCount: 7
+  diagnostics: []
+convert:
+  - to: "5.5.5"
+    expected: expected.5.5.5.ged
+    losses: losses.5.5.5.json

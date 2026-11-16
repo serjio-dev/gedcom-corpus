@@ -1,0 +1,78 @@
+{
+    "from": "5.5.1",
+    "to": "5.5.5",
+    "entries": [
+        {
+            "code": "KL2001",
+            "severity": "warning",
+            "path": "HEAD/PLAC",
+            "line": 14,
+            "storedAs": "extension",
+            "message": "5.5.5 has no PLAC here"
+        },
+        {
+            "code": "KL2002",
+            "severity": "warning",
+            "path": "@U1@",
+            "line": 16,
+            "storedAs": "extension",
+            "message": "5.5.5 allows one SUBM record"
+        },
+        {
+            "code": "KL2001",
+            "severity": "warning",
+            "path": "@I1@/RESN",
+            "line": 22,
+            "storedAs": "extension",
+            "message": "5.5.5 has no RESN here"
+        },
+        {
+            "code": "KL3001",
+            "severity": "warning",
+            "path": "@I1@/BIRT",
+            "line": 23,
+            "storedAs": "extension",
+            "message": "5.5.5 BIRT needs a value or substructures"
+        },
+        {
+            "code": "KL3001",
+            "severity": "warning",
+            "path": "@I1@/BURI",
+            "line": 24,
+            "storedAs": "extension",
+            "message": "5.5.5 BURI needs a value or substructures"
+        },
+        {
+            "code": "KL3001",
+            "severity": "warning",
+            "path": "@I1@/RESI[2]/ADDR",
+            "line": 52,
+            "storedAs": "extension",
+            "message": "5.5.5 ADDR has no value"
+        },
+        {
+            "code": "KL2001",
+            "severity": "warning",
+            "path": "@I1@/BAPL",
+            "line": 56,
+            "storedAs": "extension",
+            "message": "5.5.5 has no BAPL here"
+        },
+        {
+            "code": "KL2002",
+            "severity": "warning",
+            "path": "@O1@/FILE[1]",
+            "line": 76,
+            "storedAs": "extension",
+            "message": "5.5.5 allows 1 FILE here"
+        },
+        {
+            "code": "KL2001",
+            "severity": "warning",
+            "path": "@U2@/LANG",
+            "line": 80,
+            "storedAs": "extension",
+            "message": "5.5.5 has no LANG here"
+        }
+    ]
+}
