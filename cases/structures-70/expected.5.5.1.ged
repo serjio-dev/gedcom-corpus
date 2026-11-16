@@ -1,0 +1,57 @@
+0 HEAD
+1 SOUR Korin Corpus
+1 SUBM @U1@
+1 GEDC
+2 VERS 5.5.1
+2 FORM LINEAGE-LINKED
+1 _SCHMA
+2 TAG _MILESTONE https://example.org/korin-corpus/milestone
+1 CHAR UTF-8
+0 @U1@ SUBM
+1 NAME Corpus Author
+0 @I1@ INDI
+1 NAME 山田 /太郎/
+2 ROMN Yamada /Taro/
+3 TYPE romaji
+2 FONE やまだ /たろう/
+3 TYPE hiragana
+2 _TRAN Ямада /Таро/
+3 LANG uk
+1 SEX U
+2 _SEX X
+1 _NO MARR
+2 DATE TO 1950
+2 NOTE Never married
+1 BIRT
+2 DATE ABT 1900
+3 _PHRASE around the time of the flood
+2 PLAC 東京
+3 ROMN Tokyo
+4 TYPE pinyin
+2 _ASSO @VOID@
+3 PHRASE The midwife
+3 ROLE OTHER
+4 PHRASE midwife
+2 _SDATE 1900
+1 _MILESTONE First school day
+2 DATE 1906
+1 OBJE @O1@
+2 _CROP
+3 TOP 10
+3 LEFT 20
+1 _CREA
+2 DATE 1 JAN 2020
+1 CHAN
+2 DATE 2 JAN 2020
+1 NOTE @N1@
+0 @N1@ NOTE <p>A shared note in HTML</p>
+1 _MIME text/html
+1 _LANG en
+1 _TRAN A shared note
+2 MIME text/plain
+0 @O1@ OBJE
+1 FILE photos/taro.jpg
+2 FORM jpg
+2 _TRAN photos/taro-small.jpg
+3 FORM image/jpeg
+0 TRLR

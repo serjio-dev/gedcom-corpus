@@ -1,0 +1,110 @@
+{
+    "from": "7.0",
+    "to": "5.5.1",
+    "entries": [
+        {
+            "code": "KL2001",
+            "severity": "warning",
+            "path": "HEAD/SCHMA",
+            "line": 6,
+            "storedAs": "extension",
+            "message": "5.5.1 has no SCHMA here"
+        },
+        {
+            "code": "KL2001",
+            "severity": "warning",
+            "path": "@I1@/NAME/TRAN[2]",
+            "line": 17,
+            "storedAs": "extension",
+            "message": "5.5.1 has no TRAN here"
+        },
+        {
+            "code": "KL3002",
+            "severity": "warning",
+            "path": "@I1@/SEX",
+            "line": 19,
+            "storedAs": "extension",
+            "message": "SEX X has no 5.5.1 value: SEX U"
+        },
+        {
+            "code": "KL2001",
+            "severity": "warning",
+            "path": "@I1@/NO",
+            "line": 20,
+            "storedAs": "extension",
+            "message": "5.5.1 has no NO here"
+        },
+        {
+            "code": "KL2001",
+            "severity": "warning",
+            "path": "@I1@/BIRT/DATE/PHRASE",
+            "line": 25,
+            "storedAs": "extension",
+            "message": "5.5.1 has no PHRASE here"
+        },
+        {
+            "code": "KL4001",
+            "severity": "warning",
+            "path": "@I1@/BIRT/ASSO",
+            "line": 29,
+            "storedAs": "extension",
+            "message": "A pointer to @VOID@ has no record to point to in 5.5.1"
+        },
+        {
+            "code": "KL2001",
+            "severity": "warning",
+            "path": "@I1@/BIRT/SDATE",
+            "line": 33,
+            "storedAs": "extension",
+            "message": "5.5.1 has no SDATE here"
+        },
+        {
+            "code": "KL2001",
+            "severity": "warning",
+            "path": "@I1@/OBJE/CROP",
+            "line": 37,
+            "storedAs": "extension",
+            "message": "5.5.1 has no CROP here"
+        },
+        {
+            "code": "KL2001",
+            "severity": "warning",
+            "path": "@I1@/CREA",
+            "line": 40,
+            "storedAs": "extension",
+            "message": "5.5.1 has no CREA here"
+        },
+        {
+            "code": "KL2001",
+            "severity": "warning",
+            "path": "@N1@/MIME",
+            "line": 46,
+            "storedAs": "extension",
+            "message": "5.5.1 has no MIME here"
+        },
+        {
+            "code": "KL2001",
+            "severity": "warning",
+            "path": "@N1@/LANG",
+            "line": 47,
+            "storedAs": "extension",
+            "message": "5.5.1 has no LANG here"
+        },
+        {
+            "code": "KL2001",
+            "severity": "warning",
+            "path": "@N1@/TRAN",
+            "line": 48,
+            "storedAs": "extension",
+            "message": "5.5.1 has no TRAN here"
+        },
+        {
+            "code": "KL2001",
+            "severity": "warning",
+            "path": "@O1@/FILE/TRAN",
+            "line": 53,
+            "storedAs": "extension",
+            "message": "5.5.1 has no TRAN here"
+        }
+    ]
+}

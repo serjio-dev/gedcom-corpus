@@ -1,0 +1,29 @@
+id: structures-70
+description: >-
+  7.0 → 5.5.1 structures 5.5.1 does not have, and back. TRAN of a name or place → ROMN/FONE where
+  5.5.1 has the type (ja-Latn → ROMN romaji, und + _TYPE hiragana → FONE hiragana, zh-Latn-pinyin
+  → ROMN pinyin); TRAN in another language → _TRAN. SEX X → SEX U + _SEX X (KL3002). NO, SDATE,
+  CREA, CROP, HEAD.SCHMA, MIME/LANG/TRAN of a note, TRAN of a file, a PHRASE of an approximate
+  date → extensions with their tags and substructures (_NO, _SDATE, …, KL2001); ASSO @VOID@ of an
+  event → _ASSO (KL4001), whose 7.0 substructures stay as they are. Converting the expected 5.5.1
+  file up gives the input back byte for byte.
+source:
+  origin: handmade
+license: Apache-2.0
+fictional: true
+milestone: "0.3"
+tags: [convert, downgrade, structures, extensions, tran]
+input:
+  file: input.ged
+  version: "7.0"
+  encoding: UTF-8
+  lineEnding: LF
+  bom: true
+checks: [read, roundtrip-preserve, validate, convert]
+expect:
+  recordCount: 4
+  diagnostics: []
+convert:
+  - to: "5.5.1"
+    expected: expected.5.5.1.ged
+    losses: losses.5.5.1.json
