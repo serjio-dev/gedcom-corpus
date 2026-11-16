@@ -1,0 +1,27 @@
+id: structures-551
+description: >-
+  5.5.1 → 7.0 structures 7.0 has in another form. HEAD.FILE is removed without a loss, like CHAR:
+  it describes the file, not its data. FONE and ROMN of a name or place become TRAN with LANG from
+  their TYPE (romaji → ja-Latn, HANGUL → ko-Hang, kana → ja-Kana, pinyin → zh-Latn-pinyin,
+  wadegiles → zh-Latn-wadegile); another TYPE is kept as _TYPE with LANG und (FONE) or und-Latn
+  (ROMN); name pieces under ROMN stay under TRAN. RESI and EVEN without a value stay as they are:
+  an empty Text is valid 7.0 ("1 EVEN" in section 1 of the specification).
+source:
+  origin: handmade
+license: Apache-2.0
+fictional: true
+milestone: "0.3"
+tags: [convert, structures, tran, head]
+input:
+  file: input.ged
+  version: "5.5.1"
+  encoding: UTF-8
+  lineEnding: LF
+checks: [read, roundtrip-preserve, validate, convert]
+expect:
+  recordCount: 3
+  diagnostics: []
+convert:
+  - to: "7.0"
+    expected: expected.7.0.ged
+    losses: losses.7.0.json

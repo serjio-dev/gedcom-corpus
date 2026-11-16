@@ -4,6 +4,8 @@
 1 GEDC
 2 VERS 7.0
 1 LANG uk
+1 SCHMA
+2 TAG _PHRASE https://gedcom.io/terms/v7/PHRASE
 0 @U1@ SUBM
 1 NAME Corpus Author
 1 LANG und
