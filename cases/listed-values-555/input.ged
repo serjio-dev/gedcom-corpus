@@ -1,0 +1,20 @@
+﻿0 HEAD
+1 GEDC
+2 VERS 5.5.5
+2 FORM LINEAGE-LINKED
+3 VERS 5.5.5
+1 CHAR UTF-8
+1 SOUR KORIN
+1 SUBM @U1@
+0 @U1@ SUBM
+1 NAME Olena Koval
+0 @I1@ INDI
+1 NAME Taro /Yamada/
+2 TYPE aka
+2 FONE Taro /Yamada/
+3 TYPE kana
+2 ROMN Taro /Yamada/
+3 TYPE romaji
+1 NAME Taras /Koval/
+2 TYPE alt
+0 TRLR

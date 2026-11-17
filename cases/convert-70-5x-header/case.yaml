@@ -1,0 +1,32 @@
+id: convert-70-5x-header
+description: >-
+  7.0 → 5.5.1, 5.5.5 and 5.5 of a file without HEAD.SOUR, which 5.x requires: SOUR Korin, the
+  system writing the file, is added first in HEAD, and GEDC.FORM LINEAGE-LINKED (5.5.5 with its
+  VERS). The TYPE of EVEN equal to its value, as 5.5.1 → 7.0 writes it for an EVEN without TYPE,
+  is removed in 5.5.1 and 5.5.5; 5.5 keeps EVEN without a value, the value in TYPE.
+source:
+  origin: handmade
+license: Apache-2.0
+fictional: true
+milestone: "0.3"
+tags: [convert, downgrade, header]
+input:
+  file: input.ged
+  version: "7.0"
+  encoding: UTF-8
+  lineEnding: LF
+  bom: true
+checks: [read, roundtrip-preserve, validate, convert]
+expect:
+  recordCount: 2
+  diagnostics: []
+convert:
+  - to: "5.5.1"
+    expected: expected.5.5.1.ged
+    losses: losses.5.5.1.json
+  - to: "5.5.5"
+    expected: expected.5.5.5.ged
+    losses: losses.5.5.5.json
+  - to: "5.5"
+    expected: expected.5.5.ged
+    losses: losses.5.5.json
