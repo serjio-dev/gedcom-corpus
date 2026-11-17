@@ -87,12 +87,13 @@ def check_input(case: str, spec: dict, path: Path) -> None:
     ending = line_ending(text.encode("utf-8"))
     if "lineEnding" in spec and ending != spec["lineEnding"]:
         fail(case, f"input line ending is {ending}, case.yaml says {spec['lineEnding']}")
-    match = re.search(r"^\s*2 VERS ([0-9.]+)", text, re.MULTILINE)
+    gedc = re.search(r"^\s*1 GEDC\s*$\s*^\s*2 VERS (\S+)", text, re.MULTILINE)
+    match = gedc or re.search(r"^\s*2 VERS ([0-9.]+)", text, re.MULTILINE)
     if match is None:
         if spec.get("versionDeclared", True):
             fail(case, "input has no HEAD.GEDC.VERS; set versionDeclared: false")
-    elif match.group(1) != spec["version"]:
-        fail(case, f"HEAD.GEDC.VERS is {match.group(1)}, case.yaml says {spec['version']}")
+    elif match.group(1) != spec.get("declaredVersion", spec["version"]):
+        fail(case, f"HEAD.GEDC.VERS is {match.group(1)}, case.yaml says {spec.get('declaredVersion', spec['version'])}")
 
 
 def check_case(case_dir: Path) -> None:

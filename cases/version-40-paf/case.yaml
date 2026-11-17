@@ -1,0 +1,63 @@
+id: version-40-paf
+description: >-
+  GEDCOM 4.0 as PAF-era programs wrote it: HEAD.GEDC.VERS 4.0 without FORM, ANSEL, CRLF,
+  SEX Male and Female, dates in words (11 June 1861, Abt. 1905, Between 1880 and 1882) and an
+  irregular one (4/5 January 1751/52), and HEAL, which 5.5 does not have. Read with the 5.5
+  profile; converted to 5.5 the values take their 5.5 form and the irregular date becomes a
+  date phrase. The records follow the example of the GEDCOM 4.0 specification, chapter 4.
+source:
+  origin: handmade
+license: Apache-2.0
+fictional: true
+milestone: "0.5"
+tags: [version-4.0, ansel, dates]
+input:
+  file: input.ged
+  version: "4.0"
+  encoding: ANSEL
+  lineEnding: CRLF
+checks: [read, roundtrip-preserve, roundtrip-stream, validate, validate-indexed, convert, convert-stream]
+expect:
+  recordCount: 5
+  diagnostics:
+    - code: KV2003
+      severity: error
+      path: HEAD/GEDC
+      about: GEDC requires FORM; 4.0 has none
+    - code: KV3006
+      severity: error
+      path: "@1@/SEX"
+      about: SEX Male
+    - code: KV3005
+      severity: error
+      path: "@1@/BIRT/DATE"
+      about: 11 June 1861
+    - code: KV3005
+      severity: error
+      path: "@1@/DEAT/DATE"
+      about: Abt. 1905
+    - code: KV2001
+      severity: error
+      path: "@1@/HEAL"
+    - code: KV3006
+      severity: error
+      path: "@2@/SEX"
+      about: SEX Female
+    - code: KV3005
+      severity: error
+      path: "@2@/BIRT/DATE"
+      about: 4/5 January 1751/52
+    - code: KV3005
+      severity: error
+      path: "@4@/MARR/DATE"
+      about: Between 1880 and 1882
+convert:
+  - to: "5.5"
+    expected: expected.5.5.ged
+    losses: losses.5.5.json
+  - to: "5.5.1"
+    expected: expected.5.5.1.ged
+    losses: losses.5.5.1.json
+  - to: "7.0"
+    expected: expected.7.0.ged
+    losses: losses.7.0.json

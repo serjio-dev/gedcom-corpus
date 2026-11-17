@@ -1,0 +1,32 @@
+id: version-501-draft
+description: >-
+  HEAD.GEDC.VERS "5.01", which Reunion, EasyTree and Ancestry wrote for the 5.1 draft. A
+  5.0–5.4 draft is read with the 5.5 profile.
+source:
+  origin: handmade
+license: Apache-2.0
+fictional: true
+milestone: "0.5"
+tags: [version-draft, macroman]
+input:
+  file: input.ged
+  version: "5.5"
+  declaredVersion: "5.01"
+  encoding: MacRoman
+  declaredChar: MACINTOSH
+  lineEnding: LF
+checks: [read, roundtrip-preserve, validate, convert]
+expect:
+  recordCount: 2
+  diagnostics:
+    - code: KV1101
+      severity: warning
+      path: HEAD/CHAR
+    - code: KV3006
+      severity: error
+      path: HEAD/CHAR
+      about: CHAR MACINTOSH is not a 5.5 value
+convert:
+  - to: "5.5.1"
+    expected: expected.5.5.1.ged
+    losses: losses.5.5.1.json
