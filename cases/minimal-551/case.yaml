@@ -11,7 +11,7 @@ input:
   version: "5.5.1"
   encoding: UTF-8
   lineEnding: LF
-checks: [read, roundtrip-preserve, roundtrip-stream, fingerprint, validate, convert]
+checks: [read, roundtrip-preserve, roundtrip-stream, fingerprint, validate, convert, convert-stream]
 expect:
   recordCount: 1
   diagnostics: []

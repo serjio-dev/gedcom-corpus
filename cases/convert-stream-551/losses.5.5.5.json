@@ -1,0 +1,22 @@
+{
+    "from": "5.5.1",
+    "to": "5.5.5",
+    "entries": [
+        {
+            "code": "KL2001",
+            "severity": "warning",
+            "path": "@U2@/LANG",
+            "line": 27,
+            "storedAs": "extension",
+            "message": "5.5.5 has no LANG here"
+        },
+        {
+            "code": "KL2002",
+            "severity": "warning",
+            "path": "@U1@",
+            "line": 9,
+            "storedAs": "extension",
+            "message": "5.5.5 allows one SUBM record"
+        }
+    ]
+}

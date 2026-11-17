@@ -20,7 +20,9 @@ checks:
 - roundtrip-preserve
 - roundtrip-stream
 - validate
+- validate-indexed
 - convert
+- convert-stream
 expect:
   diagnostics: []
 convert:

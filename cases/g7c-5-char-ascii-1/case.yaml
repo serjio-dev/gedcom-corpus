@@ -20,7 +20,9 @@ checks:
 - roundtrip-preserve
 - roundtrip-stream
 - validate
+- validate-indexed
 - convert
+- convert-stream
 references:
 - to: '7.0'
   case: g7c-7-char-ascii-1

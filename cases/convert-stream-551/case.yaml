@@ -1,0 +1,32 @@
+id: convert-stream-551
+description: >-
+  5.5.1 whose records the conversion moves far: HEAD.SUBM points to the last SUBM record
+  (@U2@), the SUBN record and an inline source and media link sit between them, so streaming
+  conversion must take SUBN and @U2@ along with HEAD and keep the new records until TRLR.
+  To 7.0: SUBN → HEAD._SUBN, the inline source and media → @X1@ and @X2@ before TRLR, LANG
+  Ukrainian → uk. To 5.5.5: @U2@ moves after HEAD, @U1@ → _SUBM (KL2002), SUBM.LANG →
+  _LANG (KL2001), SUBN → HEAD._SUBN, the inline records likewise. convert-stream must match
+  convert byte for byte, losses included.
+source:
+  origin: handmade
+license: Apache-2.0
+fictional: true
+milestone: "0.4"
+tags: [convert, streaming, prepass, gedcom-5.5.5]
+input:
+  file: input.ged
+  version: "5.5.1"
+  encoding: UTF-8
+  lineEnding: LF
+  bom: false
+checks: [read, roundtrip-preserve, roundtrip-stream, validate, convert, convert-stream]
+expect:
+  recordCount: 5
+  diagnostics: []
+convert:
+  - to: "7.0"
+    expected: expected.7.0.ged
+    losses: losses.7.0.json
+  - to: "5.5.5"
+    expected: expected.5.5.5.ged
+    losses: losses.5.5.5.json

@@ -21,7 +21,7 @@ input:
   encoding: ASCII
   lineEnding: LF
   bom: false
-checks: [read, roundtrip-preserve, roundtrip-stream, validate, convert]
+checks: [read, roundtrip-preserve, roundtrip-stream, validate, convert, convert-stream]
 expect:
   recordCount: 6
   diagnostics: 
