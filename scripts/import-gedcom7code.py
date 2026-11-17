@@ -6,10 +6,10 @@ Usage:
     scripts/import-gedcom7code.py /tmp/test-files
 
 Every upstream file becomes its own case (g7c-5-<name>, g7c-7-<name>) checked for
-read and roundtrip-preserve. A 5/ file and the 7/ file with the same name are linked
-through `references`: upstream's 7.0 file is one valid conversion, not the only one,
+read, roundtrip-preserve and roundtrip-stream. A 5/ file and the 7/ file with the same
+name are linked through `references`: upstream's 7.0 file is one valid conversion, not the only one,
 so the pair is compared semantically. Re-running the script replaces all g7c-* cases;
-checks and expectations added by hand (`checks` beyond the two above, `expect`, `convert`
+checks and expectations added by hand (`checks` beyond the three above, `expect`, `convert`
 with its expected files) are kept for files whose bytes are unchanged upstream, and dropped
 with a warning otherwise.
 Requires: pip install pyyaml
@@ -99,7 +99,7 @@ def main() -> None:
     kept = {}
     for old in CASES.glob("g7c-*"):
         descriptor = yaml.safe_load((old / "case.yaml").read_text("utf-8"))
-        extra = [c for c in descriptor["checks"] if c not in ("read", "roundtrip-preserve")]
+        extra = [c for c in descriptor["checks"] if c not in ("read", "roundtrip-preserve", "roundtrip-stream")]
         convert = descriptor.get("convert")
         if extra or "expect" in descriptor or convert:
             golden = {}
@@ -126,7 +126,7 @@ def main() -> None:
                 "milestone": "0.1",
                 "tags": ["gedcom7code"],
                 "input": spec,
-                "checks": ["read", "roundtrip-preserve"],
+                "checks": ["read", "roundtrip-preserve", "roundtrip-stream"],
             }
             if major == "5" and path.stem in names[other]:
                 descriptor["references"] = [{"to": "7.0", "case": case_id(other, path.stem)}]

@@ -15,7 +15,7 @@ input:
   encoding: Windows-1251
   declaredChar: ANSI
   lineEnding: CRLF
-checks: [read, roundtrip-preserve, fingerprint, validate, convert]
+checks: [read, roundtrip-preserve, roundtrip-stream, fingerprint, validate, convert]
 expect:
   recordCount: 2
   diagnostics:

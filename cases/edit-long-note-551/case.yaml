@@ -16,7 +16,7 @@ input:
   version: "5.5.1"
   encoding: UTF-8
   lineEnding: CRLF
-checks: [read, roundtrip-preserve, fingerprint, edit, validate]
+checks: [read, roundtrip-preserve, roundtrip-stream, fingerprint, edit, validate]
 expect:
   recordCount: 1
   diagnostics:
