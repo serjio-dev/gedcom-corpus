@@ -112,6 +112,10 @@
                 "encoding": {
                     "$ref": "#/$defs/encoding"
                 },
+                "declaredVersion": {
+                    "description": "Raw HEAD.GEDC.VERS value when it differs from version (\"4+\", \"5.01\").",
+                    "type": "string"
+                },
                 "declaredChar": {
                     "description": "Raw HEAD.CHAR value when it differs from the real encoding.",
                     "type": "string"

@@ -1,0 +1,14 @@
+{
+    "from": "4.0",
+    "to": "5.5",
+    "entries": [
+        {
+            "code": "KL2001",
+            "severity": "warning",
+            "path": "@1@/HEAL",
+            "line": 19,
+            "storedAs": "extension",
+            "message": "5.5 has no HEAL here"
+        }
+    ]
+}

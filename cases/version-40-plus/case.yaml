@@ -1,0 +1,45 @@
+id: version-40-plus
+description: >-
+  HEAD.GEDC.VERS "4+", as Roots IV and V, Family Gathering and Ultimate Family Tree write
+  GEDCOM 4.0, with CHAR IBMPC (code page 437). Read as 4.0; "Sept. 1921" is SEP 1921 in 5.5.
+source:
+  origin: handmade
+license: Apache-2.0
+fictional: true
+milestone: "0.5"
+tags: [version-4.0, cp437]
+input:
+  file: input.ged
+  version: "4.0"
+  declaredVersion: "4+"
+  encoding: CP437
+  declaredChar: IBMPC
+  lineEnding: CRLF
+checks: [read, roundtrip-preserve, validate, convert]
+expect:
+  recordCount: 2
+  diagnostics:
+    - code: KV2003
+      severity: error
+      path: HEAD/GEDC
+      about: GEDC requires FORM
+    - code: KV1101
+      severity: warning
+      path: HEAD/CHAR
+    - code: KV3006
+      severity: error
+      path: HEAD/CHAR
+      about: CHAR IBMPC is not a 5.5 value
+    - code: KV3006
+      severity: error
+      path: "@I1@/SEX"
+    - code: KV3005
+      severity: error
+      path: "@I1@/BIRT/DATE"
+convert:
+  - to: "5.5"
+    expected: expected.5.5.ged
+    losses: losses.5.5.json
+  - to: "7.0"
+    expected: expected.7.0.ged
+    losses: losses.7.0.json
