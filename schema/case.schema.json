@@ -150,7 +150,8 @@
                     "validate-indexed",
                     "convert",
                     "convert-stream",
-                    "edit"
+                    "edit",
+                    "gedzip"
                 ]
             }
         },
@@ -162,6 +163,39 @@
                     "description": "Records excluding HEAD and TRLR.",
                     "type": "integer",
                     "minimum": 0
+                },
+                "media": {
+                    "description": "GEDZIP: the entries of the archive, in order, gedcom.ged left out.",
+                    "type": "object",
+                    "additionalProperties": false,
+                    "required": [
+                        "entries",
+                        "missing",
+                        "ignored"
+                    ],
+                    "properties": {
+                        "entries": {
+                            "description": "Entries a FILE reference can name.",
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "missing": {
+                            "description": "FILE references that are relative paths and name no entry, in document order.",
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        },
+                        "ignored": {
+                            "description": "Entries a reader must not use: unsafe paths and symbolic links.",
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
                 },
                 "diagnostics": {
                     "type": "array",
@@ -315,6 +349,36 @@
                         }
                     }
                 }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "checks": {
+                        "contains": {
+                            "const": "gedzip"
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "input": {
+                        "properties": {
+                            "file": {
+                                "const": "input.gdz"
+                            }
+                        }
+                    },
+                    "expect": {
+                        "required": [
+                            "media"
+                        ]
+                    }
+                },
+                "required": [
+                    "expect"
+                ]
             }
         },
         {

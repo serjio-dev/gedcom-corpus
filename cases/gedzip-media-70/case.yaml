@@ -1,0 +1,24 @@
+id: gedzip-media-70
+description: >-
+  A GEDZIP archive: gedcom.ged and the media its FILE references point to. A reference
+  is a URI, so "docs/birth%20record.txt" is the entry "docs/birth record.txt"; a URL is
+  not looked for in the archive, and one reference has no entry.
+source:
+  origin: handmade
+license: Apache-2.0
+fictional: true
+milestone: "0.4"
+tags: [gedzip, media]
+input:
+  file: input.gdz
+  version: "7.0"
+  encoding: UTF-8
+  lineEnding: LF
+checks: [read, roundtrip-preserve, validate, gedzip]
+expect:
+  recordCount: 4
+  diagnostics: []
+  media:
+    entries: [photos/anna.jpg, docs/birth record.txt]
+    missing: [photos/missing.png]
+    ignored: []

@@ -8,6 +8,7 @@ Requires: pip install pyyaml jsonschema
 import json
 import re
 import sys
+import zipfile
 from pathlib import Path
 
 import yaml
@@ -60,9 +61,17 @@ BOMS = {"UTF-8": b"\xef\xbb\xbf", "UTF-16LE": b"\xff\xfe", "UTF-16BE": b"\xfe\xf
 
 
 def check_input(case: str, spec: dict, path: Path) -> None:
-    if path.suffix != ".ged":
+    if path.suffix == ".gdz":
+        try:
+            with zipfile.ZipFile(path) as archive:
+                raw = archive.read("gedcom.ged")
+        except (zipfile.BadZipFile, KeyError) as e:
+            fail(case, f"input.gdz is not a GEDZIP archive with gedcom.ged: {e}")
+            return
+    elif path.suffix == ".ged":
+        raw = path.read_bytes()
+    else:
         return
-    raw = path.read_bytes()
     encoding = spec["encoding"]
     bom = BOMS.get(encoding, b"")
     has_bom = bool(bom) and raw.startswith(bom)

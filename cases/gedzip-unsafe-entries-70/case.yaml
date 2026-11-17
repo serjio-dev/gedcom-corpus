@@ -1,0 +1,24 @@
+id: gedzip-unsafe-entries-70
+description: >-
+  Entries a reader must not use: a path out of the archive (zip-slip), absolute paths, a
+  backslash, a drive letter, and a symbolic link. They are ignored with a warning; the
+  document and the safe entry are read.
+source:
+  origin: handmade
+license: Apache-2.0
+fictional: true
+milestone: "0.4"
+tags: [gedzip, security]
+input:
+  file: input.gdz
+  version: "7.0"
+  encoding: UTF-8
+  lineEnding: LF
+checks: [read, roundtrip-preserve, gedzip]
+expect:
+  recordCount: 1
+  diagnostics: []
+  media:
+    entries: [ok.txt]
+    missing: []
+    ignored: [../outside.txt, /etc/absolute.txt, dir\backslash.txt, "C:/drive.txt", link.txt]
