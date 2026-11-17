@@ -1,0 +1,28 @@
+0 HEAD
+1 SOUR Korin Corpus
+1 SUBM @U2@
+1 SUBN @S1@
+1 GEDC
+2 VERS 5.5.1
+2 FORM LINEAGE-LINKED
+1 CHAR UTF-8
+0 @U1@ SUBM
+1 NAME Перший подавач
+0 @I1@ INDI
+1 NAME Олена /Гнатюк/
+1 SEX F
+1 BIRT
+2 DATE 12 MAR 1921
+2 SOUR Метрична книга, Вишнівка
+3 PAGE арк. 12
+0 @S1@ SUBN
+1 TEMP SLAKE
+0 @I2@ INDI
+1 NAME Іван /Гнатюк/
+1 OBJE
+2 FILE photos/ivan.jpg
+3 FORM jpg
+0 @U2@ SUBM
+1 NAME Другий подавач
+1 LANG Ukrainian
+0 TRLR

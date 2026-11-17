@@ -21,6 +21,7 @@ checks:
 - roundtrip-stream
 - validate
 - convert
+- convert-stream
 references:
 - to: '7.0'
   case: g7c-7-xref-case
