@@ -1,0 +1,27 @@
+id: dialect-geditcom-macroman
+description: >-
+  GEDitCOM writes CHAR ASCII with VERS MacOS Roman for files in MacRoman (MacFamilyTree
+  before 8.3.5 likewise, with VERS MACINTOSH), here with Mac line endings (CR). Read as ASCII
+  the bytes do not fit, and guessed they are Windows-1252 ("RenŽe"); a reader that knows the
+  convention reads MacRoman.
+  Documented by Tamura Jones, "GEDCOM Character Encodings".
+source:
+  origin: handmade
+license: Apache-2.0
+fictional: true
+milestone: "0.5"
+tags: [dialect, encoding, macroman, cr]
+input:
+  file: input.ged
+  version: "5.5.1"
+  encoding: MacRoman
+  declaredChar: ASCII
+  lineEnding: CR
+checks: [read, roundtrip-preserve, roundtrip-stream, validate, convert, convert-stream]
+expect:
+  recordCount: 2
+  diagnostics: []
+convert:
+  - to: "7.0"
+    expected: expected.7.0.ged
+    losses: losses.7.0.json
