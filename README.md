@@ -37,6 +37,10 @@ Only files referenced from `case.yaml` may be present.
 | `convert` | For each `convert[]` entry, output equals `expected.<ver>.ged`, validates cleanly, and the loss report matches `losses.<ver>.json` by `code`, `path`, `storedAs` |
 | `convert-stream` | Streaming conversion with constant memory gives the same output and loss report as `convert`, byte for byte. Requires `convert` |
 | `edit` | Applying `ops.json` and writing in `edit.writeMode` gives `expected.ged` |
+| `gedzip` | The archive `input.gdz` is read: its entries, the `FILE` references with no entry and the entries a reader must ignore equal `expect.media` |
+
+For an `input.gdz`, the other checks apply to its `gedcom.ged`. The archives are binary and are
+built by `scripts/make-gedzip-cases.py`, which holds their content.
 
 Diagnostics without `code` are matched by severity and path until codes are assigned.
 Codes are those of Korin's [diagnostics reference](https://github.com/serjio-dev/korin-php/blob/main/docs/diagnostics.md);
