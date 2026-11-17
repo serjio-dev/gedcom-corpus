@@ -147,6 +147,7 @@
                     "roundtrip-stream",
                     "fingerprint",
                     "validate",
+                    "validate-indexed",
                     "convert",
                     "convert-stream",
                     "edit"
@@ -311,6 +312,26 @@
                     "checks": {
                         "contains": {
                             "const": "convert"
+                        }
+                    }
+                }
+            }
+        },
+        {
+            "if": {
+                "properties": {
+                    "checks": {
+                        "contains": {
+                            "const": "validate-indexed"
+                        }
+                    }
+                }
+            },
+            "then": {
+                "properties": {
+                    "checks": {
+                        "contains": {
+                            "const": "validate"
                         }
                     }
                 }

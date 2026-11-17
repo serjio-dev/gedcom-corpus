@@ -33,6 +33,7 @@ Only files referenced from `case.yaml` may be present.
 | `roundtrip-stream` | Reading record by record and writing each record in preserve mode reproduces `input` byte for byte |
 | `fingerprint` | The fingerprint of the parsed input equals `fingerprint.json` |
 | `validate` | Diagnostics of the version's validator equal `expect.diagnostics` |
+| `validate-indexed` | Validating the file opened with an index, record by record without its tree, gives the diagnostics of `validate`. Requires `validate` |
 | `convert` | For each `convert[]` entry, output equals `expected.<ver>.ged`, validates cleanly, and the loss report matches `losses.<ver>.json` by `code`, `path`, `storedAs` |
 | `convert-stream` | Streaming conversion with constant memory gives the same output and loss report as `convert`, byte for byte. Requires `convert` |
 | `edit` | Applying `ops.json` and writing in `edit.writeMode` gives `expected.ged` |

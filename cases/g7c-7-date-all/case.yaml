@@ -21,6 +21,7 @@ checks:
 - roundtrip-preserve
 - roundtrip-stream
 - validate
+- validate-indexed
 expect:
   diagnostics:
   - code: KV3008
