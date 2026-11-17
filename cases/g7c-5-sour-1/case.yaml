@@ -18,6 +18,7 @@ input:
 checks:
 - read
 - roundtrip-preserve
+- roundtrip-stream
 - validate
 - convert
 references:

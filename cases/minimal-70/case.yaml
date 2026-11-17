@@ -11,7 +11,7 @@ input:
   version: "7.0"
   encoding: UTF-8
   lineEnding: LF
-checks: [read, roundtrip-preserve, fingerprint, validate]
+checks: [read, roundtrip-preserve, roundtrip-stream, fingerprint, validate]
 expect:
   recordCount: 0
   diagnostics: []

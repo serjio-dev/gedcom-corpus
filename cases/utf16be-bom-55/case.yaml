@@ -12,7 +12,7 @@ input:
   encoding: UTF-16BE
   bom: true
   lineEnding: LF
-checks: [read, roundtrip-preserve, fingerprint, validate]
+checks: [read, roundtrip-preserve, roundtrip-stream, fingerprint, validate]
 expect:
   recordCount: 2
   diagnostics: []

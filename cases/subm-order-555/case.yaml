@@ -15,7 +15,7 @@ input:
   encoding: UTF-8
   bom: true
   lineEnding: LF
-checks: [read, roundtrip-preserve, validate]
+checks: [read, roundtrip-preserve, roundtrip-stream, validate]
 expect:
   recordCount: 3
   diagnostics:
