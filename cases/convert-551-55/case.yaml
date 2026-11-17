@@ -7,7 +7,9 @@ description: >-
   REPO without a pointer make the structure an extension (KL3001). Media FORM jpg → jpeg moves up
   from the FILE to the OBJE. The value of EVEN becomes its TYPE, or a NOTE when it has a TYPE
   (KL3004, moved / note). ASSO gets TYPE INDI. BIRT Y stays, BURI stays without a value.
-  Converting the expected file up gives the input back, except for the EVEN values.
+  Converting the expected file up gives the input back, except for the EVEN values. In 7.0,
+  which requires TYPE under EVEN, the EVEN without one gets its value as TYPE, and the REPO
+  without a pointer is REPO @VOID@.
 source:
   origin: handmade
 license: Apache-2.0
@@ -28,3 +30,6 @@ convert:
   - to: "5.5"
     expected: expected.5.5.ged
     losses: losses.5.5.json
+  - to: "7.0"
+    expected: expected.7.0.ged
+    losses: losses.7.0.json

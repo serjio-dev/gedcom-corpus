@@ -1,0 +1,25 @@
+id: listed-values-555
+description: >-
+  5.5.5 gives NAME_TYPE, PHONETISATION_METHOD and ROMANISATION_METHOD {Size=5:30}, yet lists
+  shorter values for them (aka, kana, romaji is long enough). A listed value is valid whatever
+  its length; another value is held to the size: TYPE alt is shorter than 5 characters
+  (KV3010).
+source:
+  origin: handmade
+license: Apache-2.0
+fictional: true
+milestone: "0.3"
+tags: [validate, sizes, gedcom-5.5.5]
+input:
+  file: input.ged
+  version: "5.5.5"
+  encoding: UTF-8
+  lineEnding: LF
+  bom: true
+checks: [read, roundtrip-preserve, validate]
+expect:
+  recordCount: 2
+  diagnostics:
+    - code: KV3010
+      severity: error
+      path: "@I1@/NAME[1]/TYPE"

@@ -1,0 +1,14 @@
+{
+    "from": "7.0",
+    "to": "5.5",
+    "entries": [
+        {
+            "code": "KL3004",
+            "severity": "warning",
+            "path": "@I1@/EVEN",
+            "line": 9,
+            "storedAs": "moved",
+            "message": "5.5 EVEN has no value: it is its TYPE"
+        }
+    ]
+}
