@@ -1,0 +1,18 @@
+﻿0 HEAD
+1 SOUR PAF
+2 NAME Personal Ancestral File
+2 VERS 5.2.18.0
+1 DATE 17 NOV 2026
+1 GEDC
+2 VERS 7.0
+1 SUBM @SUB1@
+0 @SUB1@ SUBM
+1 NAME Олена Коваль
+1 EMAIL olena@example.com
+0 @I1@ INDI
+1 NAME Петро /Коваль/
+1 SEX M
+1 BIRT
+2 DATE 12 MAR 1921
+2 PLAC Полтава, Україна
+0 TRLR

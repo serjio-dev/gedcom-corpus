@@ -87,8 +87,10 @@ def check_input(case: str, spec: dict, path: Path) -> None:
     ending = line_ending(text.encode("utf-8"))
     if "lineEnding" in spec and ending != spec["lineEnding"]:
         fail(case, f"input line ending is {ending}, case.yaml says {spec['lineEnding']}")
-    gedc = re.search(r"^\s*1 GEDC\s*$\s*^\s*2 VERS (\S+)", text, re.MULTILINE)
-    match = gedc or re.search(r"^\s*2 VERS ([0-9.]+)", text, re.MULTILINE)
+    # Python's ^ and $ know only LF: CR (Mac) and CRLF line endings are made LF first.
+    lines = text.replace("\r\n", "\n").replace("\r", "\n")
+    gedc = re.search(r"^\s*1 GEDC\s*$\s*^\s*2 VERS (\S+)", lines, re.MULTILINE)
+    match = gedc or re.search(r"^\s*2 VERS ([0-9.]+)", lines, re.MULTILINE)
     if match is None:
         if spec.get("versionDeclared", True):
             fail(case, "input has no HEAD.GEDC.VERS; set versionDeclared: false")
@@ -132,7 +134,7 @@ def check_case(case_dir: Path) -> None:
         expected = case_dir / conversion["expected"]
         if not expected.is_file():
             fail(case, f"{conversion['expected']} is missing")
-        elif not re.search(rf"^2 VERS {re.escape(conversion['to'])}\r?$", decode(expected.read_bytes()), re.MULTILINE):
+        elif not re.search(rf"^2 VERS {re.escape(conversion['to'])}$", decode(expected.read_bytes()).replace("\r\n", "\n").replace("\r", "\n"), re.MULTILINE):
             fail(case, f"{conversion['expected']} does not declare VERS {conversion['to']}")
         if "losses" in conversion:
             referenced.add(conversion["losses"])

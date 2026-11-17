@@ -1,0 +1,33 @@
+id: dialect-brothers-keeper-ibmpc
+description: >-
+  Brother's Keeper before 6.1.12 writes CHAR IBMPC for files in Windows-1252 (HEAD.SOUR
+  BROSKEEP, VERS 5.2). Read as code page 437, "Renée" would be "RenΘe"; a reader that knows
+  the program reads Windows-1252.
+  Documented by Tamura Jones, "GEDCOM Character Encodings".
+source:
+  origin: handmade
+license: Apache-2.0
+fictional: true
+milestone: "0.5"
+tags: [dialect, encoding, windows-1252]
+input:
+  file: input.ged
+  version: "5.5"
+  encoding: Windows-1252
+  declaredChar: IBMPC
+  lineEnding: CRLF
+checks: [read, roundtrip-preserve, roundtrip-stream, validate, convert, convert-stream]
+expect:
+  recordCount: 2
+  diagnostics:
+    - code: KV1101
+      severity: warning
+      path: HEAD/CHAR
+    - code: KV3006
+      severity: error
+      path: HEAD/CHAR
+      about: CHAR IBMPC is not a 5.5 value
+convert:
+  - to: "7.0"
+    expected: expected.7.0.ged
+    losses: losses.7.0.json

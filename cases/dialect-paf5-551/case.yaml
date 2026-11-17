@@ -1,0 +1,26 @@
+id: dialect-paf5-551
+description: >-
+  PAF 5 writes GEDCOM 5.5.1 and declares 5.5 (HEAD.SOUR PAF, VERS 5.2.18.0): UTF-8 and EMAIL,
+  which 5.5 does not have. A reader that knows the program reads the file as 5.5.1; one that
+  does not would report both as errors.
+  Documented by Tamura Jones, "GEDCOM Character Encodings".
+source:
+  origin: handmade
+license: Apache-2.0
+fictional: true
+milestone: "0.5"
+tags: [dialect, paf]
+input:
+  file: input.ged
+  version: "5.5.1"
+  declaredVersion: "5.5"
+  encoding: UTF-8
+  lineEnding: LF
+checks: [read, roundtrip-preserve, roundtrip-stream, validate, validate-indexed, convert, convert-stream]
+expect:
+  recordCount: 2
+  diagnostics: []
+convert:
+  - to: "7.0"
+    expected: expected.7.0.ged
+    losses: losses.7.0.json
