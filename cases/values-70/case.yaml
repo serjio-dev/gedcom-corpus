@@ -25,7 +25,11 @@ input:
 checks: [read, roundtrip-preserve, roundtrip-stream, validate, convert, convert-stream]
 expect:
   recordCount: 6
-  diagnostics: []
+  diagnostics:
+    - code: KV2005
+      severity: warning
+      path: "@I1@/BAPL/STAT"
+      about: PRE_1970 is a deprecated STAT value in 7.0
 convert:
   - to: "5.5.1"
     expected: expected.5.5.1.ged
