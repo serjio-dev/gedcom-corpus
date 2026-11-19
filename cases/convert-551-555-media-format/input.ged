@@ -1,0 +1,20 @@
+0 HEAD
+1 SOUR Korin
+1 GEDC
+2 VERS 5.5.1
+2 FORM LINEAGE-LINKED
+1 CHAR UTF-8
+1 SUBM @U1@
+0 @U1@ SUBM
+1 NAME Olena Koval
+0 @I1@ INDI
+1 NAME Taras /Koval/
+1 OBJE
+2 FILE letters/1952.ole
+3 FORM ole
+4 MEDI electronic
+2 TITL Letter of 1952
+1 OBJE
+2 FILE portrait.jpg
+3 FORM jpg
+0 TRLR
