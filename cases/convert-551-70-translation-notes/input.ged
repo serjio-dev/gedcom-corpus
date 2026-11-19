@@ -1,0 +1,26 @@
+0 HEAD
+1 SOUR Korin
+1 GEDC
+2 VERS 5.5.1
+2 FORM LINEAGE-LINKED
+1 CHAR UTF-8
+1 SUBM @U1@
+0 @U1@ SUBM
+1 NAME Olena Koval
+0 @S1@ SOUR
+1 TITL Parish register of Nagasaki
+0 @N1@ NOTE Romanizations follow the 1954 cabinet notice
+0 @I1@ INDI
+1 NAME Taro /Yamada/
+2 ROMN Taro /Yamada/
+3 TYPE romaji
+3 NOTE Romanized by the parish clerk
+3 NOTE @N1@
+3 SOUR @S1@
+4 PAGE folio 12
+2 FONE Taro /Yamada/
+3 TYPE kana
+3 GIVN Taro
+3 SOUR @S1@
+2 NOTE @N1@
+0 TRLR
