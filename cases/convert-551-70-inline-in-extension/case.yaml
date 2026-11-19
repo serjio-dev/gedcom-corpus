@@ -1,0 +1,24 @@
+id: convert-551-70-inline-in-extension
+description: >-
+  5.5.1 → 7.0 of an inline source and inline media inside an extension (_MILT.SOUR.OBJE): what is
+  inside an extension is left as it is, at any depth, so the OBJE stays inline and is not made a
+  media record. The inline OBJE of the individual becomes one (@X1@) as usual.
+source:
+  origin: handmade
+license: Apache-2.0
+fictional: true
+milestone: "0.7"
+tags: [convert, media, extensions]
+input:
+  file: input.ged
+  version: "5.5.1"
+  encoding: UTF-8
+  lineEnding: LF
+checks: [read, roundtrip-preserve, roundtrip-stream, validate, convert, convert-stream]
+expect:
+  recordCount: 2
+  diagnostics: []
+convert:
+  - to: "7.0"
+    expected: expected.7.0.ged
+    losses: losses.7.0.json

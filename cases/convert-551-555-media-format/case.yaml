@@ -1,0 +1,25 @@
+id: convert-551-555-media-format
+description: >-
+  5.5.1 → 5.5.5 of inline media whose FORM 5.5.5 does not list (ole, which 5.5.1 lists): the
+  inline OBJE becomes a media record and its FORM stays as it is, as in every conversion to 5.x
+  ("FORM does not permit", KV3006, is a documented limit of the output). It used to become _FORM
+  (KL3001), which left the FILE without the FORM 5.5.5 requires.
+source:
+  origin: handmade
+license: Apache-2.0
+fictional: true
+milestone: "0.7"
+tags: [convert, media, values]
+input:
+  file: input.ged
+  version: "5.5.1"
+  encoding: UTF-8
+  lineEnding: LF
+checks: [read, roundtrip-preserve, roundtrip-stream, validate, convert, convert-stream]
+expect:
+  recordCount: 2
+  diagnostics: []
+convert:
+  - to: "5.5.5"
+    expected: expected.5.5.5.ged
+    losses: losses.5.5.5.json

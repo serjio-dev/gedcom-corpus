@@ -1,0 +1,19 @@
+﻿0 HEAD
+1 SOUR Korin
+1 GEDC
+2 VERS 7.0
+1 SUBM @U1@
+0 @U1@ SUBM
+1 NAME Olena Koval
+0 @I1@ INDI
+1 NAME Taras /Koval/
+1 _MILT Served 1941-1945
+2 SOUR Discharge papers
+3 OBJE
+4 FILE discharge.jpg
+5 FORM jpg
+1 OBJE @X1@
+0 @X1@ OBJE
+1 FILE portrait.jpg
+2 FORM image/jpeg
+0 TRLR
