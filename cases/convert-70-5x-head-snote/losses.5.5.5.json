@@ -1,0 +1,14 @@
+{
+    "from": "7.0",
+    "to": "5.5.5",
+    "entries": [
+        {
+            "code": "KL2001",
+            "severity": "warning",
+            "path": "HEAD/SNOTE",
+            "line": 4,
+            "storedAs": "extension",
+            "message": "5.5.1 has no SNOTE here"
+        }
+    ]
+}
