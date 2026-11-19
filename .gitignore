@@ -2,3 +2,6 @@
 .DS_Store
 /.claude/
 
+__pycache__/
+/cases/*/external.ged
+/cases/*/external.gdz

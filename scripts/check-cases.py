@@ -5,6 +5,7 @@ Usage: scripts/check-cases.py [corpus-root]
 Requires: pip install pyyaml jsonschema
 """
 
+import hashlib
 import json
 import re
 import sys
@@ -15,6 +16,7 @@ import yaml
 from jsonschema import Draft202012Validator
 
 ROOT = Path(sys.argv[1] if len(sys.argv) > 1 else Path(__file__).resolve().parent.parent)
+EXTERNAL = json.loads((ROOT / "external.json").read_text("utf-8"))["cases"]
 SCHEMAS = {
     name: Draft202012Validator(json.loads((ROOT / "schema" / f"{name}.schema.json").read_text("utf-8")))
     for name in ("case", "fingerprint", "losses", "ops")
@@ -111,14 +113,23 @@ def check_case(case_dir: Path) -> None:
 
     if descriptor["id"] != case:
         fail(case, f"id '{descriptor['id']}' does not match directory name")
-    if descriptor["license"] != "Apache-2.0" and not (case_dir / "LICENSE").is_file():
+    external = descriptor["license"] == "NOASSERTION"
+    if descriptor["license"] not in ("Apache-2.0", "NOASSERTION") and not (case_dir / "LICENSE").is_file():
         fail(case, f"license {descriptor['license']} requires a LICENSE file in the case directory")
 
     referenced = {"case.yaml", "LICENSE", descriptor["input"]["file"]}
     input_path = case_dir / descriptor["input"]["file"]
+    if external != input_path.name.startswith("external."):
+        fail(case, "the input of a NOASSERTION case, and only of one, is external.ged or external.gdz")
+    if external != (case in EXTERNAL):
+        fail(case, "a NOASSERTION case, and only one, is listed in external.json")
+    elif external and EXTERNAL[case]["file"] != input_path.name:
+        fail(case, f"external.json fetches {EXTERNAL[case]['file']}, case.yaml reads {input_path.name}")
     if input_path.is_file():
+        if external and hashlib.sha256(input_path.read_bytes()).hexdigest() != EXTERNAL[case]["sha256"]:
+            fail(case, f"{input_path.name} does not have the SHA-256 in external.json")
         check_input(case, descriptor["input"], input_path)
-    else:
+    elif not external:
         fail(case, f"{input_path.name} is missing")
 
     if "fingerprint" in descriptor["checks"]:
@@ -165,6 +176,8 @@ def check_case(case_dir: Path) -> None:
 cases = sorted(p for p in (ROOT / "cases").iterdir() if p.is_dir())
 for case_dir in cases:
     check_case(case_dir)
+for case in sorted(set(EXTERNAL) - {p.name for p in cases}):
+    fail(case, "listed in external.json, but there is no such case")
 
 if errors:
     print("\n".join(errors), file=sys.stderr)

@@ -17,4 +17,6 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install pyyaml==6.0.2 jsonschema==4.23.0
+      # External inputs (external.json) are checked against their SHA-256 and the case metadata.
+      - run: python scripts/fetch-external.py
       - run: python scripts/check-cases.py

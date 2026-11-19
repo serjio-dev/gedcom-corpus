@@ -1,0 +1,110 @@
+id: gio-warnings70
+description: gedcom.io test file warnings70.ged, fetched by scripts/fetch-external.py (no license given, not committed).
+source:
+  origin: gedcom.io
+  url: https://github.com/FamilySearch/GEDCOM.io/blob/e1d1adc3773ae2ec5e165754e1b29875f24abd9e/testfiles/gedcom70/warnings70.ged
+  commit: e1d1adc3773ae2ec5e165754e1b29875f24abd9e
+  path: testfiles/gedcom70/warnings70.ged
+license: NOASSERTION
+fictional: true
+milestone: '0.6'
+tags:
+- gedcom.io
+input:
+  file: external.ged
+  version: '7.0'
+  encoding: ASCII
+  lineEnding: LF
+checks:
+- read
+- roundtrip-preserve
+- roundtrip-stream
+- validate
+- validate-indexed
+expect:
+  recordCount: 5
+  diagnostics:
+  - code: KV2005
+    severity: warning
+    path: HEAD/SOUR/CORP/ADDR/ADR1
+    about: deprecated in 7.0
+  - code: KV2005
+    severity: warning
+    path: HEAD/SOUR/CORP/ADDR/ADR2
+    about: deprecated in 7.0
+  - code: KV2005
+    severity: warning
+    path: HEAD/SOUR/CORP/ADDR/ADR3
+    about: deprecated in 7.0
+  - code: KV2005
+    severity: warning
+    path: HEAD/SOUR/DATA
+    about: deprecated in 7.0
+  - code: KV2005
+    severity: warning
+    path: '@F1@/EXID'
+    about: deprecated in 7.0
+  - code: KV2005
+    severity: warning
+    path: '@F1@/SLGS[0]/STAT'
+    about: deprecated in 7.0
+  - code: KV2005
+    severity: warning
+    path: '@F1@/SLGS[1]/STAT'
+    about: deprecated in 7.0
+  - code: KV2005
+    severity: warning
+    path: '@F1@/SLGS[2]/STAT'
+    about: deprecated in 7.0
+  - code: KV2005
+    severity: warning
+    path: '@F1@/SLGS[3]/STAT'
+    about: deprecated in 7.0
+  - code: KV2005
+    severity: warning
+    path: '@I1@/EXID'
+    about: deprecated in 7.0
+  - code: KV2005
+    severity: warning
+    path: '@I1@/BAPL/STAT'
+    about: deprecated in 7.0
+  - code: KV2005
+    severity: warning
+    path: '@I1@/CONL/STAT'
+    about: deprecated in 7.0
+  - code: KV2005
+    severity: warning
+    path: '@I1@/INIL/STAT'
+    about: deprecated in 7.0
+  - code: KV2005
+    severity: warning
+    path: '@R1@/EXID'
+    about: deprecated in 7.0
+  - code: KV2005
+    severity: warning
+    path: '@R1@/ADDR/ADR1'
+    about: deprecated in 7.0
+  - code: KV2005
+    severity: warning
+    path: '@R1@/ADDR/ADR2'
+    about: deprecated in 7.0
+  - code: KV2005
+    severity: warning
+    path: '@R1@/ADDR/ADR3'
+    about: deprecated in 7.0
+  - code: KV2005
+    severity: warning
+    path: '@U1@/EXID'
+    about: deprecated in 7.0
+  - code: KV2005
+    severity: warning
+    path: '@U1@/ADDR/ADR1'
+    about: deprecated in 7.0
+  - code: KV2005
+    severity: warning
+    path: '@U1@/ADDR/ADR2'
+    about: deprecated in 7.0
+  - code: KV2005
+    severity: warning
+    path: '@U1@/ADDR/ADR3'
+    about: deprecated in 7.0

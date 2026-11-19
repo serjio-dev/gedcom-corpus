@@ -1,0 +1,26 @@
+id: gio-long-url
+description: gedcom.io test file long-url.ged, fetched by scripts/fetch-external.py (no license given, not committed).
+source:
+  origin: gedcom.io
+  url: https://github.com/FamilySearch/GEDCOM.io/blob/e1d1adc3773ae2ec5e165754e1b29875f24abd9e/testfiles/gedcom70/long-url.ged
+  commit: e1d1adc3773ae2ec5e165754e1b29875f24abd9e
+  path: testfiles/gedcom70/long-url.ged
+license: NOASSERTION
+fictional: true
+milestone: '0.6'
+tags:
+- gedcom.io
+input:
+  file: external.ged
+  version: '7.0'
+  encoding: ASCII
+  lineEnding: LF
+checks:
+- read
+- roundtrip-preserve
+- roundtrip-stream
+- validate
+- validate-indexed
+expect:
+  recordCount: 1
+  diagnostics: []

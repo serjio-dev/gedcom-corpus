@@ -1,0 +1,39 @@
+id: gio-maximal70-gdz
+description: gedcom.io test file maximal70.gdz, fetched by scripts/fetch-external.py (no license given, not committed).
+source:
+  origin: gedcom.io
+  url: https://github.com/FamilySearch/GEDCOM.io/blob/e1d1adc3773ae2ec5e165754e1b29875f24abd9e/testfiles/gedcom70/maximal70.gdz
+  commit: e1d1adc3773ae2ec5e165754e1b29875f24abd9e
+  path: testfiles/gedcom70/maximal70.gdz
+license: NOASSERTION
+fictional: true
+milestone: '0.6'
+tags:
+- gedcom.io
+input:
+  file: external.gdz
+  version: '7.0'
+  encoding: UTF-8
+  bom: true
+  lineEnding: CRLF
+checks:
+- read
+- roundtrip-preserve
+- validate
+- gedzip
+expect:
+  recordCount: 25
+  diagnostics:
+  - code: KV4001
+    severity: warning
+    path: '@XR1@/_IN'
+    about: pointer of an undocumented extension (_IN) to a record that does not exist
+  media:
+    entries:
+    - media/CharlotteBrontë.jpg
+    - media/derived.oga
+    - media/original.mp3
+    - media/transcript.vtt
+    - path/to/file1
+    missing: []
+    ignored: []
