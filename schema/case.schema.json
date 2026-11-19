@@ -72,9 +72,11 @@
             }
         },
         "license": {
+            "description": "NOASSERTION: the source gives no license; the input is not committed but listed in external.json and fetched by scripts/fetch-external.py.",
             "enum": [
                 "Apache-2.0",
-                "Unlicense"
+                "Unlicense",
+                "NOASSERTION"
             ]
         },
         "fictional": {
@@ -104,7 +106,8 @@
             "properties": {
                 "file": {
                     "type": "string",
-                    "pattern": "^input\\.(ged|gdz)$"
+                    "description": "external.* for a NOASSERTION case: the fetched input.",
+                    "pattern": "^(input|external)\\.(ged|gdz)$"
                 },
                 "version": {
                     "$ref": "#/$defs/version"
@@ -370,7 +373,10 @@
                     "input": {
                         "properties": {
                             "file": {
-                                "const": "input.gdz"
+                                "enum": [
+                                    "input.gdz",
+                                    "external.gdz"
+                                ]
                             }
                         }
                     },

@@ -1,0 +1,127 @@
+id: gio-date
+description: gedcom.io test file date.ged, fetched by scripts/fetch-external.py (no license given, not committed).
+source:
+  origin: gedcom.io
+  url: https://github.com/FamilySearch/GEDCOM.io/blob/e1d1adc3773ae2ec5e165754e1b29875f24abd9e/testfiles/gedcom70/date.ged
+  commit: e1d1adc3773ae2ec5e165754e1b29875f24abd9e
+  path: testfiles/gedcom70/date.ged
+license: NOASSERTION
+fictional: true
+milestone: '0.6'
+tags:
+- gedcom.io
+input:
+  file: external.ged
+  version: '7.0'
+  encoding: UTF-8
+  bom: true
+  lineEnding: LF
+checks:
+- read
+- roundtrip-preserve
+- roundtrip-stream
+- validate
+- validate-indexed
+expect:
+  recordCount: 8
+  diagnostics:
+  - code: KV3008
+    severity: warning
+    path: '@PERIOD@/BIRT[43]/DATE'
+    about: a day beyond the length of its month
+  - code: KV3008
+    severity: warning
+    path: '@CALCULATED@/BIRT[18]/DATE'
+    about: a day beyond the length of its month
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[122]/DATE'
+    about: a day beyond the length of its month
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[357]/DATE'
+    about: a day beyond the length of its month
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[358]/DATE'
+    about: a day beyond the length of its month
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[359]/DATE'
+    about: a day beyond the length of its month
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[360]/DATE'
+    about: a day beyond the length of its month
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[361]/DATE'
+    about: a day beyond the length of its month
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[362]/DATE'
+    about: a day beyond the length of its month
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[363]/DATE'
+    about: a day beyond the length of its month
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[364]/DATE'
+    about: a day beyond the length of its month
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[365]/DATE'
+    about: a day beyond the length of its month
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[366]/DATE'
+    about: a day beyond the length of its month
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[367]/DATE'
+    about: a day beyond the length of its month
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[368]/DATE'
+    about: a day beyond the length of its month
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[369]/DATE'
+    about: a day beyond the length of its month
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[370]/DATE'
+    about: a day beyond the length of its month
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[371]/DATE'
+    about: a day beyond the length of its month
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[372]/DATE'
+    about: a day beyond the length of its month
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[373]/DATE'
+    about: a day beyond the length of its month
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[374]/DATE'
+    about: a day beyond the length of its month
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[375]/DATE'
+    about: a day beyond the length of its month
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[376]/DATE'
+    about: a day beyond the length of its month
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[377]/DATE'
+    about: a day beyond the length of its month
+  - code: KV3008
+    severity: warning
+    path: '@CLOSED_RANGE@/BIRT[395]/DATE'
+    about: a day beyond the length of its month

@@ -12,7 +12,7 @@ Every person in the corpus is invented. Real trees of living people are never ac
 ```
 cases/<id>/
 ├── case.yaml               what the case is and what it checks   (schema/case.schema.json)
-├── input.ged | input.gdz   the input, byte-exact
+├── input.ged | input.gdz   the input, byte-exact (external.ged | .gdz for an external case)
 ├── fingerprint.json        semantic content of the input         (schema/fingerprint.schema.json)
 ├── expected.<ver>.ged      output of converting to <ver>
 ├── losses.<ver>.json       loss report of that conversion        (schema/losses.schema.json)
@@ -97,6 +97,32 @@ extension structures (`LANG` under `_ALL_LANGUAGES`; Korin converts only their l
 or documents extensions of the input in `HEAD.SCHMA` (`_LOC`; Korin lists only the extensions
 the conversion writes).
 
+## External cases
+
+`cases/gio-*` are the GEDCOM 7.0 test files of gedcom.io (`testfiles/gedcom70` of
+[FamilySearch/GEDCOM.io](https://github.com/FamilySearch/GEDCOM.io)). That repository gives no
+license, so their inputs are not committed: `case.yaml` says `license: NOASSERTION`, and
+`external.json` gives each input's URL at a fixed commit and its SHA-256. Download them before
+running the cases (Python standard library only; a file already there with the right hash is kept):
+
+```bash
+python scripts/fetch-external.py
+```
+
+They land as `cases/<id>/external.ged` or `external.gdz`, which `.gitignore` keeps out of
+commits. A suite should leave an external case out, not fail it, while its input is missing.
+To refresh them:
+
+```bash
+git clone https://github.com/FamilySearch/GEDCOM.io.git /tmp/GEDCOM.io
+python scripts/import-gedcomio.py /tmp/GEDCOM.io && python scripts/fetch-external.py
+```
+
+Their expected diagnostics follow GEDCOM 7.0.18: `xref.ged` has records with neither a payload
+nor substructures (`KV3007`), `warnings70.ged` the structures and values 7.0 deprecates
+(`KV2005`), `date.ged` days beyond their month (`KV3008`); `maximal70` and `extensions` point
+from an undocumented extension to a record that does not exist (`KV4001`, a warning).
+
 Every imported case has the `validate` check except `g7c-5-date-all`: it combines every
 date form with every calendar written without its `@#D…@` escape (`JULIAN 1401`) and with
 one-digit dual years (`1401/8`), so most of its 2,917 dates are invalid 5.5.1 by design and an
@@ -106,12 +132,12 @@ expected list would not test anything the smaller date cases do not.
 
 1. Create `cases/<id>/` with a lowercase, hyphenated `id`.
 2. Add the input and `case.yaml`; set `fictional: true` and a license. Files with an
-   unclear license are not committed — they are fetched by a script instead.
+   unclear license are not committed: they are external cases (see above).
 3. Run the checks:
 
    ```bash
    pip install pyyaml jsonschema
-   python scripts/check-cases.py
+   python scripts/fetch-external.py && python scripts/check-cases.py
    ```
 
 `.ged` and `.gdz` files are `binary` in `.gitattributes`, so Git never rewrites their line endings.
