@@ -1,0 +1,20 @@
+0 HEAD
+1 SOUR Korin
+1 GEDC
+2 VERS 5.5
+2 FORM LINEAGE-LINKED
+1 CHAR ASCII
+1 SUBM @U1@
+0 @U1@ SUBM
+1 NAME Olena Koval
+0 @S1@ SOUR
+1 TITL Parish register
+0 @I1@ INDI
+1 NAME Taras /Koval/
+1 NOTE Born at home
+2 SOUR @S1@
+3 OBJE
+4 FORM jpeg
+4 FILE scans/page 3.jpg
+4 TITL Page 3
+0 TRLR

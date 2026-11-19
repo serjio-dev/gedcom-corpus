@@ -1,0 +1,25 @@
+id: convert-55-70-restored-media
+description: >-
+  5.5 → 7.0 of NOTE.SOUR with an inline OBJE: 5.5.1 has no SOUR under NOTE, so the first step
+  of the chain makes it _SOUR, and 7.0 makes it SOUR again. The OBJE inside is still a 5.5 link,
+  FORM beside FILE: the FORM moves into its FILE, and the media record gets a media type and an
+  encoded path, as a 5.5 OBJE where 5.5.1 has it does. The KL2001 of _SOUR is not reported.
+source:
+  origin: handmade
+license: Apache-2.0
+fictional: true
+milestone: "0.7"
+tags: [convert, media, extensions]
+input:
+  file: input.ged
+  version: "5.5"
+  encoding: ASCII
+  lineEnding: LF
+checks: [read, roundtrip-preserve, roundtrip-stream, validate, convert, convert-stream]
+expect:
+  recordCount: 3
+  diagnostics: []
+convert:
+  - to: "7.0"
+    expected: expected.7.0.ged
+    losses: losses.7.0.json
