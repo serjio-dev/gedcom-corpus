@@ -1,0 +1,25 @@
+﻿0 HEAD
+1 SOUR Korin
+1 GEDC
+2 VERS 7.0
+1 SUBM @U1@
+0 @U1@ SUBM
+1 NAME Olena Koval
+0 @S1@ SOUR
+1 TITL Parish register of Lviv
+0 @I1@ INDI
+1 NAME Taras /Koval/
+1 _BAPL
+1 _CONL
+1 _ENDL
+1 _RESI
+1 BURI Y
+1 FAMS @F1@
+1 BIRT
+2 SOUR @S1@
+3 PAGE folio 3
+3 _DATA
+0 @F1@ FAM
+1 HUSB @I1@
+1 _SLGS
+0 TRLR

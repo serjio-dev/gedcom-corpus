@@ -1,0 +1,25 @@
+id: convert-551-70-empty-structures
+description: >-
+  5.5.1 → 7.0 of structures with neither a value nor substructures. 7.0 has no such structure: an
+  event says it occurred with Y (BURI Y), and one that is not an event (BAPL, CONL, ENDL, SLGS,
+  an empty SOUR.DATA) or has a text (RESI) becomes an extension with its tag (_BAPL, _DATA,
+  KL3001), as in 5.5.1 → 5.5.5; converting down makes them the structures again.
+source:
+  origin: handmade
+license: Apache-2.0
+fictional: true
+milestone: "0.7"
+tags: [convert, structures, empty]
+input:
+  file: input.ged
+  version: "5.5.1"
+  encoding: UTF-8
+  lineEnding: LF
+checks: [read, roundtrip-preserve, roundtrip-stream, validate, convert, convert-stream]
+expect:
+  recordCount: 4
+  diagnostics: []
+convert:
+  - to: "7.0"
+    expected: expected.7.0.ged
+    losses: losses.7.0.json
