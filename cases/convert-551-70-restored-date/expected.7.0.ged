@@ -1,0 +1,16 @@
+﻿0 HEAD
+1 SOUR Korin
+1 GEDC
+2 VERS 7.0
+1 SUBM @U1@
+0 @U1@ SUBM
+1 NAME Olena Koval
+0 @F1@ FAM
+1 HUSB @I1@
+1 NCHI 2
+2 DATE 1900
+3 PHRASE about then
+0 @I1@ INDI
+1 NAME Taras /Koval/
+1 FAMS @F1@
+0 TRLR

@@ -29,14 +29,6 @@
         {
             "code": "KL2001",
             "severity": "warning",
-            "path": "@I1@/OBJE[0]/NOTE",
-            "line": 32,
-            "storedAs": "extension",
-            "message": "5.5.1 has no NOTE here"
-        },
-        {
-            "code": "KL2001",
-            "severity": "warning",
             "path": "@I1@/NOTE/SOUR",
             "line": 34,
             "storedAs": "extension",

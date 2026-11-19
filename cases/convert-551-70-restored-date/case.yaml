@@ -1,0 +1,25 @@
+id: convert-551-70-restored-date
+description: >-
+  5.5.1 → 7.0 of _DATE under FAM.NCHI, as 7.0 → 5.5.1 writes a 7.0 FAM.NCHI.DATE (5.5.1 has no
+  DATE there): the extension becomes DATE again and its value is converted as a 5.5.1 date, so INT
+  1900 (about then) becomes 1900 with PHRASE about then. It used to stay INT 1900 (about then), which
+  is no 7.0 date.
+source:
+  origin: handmade
+license: Apache-2.0
+fictional: true
+milestone: "0.7"
+tags: [convert, dates, extensions]
+input:
+  file: input.ged
+  version: "5.5.1"
+  encoding: UTF-8
+  lineEnding: LF
+checks: [read, roundtrip-preserve, roundtrip-stream, validate, convert, convert-stream]
+expect:
+  recordCount: 3
+  diagnostics: []
+convert:
+  - to: "7.0"
+    expected: expected.7.0.ged
+    losses: losses.7.0.json

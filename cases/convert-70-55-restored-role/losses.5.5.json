@@ -1,0 +1,14 @@
+{
+    "from": "7.0",
+    "to": "5.5",
+    "entries": [
+        {
+            "code": "KL3001",
+            "severity": "warning",
+            "path": "@I1@/NOTE/SOUR/EVEN/ROLE",
+            "line": 15,
+            "storedAs": "extension",
+            "message": "5.5 ROLE has no such value"
+        }
+    ]
+}

@@ -1,0 +1,25 @@
+id: convert-70-55-restored-role
+description: >-
+  7.0 → 5.5 of NOTE.SOUR with EVEN.ROLE NGHBR: 5.5.1 has no SOUR under NOTE, so the first step
+  of the chain makes it _SOUR, and 5.5 makes it SOUR again. What is inside is still in the 7.0 form:
+  ROLE NGHBR, which 5.5 does not list, becomes _ROLE (KL3001), as it does where 5.5.1 has the
+  structure. It used to stay ROLE NGHBR. The KL2001 of _SOUR is not reported: the output has the SOUR.
+source:
+  origin: handmade
+license: Apache-2.0
+fictional: true
+milestone: "0.7"
+tags: [convert, enumerations, extensions]
+input:
+  file: input.ged
+  version: "7.0"
+  encoding: UTF-8
+  lineEnding: LF
+checks: [read, roundtrip-preserve, roundtrip-stream, validate, convert, convert-stream]
+expect:
+  recordCount: 3
+  diagnostics: []
+convert:
+  - to: "5.5"
+    expected: expected.5.5.ged
+    losses: losses.5.5.json
