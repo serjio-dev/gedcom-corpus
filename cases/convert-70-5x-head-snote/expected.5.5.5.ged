@@ -1,0 +1,16 @@
+﻿0 HEAD
+1 SOUR Korin
+1 GEDC
+2 VERS 5.5.5
+2 FORM LINEAGE-LINKED
+3 VERS 5.5.5
+1 _SNOTE @N1@
+1 SUBM @U1@
+1 CHAR UTF-8
+0 @U1@ SUBM
+1 NAME Olena Koval
+0 @N1@ NOTE Exported for the Koval family reunion
+0 @I1@ INDI
+1 NAME Taras /Koval/
+1 NOTE @N1@
+0 TRLR

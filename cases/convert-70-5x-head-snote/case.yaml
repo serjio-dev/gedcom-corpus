@@ -1,0 +1,32 @@
+id: convert-70-5x-head-snote
+description: >-
+  7.0 → 5.5.1, 5.5.5 and 5.5 of a HEAD with a shared note. The SNOTE record is a NOTE record and
+  the SNOTE of the individual a NOTE pointer, but HEAD.NOTE of 5.x is text (the content of the
+  file), never a pointer: HEAD.SNOTE stays as _SNOTE (KL2001), which converting up makes SNOTE
+  again.
+source:
+  origin: handmade
+license: Apache-2.0
+fictional: true
+milestone: "0.7"
+tags: [convert, downgrade, header, notes]
+input:
+  file: input.ged
+  version: "7.0"
+  encoding: UTF-8
+  lineEnding: LF
+  bom: true
+checks: [read, roundtrip-preserve, roundtrip-stream, validate, convert, convert-stream]
+expect:
+  recordCount: 3
+  diagnostics: []
+convert:
+  - to: "5.5.1"
+    expected: expected.5.5.1.ged
+    losses: losses.5.5.1.json
+  - to: "5.5.5"
+    expected: expected.5.5.5.ged
+    losses: losses.5.5.5.json
+  - to: "5.5"
+    expected: expected.5.5.ged
+    losses: losses.5.5.json
