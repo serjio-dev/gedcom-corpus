@@ -3,5 +3,7 @@
 *.gdz binary
 
 /.github       export-ignore
-/scripts       export-ignore
+# fetch-external.py ships: test suites run it from vendor/ to download the external inputs.
+/scripts/*     export-ignore
+/scripts/fetch-external.py -export-ignore
 /.gitattributes export-ignore

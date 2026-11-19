@@ -110,7 +110,8 @@ python scripts/fetch-external.py
 ```
 
 They land as `cases/<id>/external.ged` or `external.gdz`, which `.gitignore` keeps out of
-commits. A suite should leave an external case out, not fail it, while its input is missing.
+commits. The script is the one in the Composer package too (the other scripts are not), so a
+suite that installs the corpus runs `python vendor/korin/gedcom-corpus/scripts/fetch-external.py`. A suite should leave an external case out, not fail it, while its input is missing.
 To refresh them:
 
 ```bash
