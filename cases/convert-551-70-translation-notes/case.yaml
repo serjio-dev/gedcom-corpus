@@ -1,0 +1,25 @@
+id: convert-551-70-translation-notes
+description: >-
+  5.5.1 → 7.0 of FONE and ROMN of a name with NOTE and SOUR, which a 5.5.1 name piece structure
+  has and a 7.0 TRAN does not: they stay under the TRAN as extensions with their tags (_NOTE,
+  _SOUR, KL2001); converting down makes them NOTE and SOUR again. The NOTE pointer under ROMN
+  stays a NOTE (_NOTE @N1@): it becomes SNOTE only where 7.0 has SNOTE, as the one of NAME does.
+source:
+  origin: handmade
+license: Apache-2.0
+fictional: true
+milestone: "0.7"
+tags: [convert, structures, tran, notes]
+input:
+  file: input.ged
+  version: "5.5.1"
+  encoding: UTF-8
+  lineEnding: LF
+checks: [read, roundtrip-preserve, roundtrip-stream, validate, convert, convert-stream]
+expect:
+  recordCount: 4
+  diagnostics: []
+convert:
+  - to: "7.0"
+    expected: expected.7.0.ged
+    losses: losses.7.0.json

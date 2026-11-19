@@ -1,0 +1,38 @@
+{
+    "from": "5.5.1",
+    "to": "7.0",
+    "entries": [
+        {
+            "code": "KL2001",
+            "severity": "warning",
+            "path": "@I1@/NAME/ROMN/NOTE[0]",
+            "line": 17,
+            "storedAs": "extension",
+            "message": "7.0 has no NOTE here"
+        },
+        {
+            "code": "KL2001",
+            "severity": "warning",
+            "path": "@I1@/NAME/ROMN/NOTE[1]",
+            "line": 18,
+            "storedAs": "extension",
+            "message": "7.0 has no NOTE here"
+        },
+        {
+            "code": "KL2001",
+            "severity": "warning",
+            "path": "@I1@/NAME/ROMN/SOUR",
+            "line": 19,
+            "storedAs": "extension",
+            "message": "7.0 has no SOUR here"
+        },
+        {
+            "code": "KL2001",
+            "severity": "warning",
+            "path": "@I1@/NAME/FONE/SOUR",
+            "line": 24,
+            "storedAs": "extension",
+            "message": "7.0 has no SOUR here"
+        }
+    ]
+}
