@@ -1,0 +1,54 @@
+{
+    "from": "5.5.1",
+    "to": "7.0",
+    "entries": [
+        {
+            "code": "KL3001",
+            "severity": "warning",
+            "path": "@I1@/BAPL",
+            "line": 14,
+            "storedAs": "extension",
+            "message": "7.0 BAPL needs a value or substructures"
+        },
+        {
+            "code": "KL3001",
+            "severity": "warning",
+            "path": "@I1@/CONL",
+            "line": 15,
+            "storedAs": "extension",
+            "message": "7.0 CONL needs a value or substructures"
+        },
+        {
+            "code": "KL3001",
+            "severity": "warning",
+            "path": "@I1@/ENDL",
+            "line": 16,
+            "storedAs": "extension",
+            "message": "7.0 ENDL needs a value or substructures"
+        },
+        {
+            "code": "KL3001",
+            "severity": "warning",
+            "path": "@I1@/RESI",
+            "line": 17,
+            "storedAs": "extension",
+            "message": "7.0 RESI needs a value or substructures"
+        },
+        {
+            "code": "KL3001",
+            "severity": "warning",
+            "path": "@I1@/BIRT/SOUR/DATA",
+            "line": 23,
+            "storedAs": "extension",
+            "message": "7.0 DATA needs a value or substructures"
+        },
+        {
+            "code": "KL3001",
+            "severity": "warning",
+            "path": "@F1@/SLGS",
+            "line": 26,
+            "storedAs": "extension",
+            "message": "7.0 SLGS needs a value or substructures"
+        }
+    ]
+}
