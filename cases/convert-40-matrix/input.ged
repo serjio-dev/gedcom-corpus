@@ -1,0 +1,44 @@
+0 HEAD
+1 SOUR PAF 2.2
+1 DATE 12 OCT 1990
+1 CHAR ASCII
+1 GEDC
+2 VERS 4.0.4.18
+1 SUBM @U1@
+0 @U1@ SUBM
+1 NAME Ivan/Bondar/
+1 ADDR 12 Church Street
+2 CONT Lviv
+0 @1@ INDI
+1 NAME Taras/Bondar/
+1 SEX Male
+1 BIRT
+2 DATE c. 1850
+2 PLAC Lviv
+1 CHR
+2 DATE 7-12-84
+1 RESI
+2 DATE From 1870 to 1880
+2 PLAC Kyiv
+1 DEAT
+2 DATE After Sept. 1921
+1 BURI
+2 DATE Before 1922
+1 SYMB Oak
+1 NOTE Farmer
+2 CONT and smith
+1 SOUR Parish register
+1 FAMS @3@
+0 @2@ INDI
+1 NAME Oksana/Melnyk/
+1 SEX Female
+1 BIRT
+2 DATE 2 days after Easter, 1855
+1 FAMS @3@
+0 @3@ FAM
+1 HUSB @1@
+1 WIFE @2@
+1 MARR
+2 DATE 14 February 1875
+2 PLAC Lviv
+0 TRLR

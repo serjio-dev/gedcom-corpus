@@ -58,6 +58,9 @@ convert:
   - to: "5.5.1"
     expected: expected.5.5.1.ged
     losses: losses.5.5.1.json
+  - to: "5.5.5"
+    expected: expected.5.5.5.ged
+    losses: losses.5.5.5.json
   - to: "7.0"
     expected: expected.7.0.ged
     losses: losses.7.0.json

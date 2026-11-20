@@ -1,0 +1,44 @@
+﻿0 HEAD
+1 SOUR FTW
+2 VERS 2.0
+1 DATE 5 MAY 1995
+1 GEDC
+2 VERS 7.0
+1 SUBM @U1@
+0 @U1@ SUBM
+1 NAME Hanna Kravets
+1 ADDR 3 Market Square
+2 CITY Ternopil
+1 PHON +380 352 000000
+0 @I1@ INDI
+1 NAME Mykola /Kravets/
+1 SEX M
+1 BIRT
+2 DATE 1 JAN 1890
+2 SOUR @S1@
+3 PAGE p. 12
+3 QUAY 2
+1 EVEN
+2 TYPE Emigration
+2 DATE 1912
+1 OBJE @X1@
+2 TITL Portrait
+1 SNOTE @N1@
+1 FAMS @F1@
+0 @I2@ INDI
+1 NAME Kateryna /Kravets/
+1 SEX F
+1 FAMS @F1@
+0 @F1@ FAM
+1 HUSB @I1@
+1 WIFE @I2@
+1 MARR
+2 DATE ABT 1910
+0 @S1@ SOUR
+1 TITL Parish book
+1 AUTH Ternopil parish
+0 @N1@ SNOTE Left for Québec in spring
+0 @X1@ OBJE
+1 FILE portrait.jpg
+2 FORM image/jpeg
+0 TRLR
