@@ -37,6 +37,7 @@
                         "gedcom7code",
                         "gedcom.io",
                         "vendor-export",
+                        "torture-test",
                         "fuzz"
                     ]
                 },

@@ -1,0 +1,128 @@
+id: tgc-551
+description: >-
+  GEDCOM 5.5 torture test of H. Eichmann, extended by J. A. Nairn (GEDitCOM, 1997–2001):
+  TGC551.ged, the same file with one NAME structure in "Joseph Tag Torture" (the 1 of its name). Every 5.5 tag, ANSEL with every special character including the GEDCOM 5.5 "LDS
+  extensions" (empty and black box, midline e and o), CR line ends, an encoded multimedia record.
+  The file permits copying and use for any non-commercial purpose, so it is fetched, not
+  committed (scripts/fetch-external.py), from a mirror at a fixed commit whose copy has the hash of
+  a second mirror (cacack/gedcom-go). The file says it is 100% valid 5.5; it is not against the
+  5.5 grammars, and these are the errors: media FORM values 5.5 does not list (URL, PDF, mov, …),
+  ROLE without parentheses, AGE without a unit (76, 3 months), Hebrew and French dates without a
+  calendar escape, CONL Y, ASSO without TYPE, SLGS STAT Child, a free-text CALN.MEDI.
+source:
+  origin: torture-test
+  url: https://github.com/rbur004/gedcom/blob/45951f938875b57724f40a9967fcc423b8ee9a08/test/test_data/TGC551.ged
+  commit: 45951f938875b57724f40a9967fcc423b8ee9a08
+  path: test/test_data/TGC551.ged
+license: NOASSERTION
+fictional: true
+milestone: '0.7'
+tags: [torture-test, ansel, gedcom-5.5]
+input:
+  file: external.ged
+  version: '5.5'
+  encoding: ANSEL
+  lineEnding: CR
+checks: [read, roundtrip-preserve, roundtrip-stream, validate, validate-indexed]
+expect:
+  recordCount: 63
+  diagnostics:
+    - code: KV3006
+      severity: error
+      path: "@I12@/OBJE[0]/FORM"
+    - code: KV3006
+      severity: error
+      path: "@I12@/OBJE[1]/FORM"
+    - code: KV3006
+      severity: error
+      path: "@I12@/OBJE[2]/FORM"
+    - code: KV3006
+      severity: error
+      path: "@I12@/OBJE[3]/FORM"
+    - code: KV3006
+      severity: error
+      path: "@I11@/OBJE[0]/FORM"
+    - code: KV3006
+      severity: error
+      path: "@I11@/OBJE[1]/FORM"
+    - code: KV3006
+      severity: error
+      path: "@I11@/OBJE[2]/FORM"
+    - code: KV3006
+      severity: error
+      path: "@I11@/OBJE[3]/FORM"
+    - code: KV3006
+      severity: error
+      path: "@I10@/OBJE[0]/FORM"
+    - code: KV3006
+      severity: error
+      path: "@I10@/OBJE[1]/FORM"
+    - code: KV3006
+      severity: error
+      path: "@I10@/OBJE[2]/FORM"
+    - code: KV3006
+      severity: error
+      path: "@I10@/OBJE[3]/FORM"
+    - code: KV3006
+      severity: error
+      path: "@I10@/OBJE[4]/FORM"
+    - code: KV3006
+      severity: error
+      path: "@I10@/OBJE[5]/FORM"
+    - code: KV3006
+      severity: error
+      path: "@I10@/OBJE[6]/FORM"
+    - code: KV3005
+      severity: error
+      path: "@PERSON1@/DEAT/AGE"
+    - code: KV3005
+      severity: error
+      path: "@PERSON1@/BAPM/AGE"
+    - code: KV3005
+      severity: error
+      path: "@PERSON1@/CENS/DATE"
+    - code: KV3005
+      severity: error
+      path: "@PERSON1@/RETI/DATE"
+    - code: KV3005
+      severity: error
+      path: "@PERSON1@/PROB/DATE"
+    - code: KV3005
+      severity: error
+      path: "@PERSON1@/BURI/DATE"
+    - code: KV3005
+      severity: error
+      path: "@PERSON1@/WILL/DATE"
+    - code: KV3002
+      severity: error
+      path: "@PERSON1@/CONL"
+    - code: KV3005
+      severity: error
+      path: "@PERSON1@/RESI/AGE"
+    - code: KV3005
+      severity: error
+      path: "@PERSON1@/OCCU[0]/AGE"
+    - code: KV2003
+      severity: error
+      path: "@PERSON1@/ASSO[0]"
+    - code: KV2003
+      severity: error
+      path: "@PERSON1@/ASSO[1]"
+    - code: KV3005
+      severity: error
+      path: "@PERSON5@/DEAT/AGE"
+    - code: KV3005
+      severity: error
+      path: "@FAMILY1@/ENGA/AGE"
+    - code: KV3006
+      severity: error
+      path: "@FAMILY1@/SLGS/STAT"
+    - code: KV3006
+      severity: error
+      path: "@SOURCE1@/REPO/CALN/MEDI"
+    - code: KV3006
+      severity: error
+      path: "@N8@/SOUR/EVEN/ROLE"
+    - code: KV3006
+      severity: error
+      path: "@M1@/FORM"
