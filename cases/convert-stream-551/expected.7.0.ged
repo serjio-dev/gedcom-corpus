@@ -13,7 +13,8 @@
 1 BIRT
 2 DATE 12 MAR 1921
 2 SOUR @X1@
-3 PAGE арк. 12
+3 DATA
+4 TEXT арк. 12
 0 @I2@ INDI
 1 NAME Іван /Гнатюк/
 1 OBJE @X2@

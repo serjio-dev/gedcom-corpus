@@ -1,0 +1,23 @@
+id: convert-551-55-inline-quay
+description: >-
+  5.5.1 → 5.5 of an inline source citation with QUAY: the inline 5.5 citation has no QUAY (only
+  the one by pointer does), so it becomes _QUAY (KL2001). It used to stay QUAY.
+source:
+  origin: handmade
+license: Apache-2.0
+fictional: true
+milestone: "0.7"
+tags: [convert, sources]
+input:
+  file: input.ged
+  version: "5.5.1"
+  encoding: UTF-8
+  lineEnding: LF
+checks: [read, roundtrip-preserve, roundtrip-stream, validate, convert, convert-stream]
+expect:
+  recordCount: 2
+  diagnostics: []
+convert:
+  - to: "5.5"
+    expected: expected.5.5.ged
+    losses: losses.5.5.json

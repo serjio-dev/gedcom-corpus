@@ -1,0 +1,27 @@
+0 HEAD
+1 SOUR Korin
+1 GEDC
+2 VERS 5.5.1
+2 FORM LINEAGE-LINKED
+1 CHAR UTF-8
+1 SUBM @U1@
+0 @U1@ SUBM
+1 NAME Olena Koval
+0 @S1@ SOUR
+1 TITL Parish register
+0 @O1@ OBJE
+1 FILE portrait.jpg
+2 FORM jpg
+0 @I1@ INDI
+1 NAME Taras /Koval/
+1 BIRT
+2 SOUR @S1@
+3 TEXT Born on the third day
+2 SOUR Told by his sister
+3 PAGE 4
+1 OBJE @O1@
+2 FILE other.jpg
+3 FORM jpg
+1 OBJE
+2 TITL Letter of 1952
+0 TRLR

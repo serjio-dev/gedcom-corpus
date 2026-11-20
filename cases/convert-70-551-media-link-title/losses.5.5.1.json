@@ -1,0 +1,14 @@
+{
+    "from": "7.0",
+    "to": "5.5.1",
+    "entries": [
+        {
+            "code": "KL2001",
+            "severity": "warning",
+            "path": "@I1@/OBJE/TITL",
+            "line": 13,
+            "storedAs": "extension",
+            "message": "5.5.1 has no TITL here"
+        }
+    ]
+}

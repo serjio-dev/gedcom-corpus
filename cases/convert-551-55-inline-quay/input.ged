@@ -1,0 +1,15 @@
+0 HEAD
+1 SOUR Korin
+1 GEDC
+2 VERS 5.5.1
+2 FORM LINEAGE-LINKED
+1 CHAR UTF-8
+1 SUBM @U1@
+0 @U1@ SUBM
+1 NAME Olena Koval
+0 @I1@ INDI
+1 NAME Taras /Koval/
+1 BIRT
+2 SOUR Told by his sister
+3 QUAY 2
+0 TRLR

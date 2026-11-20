@@ -1,0 +1,17 @@
+0 HEAD
+1 SOUR Korin
+1 GEDC
+2 VERS 5.5.1
+2 FORM LINEAGE-LINKED
+1 SUBM @U1@
+1 CHAR UTF-8
+0 @U1@ SUBM
+1 NAME Olena Koval
+0 @O1@ OBJE
+1 FILE portrait.jpg
+2 FORM jpg
+0 @I1@ INDI
+1 NAME Taras /Koval/
+1 OBJE @O1@
+2 _TITL Portrait of 1950
+0 TRLR

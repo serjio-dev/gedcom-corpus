@@ -1,0 +1,23 @@
+id: validate-70-head-note-snote
+description: >-
+  7.0 HEAD allows one <<NOTE_STRUCTURE>> ({0:1}): a NOTE or an SNOTE, not both. The term files give
+  each its own {0:1}; the validator reports the second (KV2002).
+source:
+  origin: handmade
+license: Apache-2.0
+fictional: true
+milestone: "0.7"
+tags: [validate, notes, gedcom-7.0]
+input:
+  file: input.ged
+  version: "7.0"
+  encoding: UTF-8
+  lineEnding: LF
+checks: [read, roundtrip-preserve, roundtrip-stream, validate]
+expect:
+  recordCount: 1
+  diagnostics:
+    - code: KV2002
+      severity: error
+      path: HEAD/SNOTE
+      about: HEAD with both NOTE and SNOTE
