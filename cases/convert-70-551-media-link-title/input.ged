@@ -1,0 +1,14 @@
+0 HEAD
+1 GEDC
+2 VERS 7.0
+1 SUBM @U1@
+0 @U1@ SUBM
+1 NAME Olena Koval
+0 @O1@ OBJE
+1 FILE portrait.jpg
+2 FORM image/jpeg
+0 @I1@ INDI
+1 NAME Taras /Koval/
+1 OBJE @O1@
+2 TITL Portrait of 1950
+0 TRLR

@@ -1,0 +1,24 @@
+id: convert-70-551-media-link-title
+description: >-
+  7.0 → 5.5.1 of a media link by pointer with TITL: 5.5.1 OBJE @O1@ has no substructures (the
+  title of an inline link is OBJE.TITL), so TITL becomes _TITL (KL2001), and 7.0 makes it TITL again.
+  It used to stay TITL, which 5.5.1 does not allow there.
+source:
+  origin: handmade
+license: Apache-2.0
+fictional: true
+milestone: "0.7"
+tags: [convert, media]
+input:
+  file: input.ged
+  version: "7.0"
+  encoding: UTF-8
+  lineEnding: LF
+checks: [read, roundtrip-preserve, roundtrip-stream, validate, convert, convert-stream]
+expect:
+  recordCount: 3
+  diagnostics: []
+convert:
+  - to: "5.5.1"
+    expected: expected.5.5.1.ged
+    losses: losses.5.5.1.json

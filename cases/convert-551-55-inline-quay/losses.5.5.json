@@ -1,0 +1,14 @@
+{
+    "from": "5.5.1",
+    "to": "5.5",
+    "entries": [
+        {
+            "code": "KL2001",
+            "severity": "warning",
+            "path": "@I1@/BIRT/SOUR/QUAY",
+            "line": 14,
+            "storedAs": "extension",
+            "message": "5.5 has no QUAY here"
+        }
+    ]
+}

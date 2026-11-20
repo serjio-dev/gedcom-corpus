@@ -1,0 +1,37 @@
+id: validate-551-citation-forms
+description: >-
+  5.5.1 gives a source citation and a media link in two forms, by pointer and inline, with
+  different substructures. The profile merges them, and the validator checks each by its form:
+  TEXT under SOUR @S1@ (its text is DATA.TEXT), PAGE under an inline SOUR, FILE under OBJE @O1@
+  (the file is in the record) are not allowed (KV2001), and an inline OBJE requires FILE (KV2003).
+source:
+  origin: handmade
+license: Apache-2.0
+fictional: true
+milestone: "0.7"
+tags: [validate, sources, media]
+input:
+  file: input.ged
+  version: "5.5.1"
+  encoding: UTF-8
+  lineEnding: LF
+checks: [read, roundtrip-preserve, roundtrip-stream, validate]
+expect:
+  recordCount: 4
+  diagnostics:
+    - code: KV2001
+      severity: error
+      path: "@I1@/BIRT/SOUR[0]/TEXT"
+      about: TEXT under a citation by pointer
+    - code: KV2001
+      severity: error
+      path: "@I1@/BIRT/SOUR[1]/PAGE"
+      about: PAGE under an inline citation
+    - code: KV2001
+      severity: error
+      path: "@I1@/OBJE[0]/FILE"
+      about: FILE under a media link by pointer
+    - code: KV2003
+      severity: error
+      path: "@I1@/OBJE[1]"
+      about: an inline media link without FILE
