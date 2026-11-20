@@ -124,6 +124,16 @@
       "file": "external.ged",
       "url": "https://raw.githubusercontent.com/FamilySearch/GEDCOM.io/e1d1adc3773ae2ec5e165754e1b29875f24abd9e/testfiles/gedcom70/xref.ged",
       "sha256": "c194630901c65e13724b47ecd0f11818ac6d4b089757c916506caa08ab8c0870"
+    },
+    "tgc-551": {
+      "file": "external.ged",
+      "url": "https://raw.githubusercontent.com/rbur004/gedcom/45951f938875b57724f40a9967fcc423b8ee9a08/test/test_data/TGC551.ged",
+      "sha256": "e5f8622d723009fbe70b04e1c30d8651cd53793070857d72ea403b9453061b1a"
+    },
+    "tgc-55c": {
+      "file": "external.ged",
+      "url": "https://raw.githubusercontent.com/rbur004/gedcom/45951f938875b57724f40a9967fcc423b8ee9a08/test/test_data/TGC55C.ged",
+      "sha256": "f631b100ed8f8ff00ca9d3c6af6015039fe9ec3d30d661a826691d5c562d00e0"
     }
   }
 }

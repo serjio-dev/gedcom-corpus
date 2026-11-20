@@ -109,6 +109,13 @@ running the cases (Python standard library only; a file already there with the r
 python scripts/fetch-external.py
 ```
 
+`cases/tgc-*` are the GEDCOM 5.5 torture test files of H. Eichmann, extended by J. A. Nairn
+(GEDitCOM), which permit copying and use for any non-commercial purpose only: external as well,
+`license: NOASSERTION`. They are fetched from the copy in
+[rbur004/gedcom](https://github.com/rbur004/gedcom) at a fixed commit; the files with CR line ends
+have the same SHA-256 in [cacack/gedcom-go](https://github.com/cacack/gedcom-go), while the
+copies whose name ends in `LF` differ between the two mirrors and are not used.
+
 They land as `cases/<id>/external.ged` or `external.gdz`, which `.gitignore` keeps out of
 commits. The script is the one in the Composer package too (the other scripts are not), so a
 suite that installs the corpus runs `python vendor/korin/gedcom-corpus/scripts/fetch-external.py`. A suite should leave an external case out, not fail it, while its input is missing.
