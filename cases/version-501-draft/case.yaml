@@ -1,7 +1,8 @@
 id: version-501-draft
 description: >-
   HEAD.GEDC.VERS "5.01", which Reunion, EasyTree and Ancestry wrote for the 5.1 draft. A
-  5.0–5.4 draft is read with the 5.5 profile.
+  5.0–5.4 draft is read with the 5.5 profile; to 5.5 it is written as 5.5 (VERS 5.5, CHAR
+  UNICODE in UTF-16), not copied.
 source:
   origin: handmade
 license: Apache-2.0
@@ -27,6 +28,15 @@ expect:
       path: HEAD/CHAR
       about: CHAR MACINTOSH is not a 5.5 value
 convert:
+  - to: "5.5"
+    expected: expected.5.5.ged
+    losses: losses.5.5.json
   - to: "5.5.1"
     expected: expected.5.5.1.ged
     losses: losses.5.5.1.json
+  - to: "5.5.5"
+    expected: expected.5.5.5.ged
+    losses: losses.5.5.5.json
+  - to: "7.0"
+    expected: expected.7.0.ged
+    losses: losses.7.0.json

@@ -1,7 +1,8 @@
 id: version-40-plus
 description: >-
   HEAD.GEDC.VERS "4+", as Roots IV and V, Family Gathering and Ultimate Family Tree write
-  GEDCOM 4.0, with CHAR IBMPC (code page 437). Read as 4.0; "Sept. 1921" is SEP 1921 in 5.5.
+  GEDCOM 4.0, with CHAR IBMPC (code page 437). Read as 4.0; "Sept. 1921" is SEP 1921 in 5.5. GEDC.VERS names the version of each
+  step: 4+ is not a 5.5.5 version number.
 source:
   origin: handmade
 license: Apache-2.0
@@ -40,6 +41,12 @@ convert:
   - to: "5.5"
     expected: expected.5.5.ged
     losses: losses.5.5.json
+  - to: "5.5.1"
+    expected: expected.5.5.1.ged
+    losses: losses.5.5.1.json
+  - to: "5.5.5"
+    expected: expected.5.5.5.ged
+    losses: losses.5.5.5.json
   - to: "7.0"
     expected: expected.7.0.ged
     losses: losses.7.0.json

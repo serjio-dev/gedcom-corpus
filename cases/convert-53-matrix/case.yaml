@@ -1,0 +1,36 @@
+id: convert-53-matrix
+description: >-
+  A 5.3 draft (HEAD.GEDC.VERS 5.3, ANSEL), read as 5.5, to every writable version: one step to
+  5.5, where it is written as 5.5 (VERS 5.5, CHAR UNICODE), not copied; three to 5.5.5 and 7.0.
+  The 5.5 media link with FORM jpeg beside FILE → 5.5.1 FILE.FORM jpg, a 5.5.5 and 7.0 media
+  record (7.0 keeps TITL on the link); the submitter's ADDR → 5.5.5 ADR1; the note record → 7.0
+  SNOTE, CONC joined. Nothing is lost.
+source:
+  origin: handmade
+license: Apache-2.0
+fictional: true
+milestone: "0.7"
+tags: [convert, version-draft, ansel, media, gedcom-5.5.5]
+input:
+  file: input.ged
+  version: "5.5"
+  declaredVersion: "5.3"
+  encoding: ANSEL
+  lineEnding: LF
+checks: [read, roundtrip-preserve, roundtrip-stream, validate, convert, convert-stream]
+expect:
+  recordCount: 6
+  diagnostics: []
+convert:
+  - to: "5.5"
+    expected: expected.5.5.ged
+    losses: losses.5.5.json
+  - to: "5.5.1"
+    expected: expected.5.5.1.ged
+    losses: losses.5.5.1.json
+  - to: "5.5.5"
+    expected: expected.5.5.5.ged
+    losses: losses.5.5.5.json
+  - to: "7.0"
+    expected: expected.7.0.ged
+    losses: losses.7.0.json

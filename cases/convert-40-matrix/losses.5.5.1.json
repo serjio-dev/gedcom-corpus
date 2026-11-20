@@ -1,0 +1,14 @@
+{
+    "from": "4.0",
+    "to": "5.5.1",
+    "entries": [
+        {
+            "code": "KL2001",
+            "severity": "warning",
+            "path": "@1@/SYMB",
+            "line": 27,
+            "storedAs": "extension",
+            "message": "5.5 has no SYMB here"
+        }
+    ]
+}

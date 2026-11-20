@@ -1,0 +1,77 @@
+id: convert-40-matrix
+description: >-
+  GEDCOM 4.0 as PAF writes it (HEAD.GEDC.VERS 4.0.4.18, no FORM, ASCII, CRLF) to every
+  writable version, three steps to 5.5.5 and 7.0. Dates in words take their 5.5 form (c. 1850
+  → ABT 1850, After Sept. 1921 → AFT SEP 1921, Before 1922 → BEF 1922, 14 February 1875 → 14 FEB
+  1875), irregular ones become date phrases (7-12-84, 2 days after Easter, 1855), 7.0 DATE +
+  PHRASE; SEX Male, Female → M, F; SYMB → _SYMB (KL2001), the only loss. GEDC.VERS names the
+  version of each step: 4.0.4.18 is not a 5.5.5 version number. 5.5.5 and 7.0 make the inline
+  source a record, 5.5.5 splits the submitter's ADDR into ADR1 and ADR2.
+source:
+  origin: handmade
+license: Apache-2.0
+fictional: true
+milestone: "0.7"
+tags: [convert, version-4.0, dates, gedcom-5.5.5]
+input:
+  file: input.ged
+  version: "4.0"
+  declaredVersion: "4.0.4.18"
+  encoding: ASCII
+  lineEnding: CRLF
+checks: [read, roundtrip-preserve, roundtrip-stream, validate, convert, convert-stream]
+expect:
+  recordCount: 4
+  diagnostics:
+    - code: KV2003
+      severity: error
+      path: HEAD/GEDC
+      about: GEDC requires FORM; 4.0 has none
+    - code: KV3006
+      severity: error
+      path: "@1@/SEX"
+      about: SEX Male
+    - code: KV3005
+      severity: error
+      path: "@1@/BIRT/DATE"
+      about: c. 1850
+    - code: KV3005
+      severity: error
+      path: "@1@/CHR/DATE"
+      about: 7-12-84
+    - code: KV3005
+      severity: error
+      path: "@1@/DEAT/DATE"
+      about: After Sept. 1921
+    - code: KV3005
+      severity: error
+      path: "@1@/BURI/DATE"
+      about: Before 1922
+    - code: KV2001
+      severity: error
+      path: "@1@/SYMB"
+    - code: KV3006
+      severity: error
+      path: "@2@/SEX"
+      about: SEX Female
+    - code: KV3005
+      severity: error
+      path: "@2@/BIRT/DATE"
+      about: 2 days after Easter, 1855
+    - code: KV3005
+      severity: error
+      path: "@3@/MARR/DATE"
+      about: 14 February 1875
+convert:
+  - to: "5.5"
+    expected: expected.5.5.ged
+    losses: losses.5.5.json
+  - to: "5.5.1"
+    expected: expected.5.5.1.ged
+    losses: losses.5.5.1.json
+  - to: "5.5.5"
+    expected: expected.5.5.5.ged
+    losses: losses.5.5.5.json
+  - to: "7.0"
+    expected: expected.7.0.ged
+    losses: losses.7.0.json
